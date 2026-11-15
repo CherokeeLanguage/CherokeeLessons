@@ -4,11 +4,11 @@ Paired spec: **CherokeeLanguage/NumbersMaze.godot#3** — the NumbersMaze.godot 
 
 ## Problem
 
-The Cherokee Numbers Maze app is downloadable only through site-hosted binaries and a store link of unknown validity; its playable web build lives only on the site. The migration makes itch.io the app download channel; this app has no itch presence, so the phase-2 landing-page edit for its site page will have no itch URL to point at.
+The Cherokee Numbers Maze app is downloadable only through site-hosted binaries and a store link of unknown validity; its playable web build lives only on the site. The migration makes itch.io the app download channel; this app has no itch presence, so its site page cannot point at an itch URL yet. (Disposition of record, remediated 2026-11-14: the site page's conversion is owned by the filed distribution-policy spec CherokeeLessons#30, which rewrites this app's page to the itch targets and removes all store links.)
 
 ## Scope
 
-Phase 1 of the two-phase migration, for this app: create its itch.io project page and deploy this repo's currently-published Numbers Maze artifacts — desktop builds and the playable browser build — to it. Site-repo changes are limited to the repeatable push tooling; the site's app pages are not modified in this phase (phase 2 owns those edits).
+Phase 1 of the two-phase migration, for this app: create its itch.io project page and deploy this repo's currently-published Numbers Maze artifacts — desktop builds and the playable browser build — to it. Site-repo changes are limited to the repeatable push tooling; the site's app page is not modified by this spec (the site-page conversion is owned by CherokeeLessons#30 — see Out of scope).
 
 ## Requirements
 
@@ -53,7 +53,7 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 
 ## Out of scope
 
-- The phase-2 edit of the Numbers Maze site page (landing-page conversion) — separate spec.
+- The site-page landing conversion of the Numbers Maze page — owned by CherokeeLessons#30 (R-1: itch targets replace the self-hosted binary links, the `/HTML-Games/NumbersMaze/` link, and all store links). Originally filed as "phase 2 — separate spec" with no spec named; remediated 2026-11-14 to point at the filed owner so the deferred work is not dangling.
 - The `CherokeeLanguage/NumbersMaze.godot` repo's deploy-target conversion ticket — filed in that repo.
 - Any artifact rebuild — only the existing site-repo copies deploy.
 
