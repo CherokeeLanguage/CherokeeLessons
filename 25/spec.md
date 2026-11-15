@@ -53,9 +53,21 @@ Mirror the proven BoundPronouns pattern: the developer creates and configures th
 
 Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-time deployment of existing artifacts, and CI enters later at the binary-repo deploy-pipeline conversion; a single bundled desktop channel — rejected, platform-specific Godot binaries need per-platform channels for correct auto-tagging; API-driven project creation — rejected, no documented butler/API path creates projects.
 
+## Site page update — executable site scope (2026-11-14, developer direction)
+
+- **R-S1 — Numbers Maze page update.** `content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md` SHALL reference `https://cherokee-language.itch.io/cherokee-numbers-maze` as its distribution target, replacing the self-hosted platform binary links (`NumbersMaze.x86_64`, `NumbersMaze-x86_64.exe`, `NumbersMaze-mac.zip`) and the `/HTML-Games/NumbersMaze/` web-build link; the commented-out wrong store links (Apple id `966667496`, Amazon ASIN `B00TCP955U` — wrong app's identifiers, present in an HTML comment) SHALL be deleted; per the itch-only policy (2026-11-11), ALL store links on the page SHALL be removed.
+
+### Site-update criteria
+
+| ID | Criterion | Class | Instrument | Traces to |
+|---|---|---|---|---|
+| SC-S1 | The page references the itch project URL | structural | `grep -c "cherokee-language.itch.io/cherokee-numbers-maze" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` ≥ 1 | R-S1 |
+| SC-S2 | The page retains no self-hosted binary link, no web-build link, and no wrong store links | structural | `grep -nE "\.(x86_64|exe|zip)\)|HTML-Games" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` is empty; `grep -c "id966667496\|B00TCP955U" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` = 0 (the BoundPronouns page's own correct links keep these strings) | R-S1 |
+| SC-S3 | The page edit does not break the build | behavioral | executed `./build.sh` over the edited working tree; exit 0 | R-S1 |
+
 ## Out of scope
 
-- The site-page landing conversion of the Numbers Maze page — owned by CherokeeLessons#30 (R-1: itch targets replace the self-hosted binary links, the `/HTML-Games/NumbersMaze/` link, and all store links). Originally filed as "phase 2 — separate spec" with no spec named; remediated 2026-11-14 to point at the filed owner so the deferred work is not dangling.
+- The site-page landing conversion of the Numbers Maze page — owned by CherokeeLessons#30 (R-1: itch targets replace the self-hosted binary links, the `/HTML-Games/NumbersMaze/` link, and all store links). Originally filed as "phase 2 — separate spec" with no spec named; remediated 2026-11-14 to point at the filed owner so the deferred work is not dangling. [Superseded same day: the page's executable edit is now this ticket's R-S1 above per the developer's site-update direction; #30 retains only the working-tree binary cleanup for this app.]
 - The `CherokeeLanguage/NumbersMaze.godot` repo's deploy-target conversion ticket — filed in that repo.
 - Any artifact rebuild — only the existing site-repo copies deploy.
 
