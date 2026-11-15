@@ -36,7 +36,7 @@ This repository — content pages only: the 14 Syllabary-Dictation pages, `conte
 
 ## Approach
 
-Mechanical rewrite of the 17 pages to `{{ youtube(id=…) }}` per the derived assignment; delete the migrated media files from the working tree; delete the two generator scripts. Rollback: revert the commit set; media re-obtainable from the YouTube channel and local mirror (`cherokee-audio-mirror`).
+Mechanical rewrite of the 16 pages to `{{ youtube(id=…) }}` per the derived assignment; delete the migrated media files from the working tree; delete the two generator scripts. Rollback: revert the commit set; media re-obtainable from the YouTube channel and local mirror (`cherokee-audio-mirror`).
 
 ## Impact
 

@@ -21,12 +21,12 @@ The site carries ~3.49 GB of untracked-but-site-required assets, and its distrib
 Parts (each closes on its own delivered work; this umbrella closes only after every part has closed):
 
 - **CherokeeLessons#20** — Bound Pronouns app page: itch conversion (R-1) + presentation refresh (R-2; wording/layout/screenshots/itch widget), bound-pronouns colocated binary retirement.
-- **CherokeeLessons#54** — lesson media: 17 pages migrate `{{video}}`/`{{audio}}` embeds to `{{ youtube(id=…) }}`; dead zip link removed; the two `process_end_notes.py` generator scripts deleted; migrated media files retired from the working tree.
+- **CherokeeLessons#54** — lesson media: 16 pages migrate `{{video}}`/`{{audio}}` embeds to `{{ youtube(id=…) }}`; dead zip link removed; the two `process_end_notes.py` generator scripts deleted; migrated media files retired from the working tree.
 - **CherokeeLessons#55** — book pages: external ebook-store links removed (15 pages + `new-page.sh` scaffold lines).
 
 Seams the umbrella names (each part builds on them; nothing part-local is restated here):
 
-1. **App-binary retirement split:** the bound-pronouns colocated binaries bind to #20 (SC-3); the animals (2 files) and cherokee-numbers-maze (3 files) colocated binaries and the untracked `static/HTML-Games/NumbersMaze` web build bind to this umbrella (R-3/SC-6) — their pages' link edits already landed via #22/#25.
+1. **App-binary retirement split:** the bound-pronouns colocated binaries bind to #20 (SC-3); the animals (2 files) and cherokee-numbers-maze (3 files) colocated binaries and the untracked `static/HTML-Games/NumbersMaze` web build bind to this umbrella (R-5/SC-6) — their pages' link edits already landed via #22/#25.
 2. **Media-file retirement split:** the migrated lesson media (mp3/mp4 classes) bind to #54 (its SC-3); the TTS demo audio is added by this umbrella's R-2, never deleted.
 3. **Site-wide gates:** SC-7/SC-8 (fresh-clone build; over-limit count) execute after the last part lands — they verify the composed whole and cannot pass early. No part carries them.
 4. **Wording-approval gate:** #20's wording change carries a developer-approval-before-landing clause — an approval gate, not a seam, recorded there for single-sourcing.
