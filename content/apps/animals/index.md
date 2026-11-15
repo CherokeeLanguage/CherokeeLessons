@@ -26,7 +26,11 @@ Beta release notes:
 
 * Initial support for Android-TV with remote or gamepad.
 
-To get the beta: [Beta Signup](https://play.google.com/apps/testing/com.cherokeelessons.vocab.animals.one)
+* The Android and iOS store listings are no longer maintained.
+
+---
+
+* Get Apps & Games at [itch.io](https://cherokee-language.itch.io/cherokee-language-animals)
 
 Release notes:
 
@@ -45,11 +49,4 @@ Release notes:
 
 ---
 
-* [Desktop App via Direct Download](Animals-5.12.jar)
-* [Android App via Direct Download](Animals-5.12-release.apk)
-
----
-
-* [Android App via Google Play](https://play.google.com/store/apps/details?id=com.cherokeelessons.vocab.animals.one)
-* iPhone/iPad App not available via Apple iTunes
-* [Android App via Amazon](https://www.amazon.com/gp/product/B006RMX16U)
+* Get Apps & Games at [itch.io](https://cherokee-language.itch.io/cherokee-language-animals)
