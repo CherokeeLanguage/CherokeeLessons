@@ -17,3 +17,19 @@ spec:
     containment:
       scope: PASS
       home: PASS
+deliverable:
+  - round: 1
+    date: '2026-11-14T22:45:00-05:00'
+    scope: R-S1 site-page executable scope (SC-S1, SC-S2, SC-S3) on feature/22-itch-animals-site-update (f8be2a7)
+    verdict: PASS — zero findings
+    reviewer: fresh-context dispatch (ses_e22cbfe24ffeH8RXUStvQhtLEj)
+    evidence: reviewer-executed SC-S1/SC-S2 greps re-run (itch ref count 2; binary-link grep empty; store-link count 0); SC-S3 on the recorded executed ./build.sh (exit 0, 161 pages, 3.6s) plus static review; scope containment confirmed; no dangling references
+spec-review-siteRefresh:
+  - round: 1 (site-refresh revision, 2026-11-14T23:30:00-05:00)
+    artifact: .issues/22/spec.md — R-S2 for the developer's 2026-11-14 site-refresh direction (layout/wording/screenshots/itch widget)
+    verdict: FAIL (round 1) — 3 substantive findings (layout clause uncovered, #30 duplicate SC-14, #30 R-1-vs-R-1a misreference; 3 minor)
+    reviewer: fresh-context dispatch (ses_e22bf70d5ffeC620XRpkP5s6W3)
+    remediation: layout-traceability note added under the site-update criteria table (R-7 procedural-note style); paired-spec ownership line corrected; Impact 'repo untouched' qualified with the R-S2(c) screenshot dependency; widget variant claim corrected to light/dark per itch's docs (the #30 findings remediated in that ticket's file)
+    reviewer-round-2: pending
+    reviewer-round-2: fresh-context dispatch (ses_e22be3a58ffe3owmc2I4nbZ31j) — remediations verified; one residual finding was #24's stale cross-ref (remediated in that ticket's file); #22's file clean
+    reviewer-round-3: fresh-context dispatch (ses_e22bdd6a4ffeLEM1ns9jbQctDr) — PASS, zero findings (site-refresh suite)

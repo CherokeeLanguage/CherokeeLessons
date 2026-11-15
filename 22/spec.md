@@ -1,7 +1,7 @@
 # Spec — itch.io page for Cherokee Language Animals: create the page and deploy the published artifacts (itch migration, phase 1)
 
 > **Ownership correction (2026-11-14, developer direction):** the itch page creation, the artifact deployment, and the push tooling are **app-repo work** under the developer's cross-repo filing rule (2026-11-11) — owned by the paired spec CherokeeLanguage/Animals#11 and executed 2026-11-09 through the Animals repo's own tooling (`/home/muksihs/git/Animals/itch-push.sh` + gitignored `itch.conf`; the runbook's pushes ran from the Animals repo). This spec's original claim to "own" deployment from this repo's copies was the cross-repo filing defect that rule corrected; the channel table, R-4/R-5/R-7, and SC-5/SC-6 are superseded to the Animals-repo ownership. What this repo's ticket retains is the acceptance record: SC-1–SC-4's executed verification of the live page (audit/validation.yaml, all PASS), which stands as evidence for the app-repo-side deployment.
-Paired spec: **CherokeeLanguage/Animals#11** — the Animals repo's side of this app's migration (its deploy-target conversion). This spec owns the cherokeelessons.com side: the itch page and the initial deployment of the currently-published artifacts.
+Paired spec: **CherokeeLanguage/Animals#11** — the Animals repo's side of this app's migration (its deploy-target conversion). The paired app-repo spec owns the app repo side (the itch page, the artifact deployment, and the push tooling); this repo's ticket owns the site acceptance record for the delivered page (SC-1-SC-4) and the site page's executable update (its site-scope section below).
 
 
 ## Problem
@@ -50,6 +50,11 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 ## Site page update — executable site scope (2026-11-14, developer direction)
 
 - **R-S1 — Animals page update.** `content/apps/animals/index.md` SHALL reference `https://cherokee-language.itch.io/cherokee-language-animals` as its distribution target, replacing the self-hosted direct-download links (`Animals-5.12.jar`, `Animals-5.12-release.apk`); per the itch-only policy (2026-11-11), ALL store links on the page SHALL be removed — every `play.google.com` link including the live Beta-testing link (removed by policy, not because dead).
+- **R-S2 — Page presentation refresh — layout, wording, screenshots, itch widget (added 2026-11-14, developer direction: "update the layout and text wording — the app pages don't describe the apps very well", "probably also need to use the widget from itch.io", "adding and including 1 or more screenshots is acceptable; each app repo should have screen shots").** The page's rewrite SHALL go beyond the link swap:
+  - (a) **Wording.** The page's descriptive text SHALL be expanded into prose that accurately describes what the app does and its notable capabilities — drafted by the agent from the app's release notes and the page's existing prose, carrying no factual claim absent from those sources, and reviewed/approved by the developer before the edit lands (content decisions are the developer's).
+  - (b) **Layout.** The page's presentation SHALL be reworked for the itch-first model — a prominent distribution section presenting the itch project replaces the direct-download/store link lists.
+  - (c) **Screenshots.** The page SHALL embed one or more in-app screenshots (developer confirmed acceptance 2026-11-14). Screenshot files come from the Animals repo, which carries its own screenshots (its paired spec CherokeeLanguage/Animals#11 side); if a needed screenshot does not yet exist, its production is app-repo work and this ticket declares the dependency — never fabricates or substitutes site-side images.
+  - (d) **Itch widget.** The page SHALL embed itch.io's embeddable widget for this project — a self-contained iframe that pulls the project's cover and description from itch (embed code is obtainable from the live project page's footer "Embed" link, no dashboard access required; light/dark variants (per itch's docs) are available and the presentation choice is a developer-review decision). Fallback: if the embed proves incompatible with the site's build/rendering at implementation, the plain itch link stands and the disposition is recorded — the widget is never silently dropped.
 
 ### Site-update criteria
 
@@ -58,6 +63,11 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 | SC-S1 | The Animals page references the itch project URL | structural | `grep -c "cherokee-language.itch.io/cherokee-language-animals" content/apps/animals/index.md` ≥ 1 | R-S1 |
 | SC-S2 | The page retains no self-hosted binary link and no store links | structural | `grep -nE "\.(apk|jar)\)" content/apps/animals/index.md` is empty; `grep -cE "play\.google\.com|apps\.apple\.com|amazon\.com" content/apps/animals/index.md` = 0 | R-S1 |
 | SC-S3 | The page edit does not break the build | behavioral | executed `./build.sh` over the edited working tree; exit 0 | R-S1 |
+| SC-S4 | The page's descriptive prose accurately describes the app — no factual claim absent from the app's release notes and the page's prior prose; the developer's wording approval is recorded | content | side-by-side read against the release notes / prior page prose; approval in the work record | R-S2(a) |
+| SC-S5 | The page embeds ≥ 1 in-app screenshot sourced from the Animals repo's screenshots | structural | `grep -niE "!\[.*\]\(.*\)" content/apps/animals/index.md` (image embed) present; the referenced file's origin recorded in the work record | R-S2(c) |
+| SC-S6 | The page embeds the itch.io embed widget for this project (or the recorded fallback disposition) | structural | `grep -c "itch.io/embed/" content/apps/animals/index.md` ≥ 1; on fallback, the work record carries the disposition | R-S2(d) |
+
+Traceability note: R-S2(b) (layout) is a presentational rewrite with no standalone grep instrument — its satisfaction is verified by the work's own record (the reviewer's before/after page read), per the R-7 procedural-note style.
 
 ## Out of scope
 
@@ -67,7 +77,7 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 
 ## Impact
 
-One public itch.io page appears under the `cherokee-language` account. No site page content changes; the Animals repo is untouched; other apps unaffected. Risk is low: new external state only, no destructive operation (a mis-configured page can be edited or deleted dashboard-side; butler pushes to a channel are idempotent and re-pushable).
+One public itch.io page appears under the `cherokee-language` account. The site's Animals page content changes per this spec's site-scope section (R-S1/R-S2: link swap plus the presentation refresh); the Animals repo's tracked content is untouched by this ticket (screenshot production is an app-repo dependency declared in R-S2(c)); other apps unaffected. Risk is low: new external state only, no destructive operation (a mis-configured page can be edited or deleted dashboard-side; butler pushes to a channel are idempotent and re-pushable).
 
 🤖 Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
 

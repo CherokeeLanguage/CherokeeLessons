@@ -209,3 +209,13 @@ revision-3-standup-first:
   verdict: PASS
   findings: []
   notes: fresh-context dispatch on the round-2-revised spec; reviewer verified the book census (15 pages/26 lines + scaffold 2, grep total 28), the R-7/SC-15 surface scoping, SC-2/SC-10 end-state coherence under the #31-first order, and the cross-spec division of labor end-to-end; containment pass both prongs.
+spec-review-siteRefresh:
+  - round: 1 (site-refresh revision, 2026-11-14T23:30:00-05:00)
+    artifact: .issues/30/spec.md — R-additions for the developer's 2026-11-14 site-refresh direction (layout/wording/screenshots/itch widget)
+    verdict: FAIL (round 1) — 3 substantive findings (layout clause uncovered, #30 duplicate SC-14, #30 R-1-vs-R-1a misreference; 3 minor)
+    reviewer: fresh-context dispatch (ses_e22bf70d5ffeC620XRpkP5s6W3)
+    remediation: layout-traceability note added under the site-update criteria table (R-7 procedural-note style; #30 instead got the layout clause into SC-14 with a section-absence grep); #30 SC-14/SC-15/SC-16 renumbered (unique IDs); #30 Out-of-scope R-1(d)→R-1a(d); paired-spec ownership line corrected in #22-#25; Impact 'repo untouched' qualified with the R-S2(c) screenshot dependency (#32 rollback wording likewise); widget variant claim corrected to light/dark per itches docs
+    reviewer-round-2: pending
+    reviewer-round-2: fresh-context dispatch (ses_e22be3a58ffe3owmc2I4nbZ31j) — all six remediations verified; one residual finding (#24 stale cross-ref 'R-2(c) names it' for #32's widget)
+    remediation-2: #24's traceability note corrected to point at CherokeeLessons#32 R-1 (SC-4 traces it)
+    reviewer-round-3: fresh-context dispatch (ses_e22bdd6a4ffeLEM1ns9jbQctDr) — PASS, zero findings

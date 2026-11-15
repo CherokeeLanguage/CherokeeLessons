@@ -1,7 +1,7 @@
 # Spec — itch.io page for Cherokee Language Lessons 1: create the page and deploy the published artifact (itch migration, phase 1)
 
 > **Ownership correction (2026-11-14, developer direction):** the itch page creation, the artifact deployment, and the push tooling are **app-repo work** under the developer's cross-repo filing rule (2026-11-11) — owned by the paired spec CherokeeLanguage/cll1-gdx#4 and its publish successor CherokeeLanguage/cll1-gdx#5, which already carry the build/publish deliverables (the 1.82 jar + APK and the page at slug `cherokee-language-lessons-1`). This spec's channel table, R-4/R-5/R-7, and SC-5/SC-6 are superseded to that app-repo ownership. This repo's ticket owns only the site surface — the CLL-1 page's link removals (CherokeeLessons#30) and itch-link addition (CherokeeLessons#32) — and its SC-1–SC-4 remain as acceptance criteria for the app-repo-delivered page.
-Paired spec: **CherokeeLanguage/cll1-gdx#4** — the cll1-gdx repo's side of this app's migration (its deploy-target conversion). This spec owns the cherokeelessons.com side: the itch page and the initial deployment of the currently-published artifacts.
+Paired spec: **CherokeeLanguage/cll1-gdx#4** — the cll1-gdx repo's side of this app's migration (its deploy-target conversion). The paired app-repo spec owns the app repo side (the itch page, the artifact deployment, and the push tooling); this repo's ticket owns the site acceptance record for the delivered page (SC-1-SC-4) and the site page's executable update (its site-scope section below).
 
 
 ## Problem
@@ -51,6 +51,11 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 ## Site page update — executable site scope (2026-11-14, developer direction)
 
 - **R-S1 — CLL-1 page update.** `content/apps/cherokee-language-lessons-1.md` SHALL drop its self-hosted desktop jar link (`/downloads/CLL1-1.72.jar`) and ALL its store links (`play.google.com`, `apps.apple.com`, `amazon.com` — all probe-dead). The page's itch link is NOT added by this ticket: it arrives via CherokeeLessons#32 once the cll1-gdx publish (CherokeeLanguage/cll1-gdx#5) delivers the project — until then the page carries no distribution links by design (no dead links shipped).
+- **R-S2 — Page presentation refresh — layout, wording, screenshots (added 2026-11-14, developer direction: "update the layout and text wording — the app pages don't describe the apps very well", "adding and including 1 or more screenshots is acceptable; each app repo should have screen shots").** The page's rewrite SHALL go beyond the link removals:
+  - (a) **Wording.** The page's descriptive text SHALL be expanded into prose that accurately describes what the app does and its notable capabilities — drafted by the agent from the app's release notes and the page's existing prose, carrying no factual claim absent from those sources, and reviewed/approved by the developer before the edit lands (content decisions are the developer's).
+  - (b) **Layout.** The page's presentation SHALL be reworked to the itch-first model's interim state: prominent, accurate app description, no dead link lists.
+  - (c) **Screenshots.** The page SHALL embed one or more in-app screenshots (developer confirmed acceptance 2026-11-14). Screenshot files come from the cll1-gdx repo, which carries its own screenshots; if a needed screenshot does not yet exist, its production is app-repo work and this ticket declares the dependency — never fabricates or substitutes site-side images.
+  - (d) **Itch widget and itch presentation are #32's scope** — the widget needs a live project to embed; this ticket's page carries only wording/layout/screenshots, and CherokeeLessons#32 adds the itch link + widget when the project is live.
 
 ### Site-update criteria
 
@@ -59,6 +64,10 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 | SC-S1 | The page carries no desktop-jar link and no store links | structural | `grep -c "downloads/CLL1" content/apps/cherokee-language-lessons-1.md` = 0; `grep -cE "play\.google\.com|apps\.apple\.com|amazon\.com" content/apps/cherokee-language-lessons-1.md` = 0 | R-S1 |
 | SC-S2 | The page carries no dead/fabricated links (no itch link until #32 adds it) | structural | `grep -c "cherokee-language.itch.io" content/apps/cherokee-language-lessons-1.md` = 0 at this ticket's completion | R-S1 |
 | SC-S3 | The page edit does not break the build | behavioral | executed `./build.sh` over the edited working tree; exit 0 | R-S1 |
+| SC-S4 | The page's descriptive prose accurately describes the app — no factual claim absent from the app's release notes and the page's prior prose; the developer's wording approval is recorded | content | side-by-side read against the release notes / prior page prose; approval in the work record | R-S2(a) |
+| SC-S5 | The page embeds ≥ 1 in-app screenshot sourced from the cll1-gdx repo's screenshots | structural | `grep -niE "!\[.*\]\(.*\)" content/apps/cherokee-language-lessons-1.md` (image embed) present; the referenced file's origin recorded in the work record | R-S2(c) |
+
+Traceability note: R-S2(b) (layout) is a presentational rewrite with no standalone grep instrument — its satisfaction is verified by the work's own record (the reviewer's before/after page read), per the R-7 procedural-note style. R-S2(d)'s widget scope is CherokeeLessons#32's (its R-1 carries the widget; SC-4 traces it).
 
 ## Out of scope
 
@@ -68,7 +77,7 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 
 ## Impact
 
-One public itch.io page appears under the `cherokee-language` account. No site page content changes; the cll1-gdx repo is untouched; other apps unaffected. Risk is low: new external state only, no destructive operation (a mis-configured page can be edited or deleted dashboard-side; butler pushes to a channel are idempotent and re-pushable).
+One public itch.io page appears under the `cherokee-language` account. The site's CLL-1 page content changes per this spec's site-scope section (R-S1/R-S2); the cll1-gdx repo's tracked content is untouched by this ticket (screenshot production is an app-repo dependency declared in R-S2(c)); other apps unaffected. Risk is low: new external state only, no destructive operation (a mis-configured page can be edited or deleted dashboard-side; butler pushes to a channel are idempotent and re-pushable).
 
 🤖 Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
 
