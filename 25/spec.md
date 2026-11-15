@@ -1,4 +1,6 @@
 # Spec — itch.io page for Cherokee Numbers Maze: create the page and deploy the published artifacts (itch migration, phase 1)
+
+> **Ownership correction (2026-11-14, developer direction):** the itch page creation, the artifact deployment, and the push tooling are **app-repo work** under the developer's cross-repo filing rule (2026-11-11) — owned by the paired spec CherokeeLanguage/NumbersMaze.godot#3, whose build outputs are the correct deploy sources (the site's untracked copies of the Linux/Windows/mac builds and the `static/HTML-Games/NumbersMaze/` web build that this spec's original channel table anchored are not this repo's deliverable to deploy). This spec's channel table, R-4/R-5/R-6/R-7, and SC-5/SC-6/SC-7 are superseded to that app-repo ownership. This repo's ticket owns only the site surface — the Numbers Maze page's conversion (CherokeeLessons#30) — and its SC-1–SC-4 remain as acceptance criteria for the app-repo-delivered page.
 Paired spec: **CherokeeLanguage/NumbersMaze.godot#3** — the NumbersMaze.godot repo's side of this app's migration (its deploy-target conversion). This spec owns the cherokeelessons.com side: the itch page and the initial deployment of the currently-published artifacts.
 
 
