@@ -1,4 +1,6 @@
 # Spec — itch.io page for Syllabary: create the page and deploy the published artifact (itch migration, phase 1)
+
+> **Ownership correction (2026-11-14, developer direction):** the itch page creation, the artifact deployment, and the push tooling are **app-repo work** under the developer's cross-repo filing rule (2026-11-11) — owned by the paired spec CherokeeLanguage/Syllabary#2. This spec's channel table, R-4/R-5/R-7, and SC-5/SC-6 are superseded to that app-repo ownership. This repo's ticket owns only the site surface — the Syllabary page's conversion (CherokeeLessons#30) — and its SC-1–SC-4 remain as acceptance criteria for the app-repo-delivered page.
 Paired spec: **CherokeeLanguage/Syllabary#2** — the Syllabary repo's side of this app's migration (its deploy-target conversion). This spec owns the cherokeelessons.com side: the itch page and the initial deployment of the currently-published artifacts.
 
 
