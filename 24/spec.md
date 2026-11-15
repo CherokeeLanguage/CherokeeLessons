@@ -1,4 +1,6 @@
 # Spec — itch.io page for Cherokee Language Lessons 1: create the page and deploy the published artifact (itch migration, phase 1)
+
+> **Ownership correction (2026-11-14, developer direction):** the itch page creation, the artifact deployment, and the push tooling are **app-repo work** under the developer's cross-repo filing rule (2026-11-11) — owned by the paired spec CherokeeLanguage/cll1-gdx#4 and its publish successor CherokeeLanguage/cll1-gdx#5, which already carry the build/publish deliverables (the 1.82 jar + APK and the page at slug `cherokee-language-lessons-1`). This spec's channel table, R-4/R-5/R-7, and SC-5/SC-6 are superseded to that app-repo ownership. This repo's ticket owns only the site surface — the CLL-1 page's link removals (CherokeeLessons#30) and itch-link addition (CherokeeLessons#32) — and its SC-1–SC-4 remain as acceptance criteria for the app-repo-delivered page.
 Paired spec: **CherokeeLanguage/cll1-gdx#4** — the cll1-gdx repo's side of this app's migration (its deploy-target conversion). This spec owns the cherokeelessons.com side: the itch page and the initial deployment of the currently-published artifacts.
 
 
