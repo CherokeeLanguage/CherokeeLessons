@@ -1,1 +1,7 @@
-links: []
+links:
+- number: 20
+  type: sub-issue
+- number: 54
+  type: sub-issue
+- number: 55
+  type: sub-issue
