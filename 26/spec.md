@@ -37,7 +37,7 @@ This repository (CherokeeLessons.com): one new documentation file, `docs/app-ann
 - Which account posts the toots, and on which Mastodon instance — developer decision, declined 2026-11-10 ("not applicable right now"); the doc records the format only.
 - Announcement trigger and cadence (initial launch, per-release push, or both) — not yet bound.
 - Retroactive announcements for already-live apps (Bound Pronouns, Animals — the two pages with verified live state in the store; see Provenance and the correction recorded in the issue-store history of #22).
-- Phase-2 site-page work (unfiled specs) and the app repos' pipelines — untouched.
+- The site-page work (filed: CherokeeLessons#30 — distribution policy covering the four itch-backed app pages; CherokeeLessons#32 — the CLL-1 page's itch link) and the app repos' pipelines — untouched. (This bullet originally read "unfiled specs"; remediated 2026-11-14 now that the specs exist on file.)
 - The itchio account's actual boost behavior — the doc cites the toot's guidance, it does not assert outcomes.
 
 ## Approach
