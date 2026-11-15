@@ -34,10 +34,6 @@ device), Windows, macOS, and Linux.
 
 **[Get it at itch.io](https://cherokee-language.itch.io/cherokee-numbers-maze)**
 
-## Demo Video
-
-{{ youtube(id="tj6c0UGRMF4") }}
-
 ## Screenshots
 
 ![Cherokee Numbers Maze gameplay — collecting dice in the maze](/images/nm-screenshot-1.png)
