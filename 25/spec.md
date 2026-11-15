@@ -62,7 +62,7 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 | ID | Criterion | Class | Instrument | Traces to |
 |---|---|---|---|---|
 | SC-S1 | The page references the itch project URL | structural | `grep -c "cherokee-language.itch.io/cherokee-numbers-maze" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` ≥ 1 | R-S1 |
-| SC-S2 | The page retains no self-hosted binary link, no web-build link, and no wrong store links | structural | `grep -nE "\.(x86_64|exe|zip)\)|HTML-Games" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` is empty; `grep -c "id966667496\|B00TCP955U" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` = 0 (the BoundPronouns page's own correct links keep these strings) | R-S1 |
+| SC-S2 | The page retains no self-hosted binary link, no web-build link, no store links (incl. the live Play link), and no wrong store-link residue | structural | `grep -nE "\.(x86_64|exe|zip)\)|HTML-Games" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` is empty; `grep -cE "play\.google\.com|apps\.apple\.com|amazon\.com" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` = 0; `grep -c "id966667496\|B00TCP955U" "content/apps/cherokee-numbers-maze---ᏣᎳᎩ-ᏗᏎᏍᏗ-ᏚᎴᎾᎯᎯ/index.md"` = 0 (the BoundPronouns page's own correct links keep these strings) | R-S1 |
 | SC-S3 | The page edit does not break the build | behavioral | executed `./build.sh` over the edited working tree; exit 0 | R-S1 |
 
 ## Out of scope
