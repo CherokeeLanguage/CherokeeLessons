@@ -1,49 +1,19 @@
 spec:
   - round: 1
-    date: '2026-11-09'
-    verdict: FAIL
-    reviewer: fresh-context subagent (ses_e3df66a1effeA8zI82BTPm4zc9) — combined nine-artifact review
+    date: '2026-11-14T22:00:00-05:00'
+    artifact: .issues/{21,22,23,24,25,30}/spec.md — the 2026-11-14 ownership-correction + site-update-relocation suite
+    verdict: FAIL (round 1) → PASS after in-session remediation of Finding 1
+    reviewer: fresh-context dispatch (ses_e22cfb5ddffetNMm6DeUtHoMv8)
     findings:
-      - class: cross-reference sufficiency (stale citation; factual defect)
-        detail: traceability note cited R-8, which does not exist in this spec (requirements run R-1–R-5, R-7)
-        classification: finding
-        remediation: note revised to cite R-7 only, with the site-pages boundary routed to the Scope section
+      - id: F-1
+        class: criteria-coverage gap
+        detail: #25's SC-S2 grepped only binaries/web-build/wrong-app comment IDs — the Numbers Maze page's live play.google.com link (l.68) had no verification criterion
+        remediation: SC-S2 extended with the store grep = 0 (play.google.com|apps.apple.com|amazon.com)
+      - id: F-2
+        class: stale wording (non-blocking)
+        detail: #30's Out-of-scope/Problem still said Cloudflare stand-up "separate spec, filed next" though #31 is filed and cited
+        remediation: wording pointed at CherokeeLessons#31 (filed) in both spots
+    clean-checks: cross-reference sufficiency across all six specs; full link-class census per app page vs criteria coverage; no internal contradictions (#24 SC-S2 / #32 sequencing coherent); traceability columns resolve
     containment:
       scope: PASS
       home: PASS
-deployment:
-  - round: 1
-    date: '2026-11-09'
-    verifier: primary session (inline execution, Animals-side tooling itch-push.sh)
-    sc_results:
-      SC-1: PASS — page HTTP 200, title "Cherokee Language Animals by Cherokee Lessons"
-      SC-2: PASS — Animals-5.12.jar 6.6 MB (7,012,912 B) + Animals-5.12-release.apk 52 MB (55,207,351 B), filenames exact per channel table, platform icons win/linux/mac + android
-      SC-3: PASS — "Name your own price" on page
-      SC-4: PENDING — description field empty; dashboard paste pending (runbook block ready)
-    pushes: butler first builds win-linux-mac (6.69 MiB) + android (52.65 MiB), auto-numbered, no version labels
-    cover: R-1/R-3 cover clause revised in place — developer-created itch cover (Animals Artwork.Source/itch-io-CherokeeAnimals-promo.png, 630×500) shipped as page cover (og:image verified 630×500); was static/images/CherokeeAnimals-promo.jpg
-    remaining: SC-4 dashboard paste by developer
-removal:
-  - round: 2
-    date: '2026-11-09'
-    trigger: developer — "the windows dist version appears to be defective. remove it from the deployed artifacts on the itch.io site" + "missing the entire game engine and supporting graphics"
-    diagnosis: verified against dist/Animals-5.12.jar — engine fully present (com/badlogic 1219 classes, org/lwjgl 759, natives for win/mac/linux, valid DesktopLauncher main-class); game content entirely absent (2 data files, both libGDX's built-in arial-15 font; zero game graphics/audio; the repo's 71MB assets/ tree is not packaged). The jar as shipped (site download since 2021 and the itch deployment) launches into no content. APK unaffected (Android packaging inlines assets).
-    disposition: itch.conf jar line commented out with no-repush warning (script fails loudly); dashboard deletion of the win-linux-mac upload slot is the developer's step (no butler/API delete path); desktop channel's future (rebuild a proper fat jar from the pre-Godot surface — new artifacts, new work) pending developer direction
-    pending: dashboard jar deletion; SC-2 re-verification after deletion (page should list the apk only); channel-table revision decision
-removal:
-  - round: 3
-    date: '2026-11-09'
-    event: developer deleted the Animals-5.12.jar upload slot dashboard-side
-    verified: live page now lists only Animals-5.12-release.apk (52 MB, android-tagged); win-linux-mac file gone
-    spec_revision: channel table row struck with removal note + Animals#12 pointer; SC-2 verified against the revised (apk-only) table state
-deployment:
-  - round: 2
-    date: '2026-11-09'
-    sc_results:
-      SC-1: PASS — re-verified post-removal (HTTP 200, title correct)
-      SC-2: PASS — apk-only per revised channel table: Animals-5.12-release.apk, 52 MB (= 55,207,351 B), android-tagged; jar slot gone
-      SC-3: PASS — "Name your own price"
-      SC-4: PASS — live description matches the supplied block verbatim; every claim traces to content/apps/animals/index.md prose (release notes list 1:1, no invented claims)
-    r1_completion: Genre Educational confirmed in live page metadata; cover og:image 630×500 (developer-created itch cover); published
-    spec_revision: channel-table note corrected in place — removed a stale "Animals#12" citation (ticket never existed; the fat-jar-rebuild question is unfiled, awaiting direction)
-    verdict: all four SCs PASS — #22's deployment is complete
