@@ -2,6 +2,8 @@
 
 CherokeeLessons.com#20 · local-authoritative · sibling of BoundPronouns#59
 
+> **Overlap note (recorded 2026-11-14, spec-review remediation):** the page conversion this spec owns was later absorbed — page-wide, under the itch-only distribution policy — into CherokeeLessons#30, whose R-1/SC-1 cover this same page's itch-link conversion, self-hosted-binary-link removal, and store-link removal. #20's R-1/R-2 are the narrower form of the same edit; duplicate ownership is recorded here rather than left unstated. Disposition (execute via #30 and close this as superseded, vs execute this separately) is the developer's call at this ticket's approval gate.
+
 ## Provenance
 
 - **Developer statements (2026-11-05/06, chat):** "the app should also be listed in ../CherokeeLessons.com"; "the app is now only available via itch.io" (2026-11-06 — the page's Play/Apple/Amazon listing entries are superseded and itch.io is the sole current channel).
