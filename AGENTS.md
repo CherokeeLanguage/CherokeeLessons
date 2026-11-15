@@ -12,6 +12,20 @@ this file holds repo operational facts only.
   system zola — the pin was chosen for vendored-Zulma compatibility (README).
 - There is no test suite and no CI. A clean `./build.sh` (exit 0) is the
   verification gate for content and config changes.
+- **Iframe-embed CSP gate (evergreen — every new page).** `static/_headers`
+  carries the site CSP, and `build.sh` cannot catch its runtime effect: an
+  iframe whose origin is absent from the `_headers` `frame-src` list is
+  silently blocked at runtime — it renders as a blank box in the served page
+  (seen on the #22 itch widget; the console reports "violates the following
+  Content-Security-Policy directive: frame-src"). When adding any new blog or
+  content entry that embeds an iframe — itch.io widgets, video/comment
+  embeds, anything frame-based: (1) check the embed origin against
+  `static/_headers`' `frame-src` and add the origin there if absent; (2)
+  verify the served page by browser-rendering a preview (deploy or local
+  serve) and checking the console for CSP frame violations — a clean
+  `./build.sh` proves nothing about the frame. The #22 itch-widget embed
+  establishes the pattern (widget iframe `itch.io/embed/…`, origin
+  `https://itch.io` in frame-src).
 - Deployment is Cloudflare Workers Static Assets: a merge to `master` triggers
   a Workers Builds build and `npx wrangler deploy` automatically; PR branches
   get preview builds. The one-time dashboard setup (GitHub App connection,
