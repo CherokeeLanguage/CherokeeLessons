@@ -4,11 +4,11 @@ Paired spec: **CherokeeLanguage/Syllabary#2** — the Syllabary repo's side of t
 
 ## Problem
 
-The Syllabary app is downloadable only through a site-hosted binary and store links of unknown validity. The migration makes itch.io the app download channel; this app has no itch presence, so the phase-2 landing-page edit for its site page will have no itch URL to point at.
+The Syllabary app is downloadable only through a site-hosted binary and store links of unknown validity. The migration makes itch.io the app download channel; this app has no itch presence, so its site page cannot point at an itch URL yet. (Disposition of record, remediated 2026-11-14: the site page's conversion is owned by the filed distribution-policy spec CherokeeLessons#30, which rewrites this app's page to the itch target and removes all store links.)
 
 ## Scope
 
-Phase 1 of the two-phase migration, for this app: create its itch.io project page and deploy this repo's currently-published Syllabary artifact to it. Site-repo changes are limited to the repeatable push tooling; the site's app pages are not modified in this phase (phase 2 owns those edits).
+Phase 1 of the two-phase migration, for this app: create its itch.io project page and deploy this repo's currently-published Syllabary artifact to it. Site-repo changes are limited to the repeatable push tooling; the site's app page is not modified by this spec (the site-page conversion is owned by CherokeeLessons#30 — see Out of scope).
 
 ## Requirements
 
@@ -48,7 +48,7 @@ Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-
 
 ## Out of scope
 
-- The phase-2 edit of `content/apps/syllabary-app.md` (landing-page conversion) — separate spec.
+- The site-page landing conversion of `content/apps/syllabary-app.md` — owned by CherokeeLessons#30 (R-1: the Syllabary page gains its itch link and all its store links are removed). Originally filed as "phase 2 — separate spec" with no spec named; remediated 2026-11-14 to point at the filed owner so the deferred work is not dangling.
 - The `CherokeeLanguage/Syllabary` repo's deploy-target conversion ticket — filed in that repo.
 - Any artifact rebuild — only the existing site-repo copy deploys.
 
