@@ -1,4 +1,6 @@
 # Spec — itch.io page for Cherokee Language Animals: create the page and deploy the published artifacts (itch migration, phase 1)
+
+> **Ownership correction (2026-11-14, developer direction):** the itch page creation, the artifact deployment, and the push tooling are **app-repo work** under the developer's cross-repo filing rule (2026-11-11) — owned by the paired spec CherokeeLanguage/Animals#11 and executed 2026-11-09 through the Animals repo's own tooling (`/home/muksihs/git/Animals/itch-push.sh` + gitignored `itch.conf`; the runbook's pushes ran from the Animals repo). This spec's original claim to "own" deployment from this repo's copies was the cross-repo filing defect that rule corrected; the channel table, R-4/R-5/R-7, and SC-5/SC-6 are superseded to the Animals-repo ownership. What this repo's ticket retains is the acceptance record: SC-1–SC-4's executed verification of the live page (audit/validation.yaml, all PASS), which stands as evidence for the app-repo-side deployment.
 Paired spec: **CherokeeLanguage/Animals#11** — the Animals repo's side of this app's migration (its deploy-target conversion). This spec owns the cherokeelessons.com side: the itch page and the initial deployment of the currently-published artifacts.
 
 
