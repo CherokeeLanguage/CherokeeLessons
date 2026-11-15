@@ -1,5 +1,7 @@
 # Spec — itch migration phase 1 umbrella: one paired spec set per app
 
+> **Ownership correction (2026-11-14, developer direction):** the "cherokeelessons.com side" column of the Parts table below is corrected of record — itch page creation and artifact deployment are **app-repo work** (the developer's cross-repo filing rule, 2026-11-11), owned by each app's paired spec and executed through the app repo's own butler tooling. This repo's phase-1 specs own only the site surfaces (their site-page conversions route to CherokeeLessons#30/#32). The initial deployment's source-artifact anchoring to this repo's copies ("this repo's copies") was the filing defect corrected here; the channel tables and push-tooling criteria in #22–#25 are superseded to the paired app-repo specs.
+
 ## Recomposition grounds
 
 This issue was filed as a single phase-1 spec covering all four apps and reached a zero-finding validation PASS (round 4, `.issues/21/audit/validation.yaml`). The developer directed the split on 2026-11-09: "it should be one spec per app" and "(or paired specs as cherokeelessons.com needs separate specs from the app repo specific specs)". Recomposed per the issues card's recomposition protocol into four paired spec sets — the recomposition occurred during the spec phase, before any implementation or PR authorization, so no authorization is void.
