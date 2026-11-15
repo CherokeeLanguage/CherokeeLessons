@@ -48,9 +48,21 @@ Mirror the proven BoundPronouns pattern: the developer creates and configures th
 
 Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-time deployment of an existing artifact, and CI enters later at the binary-repo deploy-pipeline conversion; API-driven project creation — rejected, no documented butler/API path creates projects; an Android channel — rejected for now, no APK artifact is in evidence to deploy.
 
+## Site page update — executable site scope (2026-11-14, developer direction)
+
+- **R-S1 — CLL-1 page update.** `content/apps/cherokee-language-lessons-1.md` SHALL drop its self-hosted desktop jar link (`/downloads/CLL1-1.72.jar`) and ALL its store links (`play.google.com`, `apps.apple.com`, `amazon.com` — all probe-dead). The page's itch link is NOT added by this ticket: it arrives via CherokeeLessons#32 once the cll1-gdx publish (CherokeeLanguage/cll1-gdx#5) delivers the project — until then the page carries no distribution links by design (no dead links shipped).
+
+### Site-update criteria
+
+| ID | Criterion | Class | Instrument | Traces to |
+|---|---|---|---|---|
+| SC-S1 | The page carries no desktop-jar link and no store links | structural | `grep -c "downloads/CLL1" content/apps/cherokee-language-lessons-1.md` = 0; `grep -cE "play\.google\.com|apps\.apple\.com|amazon\.com" content/apps/cherokee-language-lessons-1.md` = 0 | R-S1 |
+| SC-S2 | The page carries no dead/fabricated links (no itch link until #32 adds it) | structural | `grep -c "cherokee-language.itch.io" content/apps/cherokee-language-lessons-1.md` = 0 at this ticket's completion | R-S1 |
+| SC-S3 | The page edit does not break the build | behavioral | executed `./build.sh` over the edited working tree; exit 0 | R-S1 |
+
 ## Out of scope
 
-- The site-page landing conversion of `content/apps/cherokee-language-lessons-1.md` — owned by CherokeeLessons#30 (removes the store links and the desktop-jar link) and CherokeeLessons#32 (adds the itch link once the cll1-gdx publish delivers it). Originally filed as "phase 2 — separate spec" with no spec named; remediated 2026-11-14 to point at the filed owners so the deferred work is not dangling.
+- The site-page landing conversion of `content/apps/cherokee-language-lessons-1.md` — owned by CherokeeLessons#30 (removes the store links and the desktop-jar link) and CherokeeLessons#32 (adds the itch link once the cll1-gdx publish delivers it). Originally filed as "phase 2 — separate spec" with no spec named; remediated 2026-11-14 to point at the filed owners so the deferred work is not dangling. [Superseded same day: the page's removal edits are now this ticket's R-S1 above per the developer's site-update direction; #30 retains the end-state re-assertion (its SC-12) and #32 retains the itch-link addition.]
 - The `CherokeeLanguage/cll1-gdx` repo's deploy-target conversion ticket — filed in that repo.
 - Any artifact rebuild — only the existing site-repo copy deploys.
 
