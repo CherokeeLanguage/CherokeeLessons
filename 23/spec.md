@@ -48,9 +48,21 @@ Mirror the proven BoundPronouns pattern: the developer creates and configures th
 
 Alternatives weighed (2026-11-09): CI-driven pushes — rejected, this is a one-time deployment of an existing artifact, and CI enters later at the binary-repo deploy-pipeline conversion; API-driven project creation — rejected, no documented butler/API path creates projects; an Android channel — rejected for now, no APK artifact is in evidence to deploy.
 
+## Site page update — executable site scope (2026-11-14, developer direction)
+
+- **R-S1 — Syllabary page update.** `content/apps/syllabary-app.md` SHALL reference `https://cherokee-language.itch.io/cherokee-syllabary` as its distribution target, replacing the self-hosted desktop jar link (`/downloads/Syllabary-3.24.jar`); per the itch-only policy (2026-11-11), ALL store links on the page SHALL be removed — including the probe-live Apple App Store link (removed by policy, not because dead).
+
+### Site-update criteria
+
+| ID | Criterion | Class | Instrument | Traces to |
+|---|---|---|---|---|
+| SC-S1 | The Syllabary page references the itch project URL | structural | `grep -c "cherokee-language.itch.io/cherokee-syllabary" content/apps/syllabary-app.md` ≥ 1 | R-S1 |
+| SC-S2 | The page retains no self-hosted binary link and no store links | structural | `grep -nE "\.jar\)|/downloads/.*\.jar\)" content/apps/syllabary-app.md` is empty; `grep -cE "play\.google\.com|apps\.apple\.com|amazon\.com" content/apps/syllabary-app.md` = 0 | R-S1 |
+| SC-S3 | The page edit does not break the build | behavioral | executed `./build.sh` over the edited working tree; exit 0 | R-S1 |
+
 ## Out of scope
 
-- The site-page landing conversion of `content/apps/syllabary-app.md` — owned by CherokeeLessons#30 (R-1: the Syllabary page gains its itch link and all its store links are removed). Originally filed as "phase 2 — separate spec" with no spec named; remediated 2026-11-14 to point at the filed owner so the deferred work is not dangling.
+- The site-page landing conversion of `content/apps/syllabary-app.md` — owned by CherokeeLessons#30 (R-1: the Syllabary page gains its itch link and all its store links are removed). Originally filed as "phase 2 — separate spec" with no spec named; remediated 2026-11-14 to point at the filed owner so the deferred work is not dangling. [Superseded same day: the page's executable edit is now this ticket's R-S1 above per the developer's site-update direction; #30 retains only the working-tree cleanup for this app.]
 - The `CherokeeLanguage/Syllabary` repo's deploy-target conversion ticket — filed in that repo.
 - Any artifact rebuild — only the existing site-repo copy deploys.
 
