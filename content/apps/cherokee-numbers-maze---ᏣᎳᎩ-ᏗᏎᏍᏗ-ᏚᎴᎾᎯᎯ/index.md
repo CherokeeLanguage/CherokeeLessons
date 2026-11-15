@@ -21,6 +21,8 @@ that match the challenge you were given — then explode them. Complete all of a
 level's challenges and you move on to the next, larger level, with more numbers
 to learn.
 
+<!-- more -->
+
 The app is free — the itch.io page's payment setting is "Name your own price",
 so you can download it for free or leave a donation.
 
