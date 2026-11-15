@@ -15,6 +15,15 @@ featured_image = "../static/images/cll1-gdx.png"
 Cherokee Language Lessons 1 is an exercise app to help you acquire the Cherokee language. You are challenged with a Cherokee word or phrase, and you select the picture that best matches it. If you don't know the answer, do a best guess. The app closely follows the material in the book "Cherokee Language Lessons 1". The book is recommended to get the most use out of this app.
 <!-- more -->
 
+## Get Cherokee Language Lessons 1
+
+The app is free — the itch.io page's payment setting is "Name your own price",
+so you can download it for free or leave a donation.
+
+<iframe class="itch-embed" src="https://itch.io/embed/5344733" width="552" height="167" frameborder="0"></iframe>
+
+**[Get it at itch.io](https://cherokee-language.itch.io/cherokee-language-lessons-1)**
+
 ## Screenshots
 
 ![Cherokee Language Lessons 1 — main menu](/images/cll1-screenshot-1.png)
