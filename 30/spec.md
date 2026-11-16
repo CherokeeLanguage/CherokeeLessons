@@ -21,7 +21,7 @@ The site carries ~3.49 GB of untracked-but-site-required assets, and its distrib
 Parts (each closes on its own delivered work; this umbrella closes only after every part has closed):
 
 - **CherokeeLessons#20** — Bound Pronouns app page: itch conversion (R-1) + presentation refresh (R-2; wording/layout/screenshots/itch widget), bound-pronouns colocated binary retirement.
-- **CherokeeLessons#54** — lesson media: the 14 dictation pages migrate 20 `{{video}}` embeds to `{{ youtube(id=…) }}`; the two lesson-audio pages (CLL-1: 23 sessions, animal-names: 9) convert their mp3s to tracked AAC `.m4a` per-track bitrate ladder; dead zip link removed; the two `process_end_notes.py` generator scripts deleted; migrated/converted media files retired from the working tree (revised 2026-11-15/16 — its spec is the single source of the record).
+- **CherokeeLessons#54** — lesson media: the 14 dictation pages migrate 20 `{{video}}` embeds to `{{ youtube(id=…) }}`; the two lesson-audio pages (CLL-1: 23 sessions, animal-names: 9) convert their mp3s to tracked AAC `.m4a` per-track bitrate ladder; the two `process_end_notes.py` generator scripts retained and updated to the `.m4a` form; migrated/converted media files retired from the working tree (revised 2026-11-15/16 and 2026-11-16 — its spec is the single source of the record).
 - **CherokeeLessons#55** — book pages: external ebook-store links removed (15 pages + `new-page.sh` scaffold lines).
 
 Seams the umbrella names (each part builds on them; nothing part-local is restated here):
