@@ -47,7 +47,7 @@ Mechanical rewrite of the 15 migrated pages to `{{ youtube(id=…) }}` per the d
 
 ## Impact
 
-Consumers: dictation and animal-names page visitors gain playable embedded mirror media on the deployed site (the local-media embeds they replaced are dead-on-deploy today); the CLL-1 page keeps fully playable exercise media, now deployment-surviving rather than dead — exercises remain downloadable as individual files with no channel dependency. The build tree gains ~250 MB of tracked `.m4a` (23 files, max ~21 MB, every file under the 25 MiB asset cap); ~2 GB of working-tree media is retired locally across the other classes. Risk: low — content plus a mechanical transcode; shortcodes pre-existing; the conversion imports settings defined by the generator spec.
+Consumers: dictation and animal-names page visitors gain playable embedded mirror media on the deployed site (the local-media embeds they replaced are dead-on-deploy today); the CLL-1 page keeps fully playable exercise media, now deployment-surviving rather than dead — exercises remain downloadable as individual files with no channel dependency. The build tree gains ≈ 432 MB of tracked `.m4a` (per the owning spec's projection from its measured rung rates: 15 tracks at the 128k rung, 8 at the 112k rung; every file ≤ 24 MiB by construction, i.e. under the 25 MiB asset cap); ~2 GB of working-tree media is retired locally across the other classes. Risk: low — content plus a mechanical transcode; shortcodes pre-existing; the conversion imports settings defined by the generator spec.
 
 > Full spec and plan artifacts: https://github.com/CherokeeLanguage/CherokeeLessons/tree/issues-data/54
 <!-- artifacts: .issues/54/ -->
