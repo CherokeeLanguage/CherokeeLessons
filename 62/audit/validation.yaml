@@ -1,11 +1,15 @@
 
-- round: 3
-  date: '2026-11-21T04:20:16Z'
+- round: 4
+  date: '2026-11-21T04:22:59Z'
   verdict: FAIL
   findings:
   - id: F-1
-    classes: cross-reference-sufficiency, internal-consistency (byte-level)
-    finding: The remote body's Scope carried a U+200C ZERO-WIDTH NON-JOINER inside the wiki URL token (CherokeeLessons.w+ZWNJ+iki, hex 77 e2 80 8c 69 6b 69 verified from the persisted API body) — the URL misstates the wiki address and breaks autolinking; the local spec/plan were clean.
-    remediation: Zero-width characters stripped from the remote body file, repushed, and the persisted API body re-verified clean (0 hits, token CherokeeLessons.wiki intact); a sweep of all store artifacts for the same byte class found none.
+    classes: superseded-text-surviving, summary-variant
+    finding: Remote body SC-8 row (and R-7 counterpart) still carried the round-1-era diagnosis-only label form — the local spec requires labels on both branch families with the one-line pairing; a runbook passing the remote bar could fail the local bar.
+  - id: F-2
+    classes: summary-variant with inverted outcome
+    finding: Remote body SC-6 row stated the unsatisfiable bare git status --porcelain form — adjudicated locally in round 2, surviving in the summary with the outcome flipped.
+  root cause (this round's structural ground): the two prior remote-body reconciliations updated only the sections the findings named, not the whole agreement surface — a partial-reconciliation defect.
+  remediation: Full agreement pass over every normative row of the remote body against the local spec (R-7, SC-6, SC-8 updated; Items 2/4 summaries aligned; R-1/3/4/6 and SC-1/2/3/4/7 walked and confirmed in agreement — compression only, no variants); remote body repushed. This is the cause-level fix, not a row-level patch.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/62
