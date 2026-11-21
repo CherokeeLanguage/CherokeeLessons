@@ -20,7 +20,7 @@ Two git surfaces. (1) The CherokeeLessons wiki, provisioned per the wiki-operati
 - **Item 2 — diagnosis decision tree (branches 0–d).**
   - **Deliverable:** the diagnosis section with five explicit condition→branch decision points, each naming its deciding evidence and exact command: serve-context (127.0.0.1/deployed), stale `data-repo` vs `nameWithOwner` (with the rename-redirect trap named, giscus#1238), giscus App install, repository visibility, CSP differential (`static/_headers` `frame-src`).
   - **RED:** the checkout's page lacks the deciding-evidence markers (`grep -c "data-repo"` → 0; `grep -c "nameWithOwner"` → 0).
-  - **GREEN:** author the five branches per spec R-4 with exact commands and stated expected outputs.
+  - **GREEN:** author the five branches per spec R-4 with exact commands and stated expected outputs, each branch entry formatted so its marker `(t)` and its provenance label share one line (spec R-7's pairing form).
   - **Tier marks:** no tests authored; instrument class: fact-check greps.
   - **Instrument:** spec SC-4 grep set.
 
@@ -34,7 +34,7 @@ Two git surfaces. (1) The CherokeeLessons wiki, provisioned per the wiki-operati
 - **Item 4 — remediation, verification, provenance.**
   - **Deliverable:** the remediation section (per-branch exact steps; the stale-pointer branch names `templates/page.html`, the PR/merge ship path, auto-deploy on master, and CherokeeLessons#63 as the fix's change record; no automatic-fix promise), the verification section (served-page console check — deploy preview/deployed domain, not bare localhost; error-string absence assertion), and provenance labels (`observed`, `record-backed`, `upstream-documented`) on the branches plus the explicit #27/#59 unresolved-disagreement note.
   - **RED:** the checkout's page lacks the surface/ship-path markers (`grep -cE "pull request|PR"` → 0 on the pre-edit page) and the provenance markers (`grep -ci "observed"` → 0).
-  - **GREEN:** author the sections per spec R-5/R-6/R-7.
+  - **GREEN:** author the sections per spec R-5/R-6/R-7 — including per-branch remediation for (a) (citing CherokeeLessons#63), (b), and (c), each remediation entry carrying its provenance label in the same one-line marker-label format as the diagnosis entries.
   - **Tier marks:** no tests authored; instrument class: fact-check greps.
   - **Instrument:** spec SC-6, SC-7, SC-8 grep sets.
 
