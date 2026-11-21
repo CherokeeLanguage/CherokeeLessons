@@ -74,7 +74,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/62 · f
 | CherokeeLessons#27 record (`.issues/27/`) | rename history, deferred-pointer record, giscus#1238 verification | satisfied (read 2026-11-20) |
 | CherokeeLessons#59 research (`.issues/59/research/download-column.md:24`) | dated local-serve observation | satisfied (read 2026-11-20) |
 | Filing-session captures of the 2026-11-21T03:54Z console/heading artifacts | verbatim symptom strings (files removed by playwright-cli cleanup; contents in transcript) | satisfied (captured 2026-11-20) |
-| The repo fix's own spec record (files in this cycle under the developer's directive) | the runbook's branch-(a) remediation tracks it as the site fix's change record | pending |
+| The repo fix's own spec record (CherokeeLessons#63, filed 2026-11-20) | the runbook's branch-(a) remediation tracks it as the site fix's change record | satisfied |
 
 ## Traceability
 
