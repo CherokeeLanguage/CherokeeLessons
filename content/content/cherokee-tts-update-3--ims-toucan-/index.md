@@ -39,10 +39,10 @@ the *Two Hunters* story from the **Cherokee English Dictionary**.
 ᏩᏯᏃ ᎤᏕᎳᎰᏎ ᎾᏭᏃ ᏓᎦᎦᎿᏁ ᏥᏍᏛᎾ, "ᏙᏳᏛ ᎯᎶᏄᎮ. ᏥᏂᏓᏛᏃ ᏥᏍᎩᎳᏩᏗᏎ," ᎠᎪᏎᎴ ᏥᏍᏛᎾ ᎤᎿᏩᏛᏃ ᎠᏥᎨᎯᏙᎴ ᏥᏍᏛᎾ ᏂᎦᏰᏥᏂᏱᏍᎩ.
 ᎤᎿᏃ ᏩᏥᏂᏴᏃ ᏩᏥᏯᏱᏁ ᎥᏍᎩᏭᏃ ᏂᎦᎠ.
 
-SPEAKER|AUDIO MP3
---|--
-#360 (male)|{{audio (file="wolf-and-crawdad-en-360-m.mp3")}}
-#361 (female)|{{audio (file="wolf-and-crawdad-en-361-f.mp3")}}
+SPEAKER|M4A FILE|DOWNLOAD
+--|--|--
+#360 (male)|{{audio (file="wolf-and-crawdad-en-360-m.m4a")}}|<a href="wolf-and-crawdad-en-360-m.m4a" download>⤓ download</a>
+#361 (female)|{{audio (file="wolf-and-crawdad-en-361-f.m4a")}}|<a href="wolf-and-crawdad-en-361-f.m4a" download>⤓ download</a>
 
 ### The Search Party
 
@@ -67,10 +67,10 @@ SPEAKER|AUDIO MP3
 ᎤᎿ ᎠᎼ ᏭᏂᎷᏤ ᎤᎿᏅᏍᏊ.
 ᎠᎹ ᏍᏈᏍᏙᏒ ᎬᎾᎨᏒ ᎦᎵᎨᏰ ᎤᎾᏍᎩᏳᏍᏗ ᎠᎼ ᏥᏚᏙᎡ.
 
-SPEAKER|AUDIO MP3
---|--
-#360 (male)|{{audio (file="search-party-en-360-m.mp3")}}
-#361 (female)|{{audio (file="search-party-en-361-f.mp3")}}
+SPEAKER|M4A FILE|DOWNLOAD
+--|--|--
+#360 (male)|{{audio (file="search-party-en-360-m.m4a")}}|<a href="search-party-en-360-m.m4a" download>⤓ download</a>
+#361 (female)|{{audio (file="search-party-en-361-f.m4a")}}|<a href="search-party-en-361-f.m4a" download>⤓ download</a>
 
 ### The Terrapin Turtle and the Rabbit
 
@@ -104,17 +104,17 @@ SPEAKER|AUDIO MP3
 ᏓᎩᏏ ᎨᏎ ᏳᏚᎵ ᎪᏍᏗ ᎩᎶ ᎤᏛᏗ ᏄᎵᏍᏔᏂᏙᎸ ᏭᏅᏥᏝ Ꮎ ᏥᏍᏚ ᏧᏯᏪᏃᏅ ᎨᏎ.
 ᎤᏠᏱᏊ ᏥᎾᏛᏁᎰ ᎪᎯᏴ ᏥᎩ ᏱᏚᏯᏪᏣ ᏱᎦᏅᎩᏊ.
 
-SPEAKER|AUDIO MP3
---|--
-#360 (male)|{{audio (file="turtle-beat-rabbit-en-360-m.mp3")}}
-#361 (female)|{{audio (file="turtle-beat-rabbit-en-361-f.mp3")}}
+SPEAKER|M4A FILE|DOWNLOAD
+--|--|--
+#360 (male)|{{audio (file="turtle-beat-rabbit-en-360-m.m4a")}}|<a href="turtle-beat-rabbit-en-360-m.m4a" download>⤓ download</a>
+#361 (female)|{{audio (file="turtle-beat-rabbit-en-361-f.m4a")}}|<a href="turtle-beat-rabbit-en-361-f.m4a" download>⤓ download</a>
 
 ### The Two Hunters
 
 ᎠᏂᏔᎵ ᎠᏂᏍᎦᏯ ᎠᏂᏃᎭᎵᏙᎮ, ᎠᏫ ᏚᏂᏲᎮ. ᏌᏊᏃ ᎠᏍᎦᏯ ᎦᎶᏇ ᎦᏁᎮ ᏐᎢᏅ Ꮭ. ᎾᏅ ᎦᎶᏇ ᎦᏁᎯ ᎤᏢᏈᏌᏘ ᎨᏎ, ᎠᎴ ᎪᎱᏍᏗ ᏳᏛᏁᎳ ᎠᏢᏈᏍᎨ. ᎠᎾᎢᏒᏅ ᎪᎱᏍᏗ ᏭᏂᎪᎮ ᏙᏧᏩᎢᏢ, ᎾᏅ ᎦᎶᏇ ᎦᏁᎯ ᎩᎳᏊ
 ᎢᏴᏓ ᏫᏚᏍᏓᏲᏞ ᎣᏍᏓᏊ ᏄᎦᏎᏍᏔᏅᎾ ᎢᏳᏍᏗ ᏓᏍᏓᏲᎯᎲ. ᎤᏙᎯᏳᏅ ᏭᏲᏞ ᎠᎴ ᎤᏂᎪᎮ ᎦᏅᎬ. ᎾᏅ ᎦᎶᏇ ᏂᎦᏁᎲᎾ "ᎠᏫ ᎡᏂᏲᎠ!" ᎤᏛᏁ. "ᏥᏲᎡᎦ" ᎤᏛᏁ Ꮎ ᎦᎶᏇ ᎦᏁᎯ, ᎠᏢᏈᏍᎬ. ᎤᎾᏁᎷᎩᏎ ᏙᏧᏩᎢᏢ ᏗᏜ, ᎾᎥᏂᎨᏅ ᏭᏂᎷᏣ ᎤᏂᎪᎮ ᏐᏈᎵ ᎦᏅ. "ᏐᏈᎵᎴ ᎢᎾᏓᎯᏏ" ᎤᏛᏁ Ꮎ ᎤᏲᏢ. "ᎭᏓᎯᏎᎦ" ᎠᎪᏎᎴ.
 
-SPEAKER|AUDIO MP3
---|--
-#360 (male)|{{audio (file="bragging-hunter-en-360-m.mp3")}}
-#361 (female)|{{audio (file="bragging-hunter-en-361-f.mp3")}}
+SPEAKER|M4A FILE|DOWNLOAD
+--|--|--
+#360 (male)|{{audio (file="bragging-hunter-en-360-m.m4a")}}|<a href="bragging-hunter-en-360-m.m4a" download>⤓ download</a>
+#361 (female)|{{audio (file="bragging-hunter-en-361-f.m4a")}}|<a href="bragging-hunter-en-361-f.m4a" download>⤓ download</a>
