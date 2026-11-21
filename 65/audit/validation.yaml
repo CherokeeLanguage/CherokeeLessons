@@ -1,11 +1,14 @@
-spec:
-- round: 1
-  date: '2026-11-21T04:55:30Z'
-  verdict: revision-before-validation
+
+- round: 1 (plan validation)
+  date: '2026-11-21T04:55:56Z'
+  verdict: FAIL
   findings:
   - id: F-1
-    classes: instrument-false-positive (caught at RED confirmation, not by a review round)
-    finding: SC-1's (and the plan's RED) unanchored grep style-src.*giscus matched script-src's giscus.app token earlier on the single-line CSP — the instrument read green against the unfixed line.
-    remediation: Directive-bounded instrument (style-src[^;]*giscus.app) in spec and plan; RED re-executed returning 0 for the stated reason; discovery recorded per the implement card's mid-cycle rule before any GREEN.
+    classes: testable-RED, factual-inaccuracy
+    finding: The plan's RED grep (unanchored style-src.*giscus) returns 1 on the unmodified line — the single-line CSP carries giscus in script-src/frame-src/connect-src, and .* spans directive boundaries; the RED could not fail.
+  - id: F-2
+    classes: unpassable-instrument
+    finding: The adopted SC-1 instrument (style-src.*(unsafe-inline ).*giscus) could never match — the file quotes unsafe-inline, so the trailing-space form is unsatisfiable pre- or post-change.
+    remediation note: both findings were remediated in place BEFORE this verdict rendered (dispatch raced the revision) — directive-bounded instrument style-src[^;]*giscus.app now in spec SC-1 and plan Item 1 RED; pre-fix returns 0; a simulated post-GREEN line returns 1 (executed this session). This entry records the round; a fresh re-validation judges the current artifacts.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65
