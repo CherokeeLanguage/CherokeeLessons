@@ -1,47 +1,6 @@
-spec:
-- round: 1
-  date: '2026-11-21T04:55:30Z'
-  verdict: revision-before-validation
-  findings:
-  - id: F-1
-    classes: instrument-false-positive (caught at RED confirmation, not by a review round)
-    finding: SC-1's (and the plan's RED) unanchored grep style-src.*giscus matched script-src's giscus.app token earlier on the single-line CSP — the instrument read green against the unfixed line.
-    remediation: Directive-bounded instrument (style-src[^;]*giscus.app) in spec and plan; RED re-executed returning 0 for the stated reason; discovery recorded per the implement card's mid-cycle rule before any GREEN.
-  preferences-adjudicated: []
-  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65
 
-plan:
-- round: 1
-  date: '2026-11-21T04:55:56Z'
-  verdict: FAIL
-  findings:
-  - id: F-1
-    classes: testable-RED, factual-inaccuracy
-    finding: "The plan's RED grep (unanchored style-src.*giscus) returns 1 on the unmodified line — the single-line CSP carries giscus in script-src/frame-src/connect-src, and .* spans directive boundaries; the RED could not fail."
-  - id: F-2
-    classes: unpassable-instrument
-    finding: "The adopted SC-1 instrument (style-src.*(unsafe-inline ).*giscus) could never match — the file quotes unsafe-inline, so the trailing-space form is unsatisfiable pre- or post-change."
-  remediation: "Both findings were remediated in place BEFORE this verdict rendered (dispatch raced the revision) — directive-bounded instrument style-src[^;]*giscus.app now in spec SC-1 and plan Item 1 RED; pre-fix returns 0; a simulated post-GREEN line returns 1 (executed this session)."
-  preferences-adjudicated: []
-  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65
-- round: 2
-  date: '2026-11-21T04:56:57Z'
-  verdict: FAIL
-  findings:
-  - id: F-1
-    classes: internal-inconsistency, approach-divergence
-    finding: Plan Item 2 gated the PR readiness on verify PASS while the spec's Key Design Decision reserved the ready transition to the developer's word — two different gates on the same boundary.
-  remediation: "Reconciled SPEC-side — the developer's approved-for-stacked-PR grant (2026-11-20, post-authoring the original disposition) supersedes the wait-on-developer-word line; Key Design Decisions, User Intent, and the Approach field now record the granted boundary; the plan's ready-on-verify-PASS text is unchanged (now consistent). Remote body reconciled the same action."
-  notes: re-executed feasibility set on the reconciled artifacts passed in-session (corrected RED 0; simulated post-GREEN 1; tree clean; PR-list empty)
-  preferences-adjudicated: []
-  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65
-- round: 3
-  date: '2026-11-21T04:58:20Z'
-  verdict: FAIL
-  findings:
-  - id: F-1
-    classes: unreal-instrument (remote variant of the remediated round-1 class), local-remote-inconsistency
-    finding: The remote body's SC-1 row still carried the round-1-era unpassable instrument — the directive-bounded fix landed only in the local artifacts (the body file itself was never patched before repush).
-  remediation: "Remote body SC-1 row synced to the local directive-bounded instrument; a mechanical whole-surface agreement pass ran over every Requirements and SC row (local spec vs remote body vs plan id refs): Requirements identical, SC-1/SC-3 identical, SC-2 compression-only; body repushed. Same root-cause class as the #62 loop's cross-surface sync hygiene; the mechanical pass precedes every further re-dispatch."
-  preferences-adjudicated: []
-  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65
+- round: 4
+  date: '2026-11-21T05:00:19Z'
+  verdict: PASS
+  findings: []
+  notes: fresh-context dispatch on the fully reconciled artifacts; reviewer re-executed the feasibility set (RED 0, simulated post-GREEN 1, clean tree, PR-list empty, byte hygiene) and walked all 16 classes with zero findings; whole-surface agreement verified both places
