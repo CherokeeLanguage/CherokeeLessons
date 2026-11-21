@@ -1,7 +1,5 @@
-comments: []
-- date: '2026-11-21'
-  kind: pr
-  note: "PR CherokeeLessons#61 opened (feature/59-animal-names-m4a, commit 8821467) — all SC-1..SC-6 PASS (fresh-context verify round 1, zero findings; record in .issues/59/audit/validation.yaml). Merge is a human gate."
-- date: '2026-11-21'
-  kind: pr-update
-  note: "Scope extended per developer disposition (download column, header fix) — commit squashed to 4ec6190 on PR #61; verify round 2 PASS SC-1..SC-8, zero findings. Merge remains a human gate."
+comments:
+- type: internal
+  body: 'PR #61 merged (129a191) 2026-11-21; issue auto-closed by closing keyword.
+    Branch deleted, trunk synced. All SCs passed rounds 1-2.'
+  timestamp: '2026-11-21T04:00:40+00:00'
