@@ -27,53 +27,20 @@ Please copy and share these exercise files with others freely.
 
 ## Exercises
 
-* Exercise set 01
-
-    {{audio (file="Animals_2021-05-31_0001.mp3")}}
-
-* Exercise set 02
-
-    {{audio (file="Animals_2021-05-31_0002.mp3")}}
-
-* Exercise set 03
-
-    {{audio (file="Animals_2021-05-31_0003.mp3")}}
-
-* Exercise set 04
-
-    {{audio (file="Animals_2021-05-31_0004.mp3")}}
-
-* Exercise set 05
-
-    {{audio (file="Animals_2021-05-31_0005.mp3")}}
-
-* Exercise set 06
-
-    {{audio (file="Animals_2021-05-31_0006.mp3")}}
-
-* Exercise set 07
-
-    {{audio (file="Animals_2021-05-31_0007.mp3")}}
-
-* Exercise set 08
-
-    {{audio (file="Animals_2021-05-31_0008.mp3")}}
-
-* Exercise set 09
-
-    {{audio (file="Animals_2021-05-31_0009.mp3")}}
-
-* Exercise set 10
-
-    {{audio (file="Animals_2021-05-31_0010.mp3")}}
-
-* Exercise set 11
-
-    {{audio (file="Animals_2021-05-31_0011.mp3")}}
-
-* Exercise set 12
-
-    {{audio (file="Animals_2021-05-31_0012.mp3")}}
+SESSION|M4A FILE|DOWNLOAD
+--|--|--
+0001|{{audio (file="Animals_2021-05-31_0001.m4a")}}|<a href="Animals_2021-05-31_0001.m4a" download>⤓ download</a>
+0002|{{audio (file="Animals_2021-05-31_0002.m4a")}}|<a href="Animals_2021-05-31_0002.m4a" download>⤓ download</a>
+0003|{{audio (file="Animals_2021-05-31_0003.m4a")}}|<a href="Animals_2021-05-31_0003.m4a" download>⤓ download</a>
+0004|{{audio (file="Animals_2021-05-31_0004.m4a")}}|<a href="Animals_2021-05-31_0004.m4a" download>⤓ download</a>
+0005|{{audio (file="Animals_2021-05-31_0005.m4a")}}|<a href="Animals_2021-05-31_0005.m4a" download>⤓ download</a>
+0006|{{audio (file="Animals_2021-05-31_0006.m4a")}}|<a href="Animals_2021-05-31_0006.m4a" download>⤓ download</a>
+0007|{{audio (file="Animals_2021-05-31_0007.m4a")}}|<a href="Animals_2021-05-31_0007.m4a" download>⤓ download</a>
+0008|{{audio (file="Animals_2021-05-31_0008.m4a")}}|<a href="Animals_2021-05-31_0008.m4a" download>⤓ download</a>
+0009|{{audio (file="Animals_2021-05-31_0009.m4a")}}|<a href="Animals_2021-05-31_0009.m4a" download>⤓ download</a>
+0010|{{audio (file="Animals_2021-05-31_0010.m4a")}}|<a href="Animals_2021-05-31_0010.m4a" download>⤓ download</a>
+0011|{{audio (file="Animals_2021-05-31_0011.m4a")}}|<a href="Animals_2021-05-31_0011.m4a" download>⤓ download</a>
+0012|{{audio (file="Animals_2021-05-31_0012.m4a")}}|<a href="Animals_2021-05-31_0012.m4a" download>⤓ download</a>
 
 The Cherokee speech in these audio files was generated using this software: [Cherokee-TTS](https://github.com/CherokeeLanguage/Cherokee-TTS)
 
