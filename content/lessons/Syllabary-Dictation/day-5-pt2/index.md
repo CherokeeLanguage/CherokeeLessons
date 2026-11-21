@@ -68,7 +68,7 @@ __Handwrite__ the Cherokee letter for each of the following English pronunciatio
 
 #### Video: Dictation Practice
 
-{{ video(video="Dictation 10-02.mp4") }}
+{{ youtube(id="mReSSIzD92o") }}
 
 ---
 

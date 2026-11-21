@@ -38,7 +38,7 @@ teeth.
 
 #### Video: Introduction
 
-{{ video(video="Dictation 04-01 Lecture Ꮅ-Ꮋ.mp4") }}
+{{ youtube(id="oB9ndFaDA5c") }}
 
 ##### Recognition Practice.
 
@@ -75,7 +75,7 @@ __Handwrite__ the Cherokee letter for each of the following English pronunciatio
 
 #### Video: Dictation Practice
 
-{{ video(video="Dictation 04-02 - Ꮅ-Ꮋ.mp4") }}
+{{ youtube(id="TA4nXtc0bBU") }}
 
 ---
 

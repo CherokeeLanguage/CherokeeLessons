@@ -54,7 +54,7 @@ teeth.
 
 #### Video: Introduction
 
-{{ video(video="Dictation 01-00 Introduction.mp4") }}
+{{ youtube(id="2YKVivrICpk") }}
 
 #### Recognition Practice.
 
@@ -93,13 +93,13 @@ pronunciations:
 
 #### Video: How to do a Dictation Exercise
 
-{{ video(video="Dictation 01-01 How to do a dictation exercise.mp4") }}
+{{ youtube(id="T7IunFbpT-0") }}
 
 ---
 
 #### Video: Dictation Practice
 
-{{ video(video="Dictation 01-02 - Ꭰ-Ꭶ - Cherokee Syllabary - Cherokee Language - ᏣᎳᎩ ᎦᏬᏂᎯᏍᏗ.mp4") }}
+{{ youtube(id="s9_EzsxWqw8") }}
 
 ---
 

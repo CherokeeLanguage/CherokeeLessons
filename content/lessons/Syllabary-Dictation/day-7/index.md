@@ -23,7 +23,7 @@ This is the final set of practices and will test your skill with all of the Syll
 
 #### Video: Dictation Practice
 
-{{ video(video="Dictation 15-02.mp4") }}
+{{ youtube(id="VuaQB_4knZg") }}
 
 ---
 
