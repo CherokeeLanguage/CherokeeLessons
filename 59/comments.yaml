@@ -8,3 +8,9 @@ comments:
     - all SC-1..SC-6 PASS (fresh-context verify round 1, zero findings; record in
     .issues/59/audit/validation.yaml). Merge is a human gate.
   timestamp: '2026-11-21T04:00:58+00:00'
+- type: internal
+  body: 'Scope extended per developer disposition (download column, header fix) -
+    commit squashed to 4ec6190 on PR #61; verify round 2 PASS SC-1..SC-8, zero findings;
+    PR title/body updated via REST after gh pr edit hit the Projects-classic GraphQL
+    deprecation. Merge remains a human gate.'
+  timestamp: '2026-11-21T04:00:59+00:00'
