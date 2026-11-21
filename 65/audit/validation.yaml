@@ -1,7 +1,7 @@
 
 - round: 2 (plan validation, adjudicated)
   date: '2026-11-21T04:58:20Z'
-  verdict: PASS after remediation-before-verdict for the round-1 items (see round-1 entry; instrument sanity re-executed: pre-fix 0, simulated post-GREEN 1)
+  verdict: "PASS after remediation-before-verdict for the round-1 items (see round-1 entry; instrument sanity re-executed: pre-fix 0, simulated post-GREEN 1)"
   findings: []
   notes: the reviewer judged the current artifacts across the 16 classes; its single remaining finding (boundary-gate inconsistency) was remediated spec-side in the same action the round-2 entry records — recorded here as the loop's adjudication of that round
 - round: 3 (plan validation)
@@ -11,6 +11,6 @@
   - id: F-1
     classes: unreal-instrument (remote variant of the remediated round-1 class), local-remote-inconsistency
     finding: The remote body's SC-1 row still carried the round-1-era unpassable instrument — the directive-bounded fix landed only in the local artifacts (the repush raced no revision but the body file itself was never patched).
-    remediation: Remote body SC-1 row synced to the local directive-bounded instrument; a mechanical whole-surface agreement pass ran over every Requirements and SC row (local spec vs remote body vs plan id refs): Requirements identical, SC-1/3 identical, SC-2 compression-only; body repushed. Same root-cause class as the #62 loop's cross-surface sync hygiene; the mechanical pass precedes every further re-dispatch.
+    remediation: "Remote body SC-1 row synced to the local directive-bounded instrument; a mechanical whole-surface agreement pass ran over every Requirements and SC row (local spec vs remote body vs plan id refs): Requirements identical, SC-1/3 identical, SC-2 compression-only; body repushed. Same root-cause class as the #62 loop's cross-surface sync hygiene; the mechanical pass precedes every further re-dispatch."
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65
