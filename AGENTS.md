@@ -39,10 +39,18 @@ this file holds repo operational facts only.
   that are untracked, so those embeds are dead in any fresh build; `audio`
   embeds are mixed — pages whose referenced mp3s are tracked stay live (122
   tracked mp3s across four page dirs), while several lesson-audio and TTS
-  pages embed untracked mp3s and are dead in fresh builds. Lesson media is
-  mirrored on the developer's YouTube channel (see the issue store) — prefer
-  `{{ youtube(id=…) }}` for new embeds; a local-media embed ships only if its
-  media is tracked (see the ignore rules below).
+  pages embed untracked mp3s and are dead in fresh builds.
+- Lesson media dispositions of record (developer decisions 2026-11-15/16,
+  landing via CherokeeLessons#54):
+  the Syllabary-Dictation videos embed via `{{ youtube(id=…) }}` (channel
+  mirror verified); the two lesson-audio pages keep their media local —
+  tracked AAC `.m4a` files re-encoded per track through the bitrate ladder
+  (owning definition: audio-lessons-generator-python#16); the TTS demo audio
+  ships as tracked mp3s per CherokeeLessons#30's R-2. Lesson media remains
+  mirrored on the YouTube channel (mirror provenance, not the delivery method
+  for the audio pages); a local-media embed ships only if its media file is
+  tracked (see the ignore rules below — `*.m4a` is not ignored;
+  `*.mp3`/`*.mp4` are).
 - Content filenames use Cherokee syllabary and Osage script (e.g.
   `content/books/ꮳꮃꭹ-…-1.md`). Use `git -c core.quotepath=off` for readable
   git output and quote paths in shell commands.
@@ -72,6 +80,14 @@ this file holds repo operational facts only.
   must not be re-proposed. Platform constraints (the Workers 25 MiB/file
   asset limit) narrow the option space; they never license a silent
   default.
+- Ruling of record (2026-11-16): lesson-media channel dispositions are
+  per-page decisions, not a blanket channel assignment. The recorded method
+  of record (2026-11-15/16, via CherokeeLessons#54 and
+  audio-lessons-generator-python#16): dictation videos → YouTube embeds; the
+  two lesson-audio pages → local tracked `.m4a` re-encoded per track through
+  the bitrate ladder; TTS demo audio → tracked mp3s. An agent
+  spec/prose that assumes blanket "lesson media → YouTube" for this repo is
+  wrong on discovery — record the per-page split.
 
 ## Workspace artifacts — never commit
 
