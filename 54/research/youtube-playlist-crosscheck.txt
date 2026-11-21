@@ -1,0 +1,55 @@
+# Playlist cross-check — developer review comment, CherokeeLessons#54, 2026-11-21
+
+Comment on #54: "Compare with:
+https://www.youtube.com/playlist?list=PLo2dw3Y__5_LM3UrVTJoFSxNErQ_yEdCk"
+
+## Method
+
+Fetched the playlist page (curl, desktop UA) and parsed `ytInitialData`
+(lockupViewModel entries, in page order). Playlist title:
+`Syllabary Dictation`. Playlist owner: the developer's channel
+(michael-conrad = the channel's operator; the "Compare with" comment on #54
+is the developer's authorship of the reference).
+
+## Result — clean bijection with the map's Syllabary-Dictation section
+
+Playlist order (positions 1-21) vs `.issues/30/research/youtube-video-id-map.txt`
+dictation section: same set (21/21), same positional order, per-position
+ID↔title pairs identical to the map's records.
+
+  #  videoId      playlist title == map record
+  1  2YKVivrICpk  Dictation 01 00 Introduction
+  2  T7IunFbpT-0  Dictation 01 01 How to do a dictation exercise
+  3  s9_EzsxWqw8  Dictation 01 02 Ꭰ Ꭶ Cherokee Syllabary ...
+  4  amlmYypzsEk  Dictation 02 01 Lecture Ꭷ Ꭽ
+  5  VRTVUX7E6Bc  Dictation 02 02 Ꭷ Ꭽ Cherokee Syllabary ...
+  6  Fhi7le-MjPY  Dictation 03 01 Lecture Ꭾ Ꮄ
+  7  ikH2luvhEtM  Dictation 03 02 Ꭾ Ꮄ
+  8  oB9ndFaDA5c  Dictation 04 01 Lecture Ꮅ Ꮋ
+  9  TA4nXtc0bBU  Dictation 04 02 Ꮅ Ꮋ
+ 10  BBla_a1icGU  Dictation 05 01 Lecture Ꮌ Ꮒ
+ 11  SdcnjNAE3YM  Dictation 05 02 Ꮌ Ꮒ
+ 12  cOK6Uoho2eM  Dictation 06 02 Ꮓ-Ꮙ
+ 13  z9C4ao2wQT8  Dictation 07 02 Ꮚ-Ꮠ
+ 14  W9x1BsYDcEY  Dictation 08 02 Ꮡ-Ꮧ
+ 15  q7-9LIw07kI  Dictation 09 02 Ꮨ-Ꮮ
+ 16  mReSSIzD92o  Dictation 10 02 Ꮯ-Ꮵ
+ 17  kAQ3kyPYUWM  Dictation 11 02 Ꮶ-Ꮼ
+ 18  0bMU41cOzOM  Dictation 12 02 Ꮽ-Ᏻ
+ 19  fDwDs61wlE8  Dictation 13 02 Ᏼ Ꮗ Ꮚ Ꮿ Ꭶ Ꮥ Ꮪ
+ 20  pNOCN-6abhk  Dictation 14 02 Ꮆ Ꮐ Ꮯ Ꮳ Ꮸ Ꮹ Ᏻ
+ 21  VuaQB_4knZg  Dictation 15 02 Ꭰ-Ᏼ | FINAL REVIEW
+
+Discrepancies: none. No playlist entries outside the map, no map dictation
+entries absent from the playlist, no ordering or title mismatches beyond the
+map's documented prefix-level conventions (the playlist page renders
+syllabary titles with spacing variants exactly as the map records them).
+
+Consequence for the spec: the dictation-set IDs R-1 consumes are corroborated
+by the developer's own curated playlist (stronger provenance than the
+title-prefix + duration correspondence alone). The map remains the ID source;
+this cross-check is corroboration, recorded in the spec's provenance. The
+unassigned entry Dictation 14 02 (pNOCN-6abhk, playlist position 20) is
+confirmed present on the playlist; its no-page-reference status is unchanged.
+
+Extraction date: 2026-11-21 (this session).
