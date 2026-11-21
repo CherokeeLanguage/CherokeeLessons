@@ -2,7 +2,7 @@
 
 ## Goal
 
-Implement the CherokeeLessons#62 spec: author, in the CherokeeLessons wiki, one runbook page for the giscus "not installed on this repository" error following the sre-runbook structure, with exact commands, stated expected outputs, five decision branches, provenance labels, and the unresolved-record note. Five items: page skeleton with symptom fidelity, the diagnosis decision tree, command-output fidelity against executed checks, the remediation/verification/provenance sections, and publish with the full SC gate.
+Implement the CherokeeLessons#62 spec: author, in the CherokeeLessons wiki, one runbook page for the giscus "not installed on this repository" error following the sre-runbook structure, with exact commands, stated expected outputs, five decision branches, provenance labels, and the unresolved-record note. The page is identified as **`giscus-not-installed-on-this-repository`** — wiki filename (and URL slug) `giscus-not-installed-on-this-repository.md`, page H1/title `Runbook: giscus "is not installed on this repository" error`. Five items: page skeleton with symptom fidelity, the diagnosis decision tree, command-output fidelity against executed checks, the remediation/verification/provenance sections, and publish with the full SC gate.
 
 ## Execution surface
 
@@ -11,7 +11,7 @@ Two git surfaces. (1) The CherokeeLessons wiki, provisioned per the wiki-operati
 ## Items
 
 - **Item 1 — page skeleton: symptom + flow order.**
-  - **Deliverable:** the wiki page's skeleton carrying the full sre-runbook section flow in order (symptom → prerequisites/blast radius → diagnosis → rollback → remediation → verification) with the symptom section quoting both observed forms verbatim and naming `templates/page.html` as the embed surface and both recorded serve contexts.
+  - **Deliverable:** the new wiki file `giscus-not-installed-on-this-repository.md` in the wiki checkout (filename above is the page's permanent identity), carrying the full sre-runbook section flow in order (symptom → prerequisites/blast radius → diagnosis → rollback → remediation → verification) with the symptom section quoting both observed forms verbatim and naming `templates/page.html` as the embed surface and both recorded serve contexts.
   - **RED:** a fresh wiki clone contains no `.md` page matching "giscus is not installed" (`grep -ril` → empty) — the page does not exist.
   - **GREEN:** author the skeleton per spec R-1/R-2/R-3 in the wiki checkout.
   - **Tier marks:** no tests authored; instrument class: fact-check greps in the wiki checkout.
