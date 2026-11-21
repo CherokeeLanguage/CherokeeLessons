@@ -32,10 +32,10 @@ Two git surfaces. (1) The CherokeeLessons wiki, provisioned per the wiki-operati
   - **Instrument:** spec SC-5 — executed outputs match the page's documented expectations for the repo's state at verification time.
 
 - **Item 4 — remediation, verification, provenance.**
-  - **Deliverable:** the remediation section (per-branch exact steps; the stale-pointer branch names `templates/page.html`, the PR/merge ship path, auto-deploy on master, and CherokeeLessons#63 as the fix's change record; no automatic-fix promise), the verification section (served-page console check — deploy preview/deployed domain, not bare localhost; error-string absence assertion), and provenance labels (`observed`, `record-backed`, `upstream-documented`) on the branches plus the explicit #27/#59 unresolved-disagreement note.
-  - **RED:** the checkout's page lacks the surface/ship-path markers (`grep -cE "pull request|PR"` → 0 on the pre-edit page) and the provenance markers (`grep -ci "observed"` → 0).
+  - **Deliverable:** the remediation section (per-branch exact steps; the stale-pointer branch names `templates/page.html`, the PR/merge ship path, auto-deploy on master, and CherokeeLessons#63 as the fix's change record; no automatic-fix promise), the verification section (served-page console check — deploy preview/deployed domain, not bare localhost; error-string absence assertion), and provenance labels (`observed`, `record-backed`, `upstream-documented`) on its branches in the one-line marker-label pairing form plus the explicit #27/#59 unresolved-disagreement note.
+  - **RED:** at Item 4's start (post-Item-3 checkout state), the remediation section's slice carries no label pairings for its three branches (t ∈ {a,b,c}) and none of SC-6's remediation-limb markers (`giscus GitHub App`/`apps/giscus` instruction, `public`/visibility branch, verification-follow language), and the verification section's slice lacks the localhost caution — each sliced grep currently returns 0/absent; the diagnosis-branch labels authored at Item 2 do not satisfy these slices.
   - **GREEN:** author the sections per spec R-5/R-6/R-7 — including per-branch remediation for (a) (citing CherokeeLessons#63), (b), and (c), each remediation entry carrying its provenance label in the same one-line marker-label format as the diagnosis entries.
-  - **Tier marks:** no tests authored; instrument class: fact-check greps.
+  - **Tier marks:** no tests authored; instrument class: section-sliced fact-check greps.
   - **Instrument:** spec SC-6, SC-7, SC-8 grep sets.
 
 - **Item 5 — publish + full SC gate.**
