@@ -3,4 +3,4 @@ plan:
   date: '2026-11-21T04:10:00Z'
   verdict: PASS
   findings: []
-  notes: fresh-context dispatch; reviewer executed the READ-premises live (stale-slug grep = 1 at line 32, new-slug grep = 0; gh pr list --head empty; ./build.sh present; every content page renders through page.html — no template: overrides in content/); all 16 defect classes walked, zero findings
+  notes: fresh-context dispatch; reviewer executed the READ-premises live (stale-slug grep = 1 at line 32, new-slug grep = 0; gh pr list --head empty; ./build.sh present; every content page renders through page.html — no template-overrides in content/); all 16 defect classes walked, zero findings
