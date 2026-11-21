@@ -1,5 +1,4 @@
 spec:
-[]
 - round: 1
   date: '2026-11-12T00:10:00Z'
   verdict: PASS

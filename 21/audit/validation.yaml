@@ -85,7 +85,7 @@ app-repo-remote-only:
         classification: finding
         remediation: Review shape section deleted; the PR contract owns that content
       - class: self-containment violation (defect class 6 — approval-state marker outside the byline footer)
-        detail: "the parts await the developer's approval individually or together" duplicated approval-state tracking the needs-approval labels already carry
+        detail: "\"the parts await the developer's approval individually or together\" duplicated approval-state tracking the needs-approval labels already carry"
         classification: finding
         remediation: sentence deleted; the void-check outcome stands as grounds, the labels own the approval state
     note: artifacts 22-25 and the three remote-only app-repo specs carried zero findings this round; Animals#11's revised body verified clean

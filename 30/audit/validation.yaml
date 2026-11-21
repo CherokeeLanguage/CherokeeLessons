@@ -1,5 +1,4 @@
 spec:
-[]
 - round: 2
   date: '2026-11-11T18:05:00Z'
   verdict: FAIL
@@ -144,7 +143,7 @@ spec:
 revision-2-itch-only:
 - round: 0
   date: '2026-11-12T00:00:00Z'
-  note: developer directives supersede the pre-revision approval — "only itch-io is the new release platform", "pre-existing store links are all dead", "file a spec to ... migrate to itch-io and to publish the latest version with the cll1-gdx repo", and the cross-repo filing rule ("all specs must be filed in the correct repos and not have work which crosses repo boundaries. proper interdependencies must be declared between specs"; "the agent for the cll1-gdx repo is a separate agent..."). Revision applied both surfaces: store-link removal (R-1, SC-1 = 0 counts, SC-12 = 0, Impact, approach alternative, scope rows), CLL-1 page-link + build/publish work separated into the correct repos (CherokeeLessons#32 page link; CherokeeLanguage/cll1-gdx#5 build/publish — that repo's agent triages), Interdependencies section added, store-link probe matrix recorded at research/store-link-probe.txt. Validation restarts fresh below.
+  note: "developer directives supersede the pre-revision approval \u2014 \"only itch-io is the new release platform\", \"pre-existing store links are all dead\", \"file a spec to ... migrate to itch-io and to publish the latest version with the cll1-gdx repo\", and the cross-repo filing rule (\"all specs must be filed in the correct repos and not have work which crosses repo boundaries. proper interdependencies must be declared between specs\"; \"the agent for the cll1-gdx repo is a separate agent...\"). Revision applied both surfaces: store-link removal (R-1, SC-1 = 0 counts, SC-12 = 0, Impact, approach alternative, scope rows), CLL-1 page-link + build/publish work separated into the correct repos (CherokeeLessons#32 page link; CherokeeLanguage/cll1-gdx#5 build/publish \u2014 that repo's agent triages), Interdependencies section added, store-link probe matrix recorded at research/store-link-probe.txt. Validation restarts fresh below."
 - round: 1
   date: '2026-11-12T00:10:00Z'
   verdict: FAIL
@@ -219,3 +218,10 @@ spec-review-siteRefresh:
     reviewer-round-2: fresh-context dispatch (ses_e22be3a58ffe3owmc2I4nbZ31j) — all six remediations verified; one residual finding (#24 stale cross-ref 'R-2(c) names it' for #32's widget)
     remediation-2: #24's traceability note corrected to point at CherokeeLessons#32 R-1 (SC-4 traces it)
     reviewer-round-3: fresh-context dispatch (ses_e22bdd6a4ffeLEM1ns9jbQctDr) — PASS, zero findings
+spec-review-ttsSeam:
+  - round: 1 (espeak-clips descope revision, 2026-11-21)
+    artifact: .issues/30/spec.md — targeted revision (R-2's 4 espeak clips descope into CherokeeLessons#67, 45→41 demo mp3s, four→three negation dirs; Scope-table row; SC-3 rewritten to the three-demo-dir 41-count instrument; Parts list gains #67 + #59 closed marker; seam 2 gains the #67 retirement sentence)
+    verdict: PASS
+    reviewer: fresh-context subagent (ses_e016915a8ffeDaw8DgGvfw6a9t)
+    findings: []
+    outcome: "clean PASS \u2014 zero findings; reviewer verified R-2's descope (45\u219241 confirmed on disk: 24+9+8; Animals*.mp3 rule and the two no-.gitignore demo dirs), Scope row, SC-3's three-dir enumeration, the #67 part-list entry matching #67's spec point-for-point, the #59 closed marker (PR #61 merged 2026-11-21), and the seam-2 sentence's consistency with R-5/SC-6, seam 3's gates, and the untouched tracking requirements; directive quote verified as a fair ellipsis of #67's full record; repo-boundary containment pass both prongs."

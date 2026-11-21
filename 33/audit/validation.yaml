@@ -1,6 +1,4 @@
 spec:
-[]
-spec:
 - round: 1
   date: '2026-11-12T02:00:00Z'
   verdict: FAIL
@@ -17,7 +15,7 @@ spec:
   findings:
   - id: F-1
     classes: fabricated-claims
-    finding: "The only local remainder / last local compiled copy" claims were false — a second byte-identical copy exists at public/HTML-Games/Hangman1/ (zola's gitignored output dir, 7.9 MB / 489 files, diff -rq clean); the filing-time survey never scanned public/.
+    finding: "\"The only local remainder / last local compiled copy\" claims were false \u2014 a second byte-identical copy exists at public/HTML-Games/Hangman1/ (zola's gitignored output dir, 7.9 MB / 489 files, diff -rq clean); the filing-time survey never scanned public/."
     remediation: Survey addendum appended (dated); Problem/Provenance/Scope/Impact enumerate both copies.
   - id: F-2
     classes: incapable-instrument, gap-analysis

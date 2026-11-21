@@ -1,6 +1,4 @@
 spec:
-[]
-spec:
 - round: 1
   date: '2026-11-11T22:50:00Z'
   verdict: FAIL
@@ -148,7 +146,7 @@ spec:
   - id: F-3
     classes: incapable-instrument
     finding: SC-1 verified not_found_handling's presence but not its value — a manifest with "none" (the platform default) passes while changing the site's 404 behavior.
-    remediation: Value-level check (grep '"not_found_handling": "404-page"').
+    remediation: "Value-level check (grep '\"not_found_handling\": \"404-page\"')."
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/31
 - round: 10
@@ -214,7 +212,7 @@ spec:
     remediation: R-6 extended to AGENTS.md (stale paragraph removed or replaced with the Workers deploy path per README); scope row now names both files; SC-6 gains the AGENTS.md absence check; Impact's era-end clause names both docs.
   - id: F-2
     classes: fabricated-claims, gap-analysis, internal-contradiction
-    finding: R-5's CSP enumeration (giscus/YouTube/self) presented itself as the site's complete real third-party usage — the built tree refutes it: superhero.css @imports fonts.googleapis.com (serving fonts.gstatic.com files) and six visitor-selectable Zulma variants import fonts too; a CSP built to the enumerated set breaks sitewide theme typography, and SC-5 could not detect it.
+    finding: "R-5's CSP enumeration (giscus/YouTube/self) presented itself as the site's complete real third-party usage \u2014 the built tree refutes it: superhero.css @imports fonts.googleapis.com (serving fonts.gstatic.com files) and six visitor-selectable Zulma variants import fonts too; a CSP built to the enumerated set breaks sitewide theme typography, and SC-5 could not detect it."
     remediation: R-5's derived set extended with the theme-font origins (fonts.googleapis.com + fonts.gstatic.com, evidenced in the built stylesheet and config); SC-5 gains both font-origin presence checks on the CSP line.
   - id: F-3
     classes: cross-reference-sufficiency
@@ -246,4 +244,4 @@ plan:
   verdict: PASS
   findings: []
   notes: fresh-context dispatch on the round-1-revised plan; reviewer verified coverage both directions (16/16 SCs), every RED false-able at trunk, the 81-stub census and inline-script form, the builtin-template non-overridability verbatim against zola v0.22.1 source, the owned CSP decision with both alternatives' rejection grounds, item 10 case (f)'s ownership of the final CSP form, the full built-tree origin census (all .com resource loads ride 'self' via get_url), and the early-run contingency's invariants; no escape hatches, no scope enlargement, surface coverage exact.
-  amendment: mid-cycle, discovered at item-10 execution — case (a)'s plain build in a scratch clone of the branch exercises preview mode (branch checkout → domain-neutral by design), so its .org greps would fail as written; case (a) now pins `WORKERS_CI_BRANCH=master` (the same deterministic production path SC-14 established). Instrument-precision amendment only; the SC-9/SC-3 behavioral substance is unchanged. Executed evidence: the case-(a) run with the pin produces exit 0 with 327/427 .org refs; the discriminated resource census (src=/stylesheet/@import) confirmed the draft CSP with zero diff.
+  amendment: "mid-cycle, discovered at item-10 execution \u2014 case (a)'s plain build in a scratch clone of the branch exercises preview mode (branch checkout \u2192 domain-neutral by design), so its .org greps would fail as written; case (a) now pins `WORKERS_CI_BRANCH=master` (the same deterministic production path SC-14 established). Instrument-precision amendment only; the SC-9/SC-3 behavioral substance is unchanged. Executed evidence: the case-(a) run with the pin produces exit 0 with 327/427 .org refs; the discriminated resource census (src=/stylesheet/@import) confirmed the draft CSP with zero diff."

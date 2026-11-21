@@ -1,0 +1,18 @@
+spec:
+  - round: 1
+    date: '2026-11-21'
+    artifact: "spec (new — tracked TTS-sample pages conversion, filed from the developer's 2026-11-21 directive)"
+    verdict: FAIL
+    reviewer: fresh-context subagent (ses_e016915a8ffeDaw8DgGvfw6a9t)
+    findings:
+      - class: layout-non-conformance/traceability
+        finding: "R-4 (umbrella seam) mapped to no success criterion — an orphan Traceability row; its rationale (verified against the umbrella's spec, not a page surface) disclosed the condition but did not cure the missing instrument."
+        remediation: "SC-9 added — a structural criterion greping `.issues/30/spec.md` for the three seam-revision elements (R-2's descope sentence, SC-3's 41-count, the Parts-list #67 entry); Traceability row R-4 → SC-9; remote body mirrored in the same action."
+    outcome: revised in place; re-validated round 2.
+  - round: 2
+    date: '2026-11-21'
+    artifact: "spec (as revised — SC-9 added, R-4 mapped)"
+    verdict: PASS
+    reviewer: fresh-context subagent (ses_e016745f4ffeItWMEoWcLHHcuO)
+    findings: []
+    outcome: "clean PASS — zero findings; reviewer executed SC-9's three greps live (all hit), verified the census (126 on-disk incl. the 4 named untracked clips, 122 tracked, both embed spellings tolerated by the name-based instruments, tacotron2 `!*.mp3` sole rule, no tracked generators), the pattern-of-record (animal-names anchors, #59 spec + executed evidence, PR #61 merged 2026-11-21), layout conformance with traceability complete both directions, the safety carve-out (retained clip sources vs SC-2's whitelist find), and repo-boundary containment."

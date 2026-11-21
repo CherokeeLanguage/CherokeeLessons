@@ -50,6 +50,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/67 · f
 | SC-6 | A clicked download anchor serves the entry's `.m4a` for download (browser save, not navigation) | behavioral | browser test on the built pages: click one anchor per page (4 total), observe the download events with matching filenames |
 | SC-7 | The residue is cleared: `content/content/tacotron2-and-cherokee-tts/.gitignore` is absent from `git ls-files` and the working tree | structural | `git ls-files` + `test -e` check |
 | SC-8 | The pages build and serve their converted media | behavioral | `./build.sh` exit 0; the four pages' `public/` dirs present carrying exactly the 100/18/5/3 `.m4a` files |
+| SC-9 | The umbrella carries the R-4 seam revision: CherokeeLessons#30's spec R-2 names the 4 espeak clips' descope into CherokeeLessons#67 with the demo-dirs-41/`!*.mp3` remainder, its SC-3 counts 41 across the three demo dirs, and its Parts list carries the #67 entry | structural | grep checks on `.issues/30/spec.md` for those three recorded elements |
 
 ## Dependencies
 
@@ -69,7 +70,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/67 · f
 | R-1 | SC-1, SC-2, SC-3, SC-4, SC-8 |
 | R-2 | SC-1, SC-5, SC-6 |
 | R-3 | SC-7 |
-| R-4 | (seam record — verified against the umbrella's revised spec, not a page surface) |
+| R-4 | SC-9 |
 
 ## Documentation Sources
 
