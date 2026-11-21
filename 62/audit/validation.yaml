@@ -46,6 +46,6 @@ plan:
   - id: F-1
     classes: incomplete-derivation
     finding: The spec's edge case routes the page title/slug decision to the plan ("the plan fixes title/slug") and the plan never carried a title, filename, or slug in any item field — authoring Item 1 requires creating a wiki file whose name is the page's permanent identity.
-    remediation: Page identity fixed in the plan's Goal and Item 1 Deliverable — wiki filename and URL slug , page H1 .
+    remediation: Page identity fixed in the plan's Goal and Item 1 Deliverable — wiki filename and URL slug giscus-not-installed-on-this-repository.md, page H1 Runbook: giscus "is not installed on this repository" error.
   preferences-adjudicated: []
   repo-boundary-containment: pass — wiki-page deliverable in the CherokeeLessons wiki, project-root commands read-only
