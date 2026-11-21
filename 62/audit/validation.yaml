@@ -1,87 +1,11 @@
-spec:
-- round: 1
-  date: '2026-11-21T04:09:33Z'
-  verdict: FAIL
-  findings:
-  - id: F-1
-    classes: two-readers, internal-contradiction
-    finding: R-2 stated the section flow two different ways in one requirement ("...remediation → verification → rollback" vs "rollback SHALL be stated before remediation"); every other surface (Approach, SC-2, remote body) resolved to rollback-before-remediation, making R-2's enumeration the sole dissenting text.
-    remediation: R-2 rewritten to the single order "symptom → diagnosis → rollback → remediation → verification"; the redundant duplicate clause removed.
-  - id: F-2
-    classes: instrument-weaker-than-criterion
-    finding: SC-3's criterion required "both observed forms quoted verbatim" but its greps matched substrings shared by the two forms — a page quoting only the heading form would pass.
-    remediation: "SC-3's instrument now uses prefix-distinct greps (\"An error occurred: giscus\" for the heading form; \"[giscus] An error occurred\" for the console form)."
-  - id: F-3
-    classes: prohibition-never-verified
-    finding: R-2's "adjust as appropriate" placeholder prohibition was stated but mapped only to SC-2/SC-5, neither of which observed it.
-    remediation: SC-2's instrument extended with a page-wide placeholder-language absence grep (adjust as appropriate / adjust as needed / TBD / <insert) = 0; criterion text names the limb.
-  - id: F-4
-    classes: traceability-overstatement
-    finding: R-3's serve-contexts limb (both recorded contexts in the symptom section) was mapped to SC-3, whose instrument could not observe it; SC-4's localhost grep was page-wide.
-    remediation: SC-3's instrument extended with symptom-section-scoped greps (127.0.0.1|localhost ≥1 and "deployed domain" ≥1 inside the section slice); criterion names the limb.
-  - id: F-5
-    classes: instrument-weaker-than-criterion, prohibition-never-verified
-    finding: SC-6 observed only branch-(a)'s elements; R-5's branches (b)/(c), the follow-with-verification instruction, and the "SHALL NOT perform tracked-content changes" clause were unobserved.
-    remediation: SC-6 broadened — remediation-section-scoped greps for the giscus App install branch, the public/visibility branch, and the verification-follow instruction, plus git status --porcelain empty at the runbook cycle's gate as the SHALL-NOT instrument; criterion restated.
-  - id: F-6
-    classes: prohibition-never-verified
-    finding: R-6's not-bare-localhost caution was never observed — SC-7's greps passed a verification section omitting the caution branch (0) exists to prevent.
-    remediation: SC-7's instrument adds a section-scoped "localhost" grep (the caution names the excluded surface); criterion restated.
-  - id: F-7
-    classes: instrument-weaker-than-criterion
-    finding: R-7 required each branch to carry a provenance label; SC-8's page-wide "≥1 per label kind" passed with unlabeled branches.
-    remediation: SC-8's instrument made diagnosis-section-scoped with per-branch pairing (≥5 branch markers AND ≥5 label-term occurrences — one per branch); criterion restated.
-  - id: F-8
-    classes: remote-body-format
-    finding: "The remote body lacked the plan-shaped sections remote-body-format requires once a plan exists (Items RED/GREEN, Dependencies, Traceability, Documentation Sources, Enforcement Gate, Cost Frame, Edge Cases, plan Not Included), and its Approach carried the stale \"After approval: plan → implement\" phrase."
-    remediation: Remote body 62 rewritten — plan-shaped sections added (items summary, dependencies, traceability, doc-sources pointer, enforcement gate, cost frame, edge cases with the direct-publish N/A-surface note), Approach updated to the plan-exists state; #63's remote body reconciled in the same action (same trigger class — its plan exists too).
-  preferences-adjudicated: []
-  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/62
 
-plan:
-- round: 1
-  date: '2026-11-21T04:10:00Z'
+- round: 3
+  date: '2026-11-21T04:20:16Z'
   verdict: FAIL
   findings:
   - id: F-1
-    classes: incomplete-derivation
-    finding: The spec's edge case routes the page title/slug decision to the plan ("the plan fixes title/slug") and the plan never carried a title, filename, or slug in any item field — authoring Item 1 requires creating a wiki file whose name is the page's permanent identity.
-    remediation: "Page identity fixed in the plan's Goal and Item 1 Deliverable — wiki filename and URL slug giscus-not-installed-on-this-repository.md, page H1 \"Runbook: giscus 'is not installed on this repository' error\"."
-  preferences-adjudicated: []
-  repo-boundary-containment: pass — wiki-page deliverable in the CherokeeLessons wiki, project-root commands read-only
-- round: 2
-  date: '2026-11-21T04:14:01Z'
-  verdict: PASS
-  findings: []
-  notes: fresh-context dispatch on the Identity-fixed plan; reviewer executed the live premises again (templates/page.html:32 stale value, gh repo view redirect output, wiki HEAD ebedeefa unchanged, CSP frame-src, .issues/63 present); all 16 classes walked, zero findings; SC coverage verified against the round-1-revised spec instrument set
-
-- round: 2
-  date: '2026-11-21T04:17:41Z'
-  verdict: FAIL
-  findings:
-  - id: F-1
-    classes: fabricated-claims, cross-reference-sufficiency
-    finding: R-2 attributed the merged rollback-before-remediation order to the sre-runbook card's structure, but the card's Structure bullet reads rollback LAST (verified live) — the order is this spec's resolution of the card's rule-4-vs-Structure tension, presented without disclosing the source says otherwise. Echoed in the Approach field and the remote body's Scope/R-2.
-    remediation: R-2, Approach, and remote-body Scope/R-2 rewritten to disclose the resolution (with the card's rule-4 mandate resolved over its Structure bullet's rollback-last arrow list into this spec's single order).
-  - id: F-2
-    classes: incapable-instrument (round-1 F-7 species partially recurring)
-    finding: SC-8's two independent slice-wide count greps do not pair labels with branches — five label occurrences can come from ordinary prose while a branch stays unlabeled.
-    remediation: SC-8 rebuilt as per-token line-paired greps — for each t in 0,a,b,c,d a diagnosis-section line carries the branch marker AND a label term on the same line; R-7 requires the one-line marker-label format making the pairing real; the plan's Items 2/4 GREEN updated to produce that format.
-  - id: F-3
-    classes: traceability-overstatement
-    finding: R-7 mandates labels on remediation branches too; SC-8 and SC-6 observed only diagnosis branches.
-    remediation: SC-8 extended with the same line-pairing over the remediation slice for the three named branch tokens (a,b,c); criterion and traceability row now state the full coverage.
-  - id: F-4
-    classes: incapable-instrument, feasibility
-    finding: SC-6's no-tracked-change limb required git status --porcelain to be empty — unsatisfiable in this checkout (permanent untracked machinery .issues/ and .tools/; reviewer executed it live).
-    remediation: Limb now requires no TRACKED modifier — git status --porcelain piped through grep -v '^??' is empty; ambient untracked machinery excluded by construction.
-  - id: F-5
-    classes: ambiguous-criterion, internal-contradiction
-    finding: SC-5's pass condition said "match the executed outputs (state-relative)" with state-relative undefined, while edge case 7 declared the runbook valid when the fix merges first — two readers resolve the condition differently.
-    remediation: State-relative defined as a both-forms rule — the page documents both comparison outcomes (mismatch fires branch (a), match clears it) and the executed state behaves as documented; edge case 7 rewritten to the same rule; remote-body SC-5 row aligned.
-  - id: F-6
-    classes: misstated-summary
-    finding: Remote body R-5 stated "SHALL NOT promise an automatic fix" where the local-authoritative R-5 states "SHALL NOT perform tracked-content changes itself" — materially different prohibitions.
-    remediation: Remote body R-5 carries the local prohibition verbatim plus the #63 pointer.
+    classes: cross-reference-sufficiency, internal-consistency (byte-level)
+    finding: The remote body's Scope carried a U+200C ZERO-WIDTH NON-JOINER inside the wiki URL token (CherokeeLessons.w+ZWNJ+iki, hex 77 e2 80 8c 69 6b 69 verified from the persisted API body) — the URL misstates the wiki address and breaks autolinking; the local spec/plan were clean.
+    remediation: Zero-width characters stripped from the remote body file, repushed, and the persisted API body re-verified clean (0 hits, token CherokeeLessons.wiki intact); a sweep of all store artifacts for the same byte class found none.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/62
