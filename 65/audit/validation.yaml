@@ -1,0 +1,11 @@
+spec:
+- round: 1
+  date: '2026-11-21T04:55:30Z'
+  verdict: revision-before-validation
+  findings:
+  - id: F-1
+    classes: instrument-false-positive (caught at RED confirmation, not by a review round)
+    finding: SC-1's (and the plan's RED) unanchored grep style-src.*giscus matched script-src's giscus.app token earlier on the single-line CSP — the instrument read green against the unfixed line.
+    remediation: Directive-bounded instrument (style-src[^;]*giscus.app) in spec and plan; RED re-executed returning 0 for the stated reason; discovery recorded per the implement card's mid-cycle rule before any GREEN.
+  preferences-adjudicated: []
+  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65

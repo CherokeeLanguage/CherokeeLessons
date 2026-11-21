@@ -46,7 +46,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/65 · f
 
 | ID | Criterion | Class | Instrument |
 |---|---|---|---|
-| SC-1 | The style-src carries the giscus origin | structural | `grep -cE 'style-src.*(unsafe-inline ).*https://giscus\.app' static/_headers` ≥ 1 |
+| SC-1 | The style-src carries the giscus origin | structural | directive-bounded grep — `grep -cE 'style-src[^;]*giscus\.app' static/_headers` ≥ 1 (`[^;]*` stops at the next directive: the CSP is one line, and an unanchored `.*` false-positives on script-src's giscus.app token earlier in the line — caught at RED confirmation 2026-11-21) |
 | SC-2 | The diff touches only the style-src directive | structural | `git diff <base-tip> -- static/_headers` shows exactly one removed/added line pair; the removed line's style-src lacks giscus.app; the added line's style-src carries it; every other directive identical between the two lines |
 | SC-3 | The rendered widget computes full-column width with no refusal | behavioral | playwright render of the branch preview (headless msedge, scrolled to the widget): `document.querySelector("iframe[src*=giscus]").getBoundingClientRect().width` ≈ the `.giscus` wrapper's width (955-class), and the console contains no `Refused to load the stylesheet 'https://giscus.app/default.css'` line |
 
