@@ -30,6 +30,7 @@ No page carries a download affordance, and the media format diverges from the co
 **User Intent / Original Prompt.**
 - (2026-11-21, developer ruling) "an untracked audio file is a lost audio file" — no audio remains untracked or untracked-retained anywhere it can be tracked.
 - (2026-11-21, developer directive) "we need to look at tracking everything feasible, using the new standard for audio" — the repo-wide audio census left this class as the only uncovered surface; this spec carries it.
+- (2026-11-21, developer directive at PR review) "this table format needs to become the norm for these types of pages" — the developer reviewed the preview and named the exercises-list table form broken relative to the `lesson-audio/animal-names` table display; the display form of record is the 3-column table, documented at the repo's SOP (R-5).
 - (2026-11-15/16, disposition of record superseded today) the class's track-as-mp3 negation-delivery method (CherokeeLessons#30 R-2) — superseded by the new standard; the umbrella records the supersession.
 - (2026-11-11, observed failure evidence class) the executed stand-up-gate build omitted every untracked asset class — all 41 demo mp3s among them.
 
@@ -48,6 +49,8 @@ No page carries a download affordance, and the media format diverges from the co
 - **R-3 — Pages updated: renamed references + per-entry download anchors.** All `{{audio (file=…)}}` embeds on the three pages (12/9/8) SHALL reference the `.m4a` names; every embedded entry SHALL gain a direct-download anchor in raw-HTML form `<a href="<file>.m4a" download>⤓ download</a>` (direct `.m4a` link with the HTML `download` attribute; arrow glyph plus the word "download") placed with its entry — for `cherokee-tts-update-3--ims-toucan-` that means each of the four tables carries the header `SPEAKER|M4A FILE|DOWNLOAD` with its divider extended to three columns and a third-cell anchor per row, replacing the `SPEAKER|AUDIO MP3` headers; the list pages' anchors sit beside each entry. `exercises.txt`'s 12 `{{audio}}` lines SHALL retarget to the 05-29 `.m4a` names (a non-rendered fragment — no anchors). The tracked generator `make-exercises-fragment.sh` SHALL be retained and SHALL emit `.m4a` embed names (its `Animals*mp3` glob SHALL become `Animals*m4a`). No per-file zip artifacts are created.
 - **R-4 — Umbrella seam (CherokeeLessons#30 R-2).** The umbrella's original R-2 SHALL be superseded and replaced by a transfer record naming this spec (the converted deliverables, the source tracking, the page treatment); the umbrella's Parts list SHALL carry the #68 entry, and the seam-2 record SHALL carry the class's new disposition (converted deliverables tracked `.m4a`, sources tracked via negation, nothing deleted).
 
+- **R-5 — SOP/AGENTS record of the display norm.** The repo's operational docs (root `AGENTS.md`, which carries both the Content facts and the SoP sections) SHALL record the developer's 2026-11-21 ruling that the audio-exercise display format is the norm of record for these pages: audio-exercise listings on TTS-demo/lesson-audio pages present as the 3-column `SESSION|M4A FILE|DOWNLOAD` table form (the `lesson-audio/animal-names/index.md` form of record), not bulleted lists — with the anchor cell carrying the `⤓ download` download anchor per entry.
+
 ## Success criteria
 
 | ID | Criterion | Class | Instrument |
@@ -61,6 +64,7 @@ No page carries a download affordance, and the media format diverges from the co
 | SC-7 | Reference surfaces updated: `exercises.txt` references only `.m4a` names (12 lines, 05-29 set, `.mp3` count = 0, no anchors); `make-exercises-fragment.sh` emits `Animals*m4a` names | structural | greps on the fragment and the script |
 | SC-8 | The pages build and serve their converted media | behavioral | `./build.sh` exit 0; the three pages' `public/` dirs present carrying exactly the 24/9/8 `.m4a` (plus the retained `.mp3` sources the build copies) |
 | SC-9 | The umbrella carries the seam record: `.issues/30/spec.md` R-2 names the supersession to CherokeeLessons#68 under the 2026-11-21 directive, its SC-3 records the transfer as resolvable (the #68 link + the transferred class), and its Parts list carries the #68 entry | structural | `local-issues` sub-issue listing / `.issues/30/links.yaml` contains 68; grep checks on `.issues/30/spec.md` for those recorded elements |
+| SC-10 | The display norm of record is documented: root `AGENTS.md` names the 3-column `SESSION|M4A FILE|DOWNLOAD` table form as the norm for audio-exercise listings on TTS-demo/lesson-audio pages, citing the developer's 2026-11-21 ruling and the `lesson-audio/animal-names/index.md` form of record, in both the Content facts and the SoP sections | structural | grep checks on the root `AGENTS.md` for the table-form statement, the ruling date, and the form-of-record reference in the Content facts and SoP sections |
 
 ## Dependencies
 
@@ -81,6 +85,7 @@ No page carries a download affordance, and the media format diverges from the co
 | R-2 | SC-2 |
 | R-3 | SC-1, SC-5, SC-6, SC-7 |
 | R-4 | SC-9 |
+| R-5 | SC-10 |
 
 ## Documentation Sources
 
