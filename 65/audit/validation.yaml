@@ -1,6 +1,6 @@
 
 - round: 1 (plan validation)
-  date: '2026-11-21T04:55:56Z'
+  date: '2026-11-21T04:56:57Z'
   verdict: FAIL
   findings:
   - id: F-1
@@ -9,6 +9,16 @@
   - id: F-2
     classes: unpassable-instrument
     finding: The adopted SC-1 instrument (style-src.*(unsafe-inline ).*giscus) could never match — the file quotes unsafe-inline, so the trailing-space form is unsatisfiable pre- or post-change.
-    remediation note: both findings were remediated in place BEFORE this verdict rendered (dispatch raced the revision) — directive-bounded instrument style-src[^;]*giscus.app now in spec SC-1 and plan Item 1 RED; pre-fix returns 0; a simulated post-GREEN line returns 1 (executed this session). This entry records the round; a fresh re-validation judges the current artifacts.
+    remediation note: both findings were remediated in place BEFORE this verdict rendered (dispatch raced the revision) — directive-bounded instrument style-src[^;]*giscus.app now in spec SC-1 and plan Item 1 RED; pre-fix returns 0; a simulated post-GREEN line returns 1 (executed this session).
+  preferences-adjudicated: []
+  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65
+- round: 2 (plan validation)
+  date: '2026-11-21T04:56:57Z'
+  verdict: FAIL
+  findings:
+  - id: F-1
+    classes: internal-inconsistency, approach-divergence
+    finding: Plan Item 2 gated the PR readiness on verify PASS while the spec's Key Design Decision reserved the ready transition to the developer's word — two different gates on the same boundary.
+    remediation note: reconciled SPEC-side — the developer's "approved for stacked PR" grant (2026-11-20, post-authoring the original disposition) supersedes the wait-on-developer-word line; Key Design Decisions, User Intent, and the Approach field now record the granted boundary; the plan's ready-on-verify-PASS text is unchanged (now consistent). Remote body reconciled the same action.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65

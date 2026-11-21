@@ -21,12 +21,13 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/65 · f
 - Origin-specific grant: `https://giscus.app` joins `style-src` only; no other directive changes.
 - The behavioral verification runs on the *served* preview (not localhost — the CherokeeLessons#59 record rules out bare-localhost widget diagnosis) and measures geometry, not just console silence: computed frame width ≈ wrapper width.
 - Stacked branch: `feature/65-giscus-style-src` off `feature/63-giscus-data-repo-pointer`'s tip so the preview includes #63's fix; the PR targets master and becomes a clean one-commit diff after #64 merges.
-- Draft PR as preview infrastructure; the PR-ready transition waits on the developer's word (the directive carried implementation, and the filing boundary stays theirs).
+- Draft PR as preview infrastructure; the filed-ready state lands after the verify PASS — the PR boundary is authorized (developer: "approved for stacked PR", 2026-11-20, superseding this spec's original wait-on-developer-word disposition authored before that grant).
 
 **User Intent / Original Prompt.**
 
 - Developer, 2026-11-20: "the giscus widget is not displaying very well." + "playwright check https://feature-63-giscus-data-repo-pointer-cherokeelessons-org.m-conrad-202.workers.dev/content/how-to-use-public-domain-comics-for-cherokee-language-teaching/" (the check executed; findings reported in-session)
 - Developer, 2026-11-20: "add an sc to the spec to implement and do so"
+- Developer, 2026-11-20: "approved for stacked PR" — the PR-boundary authorization, granted after the spec's original wait-on-developer-word disposition; the reconciliation is recorded in Key Design Decisions.
 - Session-observed failures: the console refusal line (above); computed frame width 300px vs 955px wrapper (playwright `getBoundingClientRect`, 2026-11-21); live mutation restoring 955px proving the causal link.
 
 ## Not Included
