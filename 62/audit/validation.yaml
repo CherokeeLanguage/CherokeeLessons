@@ -1,16 +1,6 @@
 
-- round: 5
-  date: '2026-11-21T04:28:40Z'
-  verdict: FAIL
-  findings:
-  - id: F-1
-    classes: fabricated-claims (plan-shaped summary attribution), internal-contradiction (remote vs its own traceability)
-    finding: The remote Items rows distributed SC-8's verification across Items 2 and 4 ("+ SC-8 diagnosis pairings" / "incl. the SC-8 remediation pairings") where the local-authoritative plan's Item 2 instrument is the SC-4 grep set only and Item 4's is the full SC-6/7/8 set — round-4's over-addition, not the plan's account.
-    remediation: Remote Items 2/4 instrument clauses restored to the local plan's attributions.
-  - id: F-2
-    classes: internal-contradiction, unreachable-prestate
-    finding: Local plan Item 4's RED asserted a reachable-failing "observed → 0" page-wide prestate that Item 2's GREEN (branch-0 label authored) had already made unreachable — the RED could not exhibit its failing value.
-    remediation: Item 4's RED rewritten section-sliced — no remediation-slice label pairings for t in a,b,c, no SC-6 remediation-limb markers, no localhost caution in the verification slice — all reachable post-Item-3; Tier-marks instrument class reworded section-sliced; remote Item 4 echo aligned.
-  structural re-evaluation ("count trigger examined — plan/spec remediations crossed 4 rounds; spin checked"): outcome Sound — no recomposition, intent reachable; artifact substance stable since round 2, the recurring class is cross-surface sync hygiene (local spec / remote body / plan updated by hand); countermeasure applied — a whole-surface agreement pass precedes each re-dispatch, mechanically assisted.
-  preferences-adjudicated: []
-  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/62
+- round: 6
+  date: '2026-11-21T04:32:35Z'
+  verdict: PASS
+  findings: []
+  notes: fresh-context dispatch over spec+plan+persisted remote body after the round-5 remediations and the structural-re-evaluation countermeasure (whole-surface agreement pass); zero findings
