@@ -1,9 +1,9 @@
-title: 'Spec: lesson media — dictation videos migrate to YouTube; the two lesson-audio
-  pages convert to tracked .m4a'
+title: 'Spec: Syllabary-Dictation pages migrate their dead video embeds to YouTube
+  (dictation slice of the lesson-media re-cut)'
 status: open
 labels:
 - needs-approval
 body: ''
 created_at: '2026-11-15T04:21:34+00:00'
-updated_at: '2026-11-16T13:42:17+00:00'
+updated_at: '2026-11-21T03:05:22+00:00'
 github_url: https://github.com/CherokeeLanguage/CherokeeLessons/issues/54
