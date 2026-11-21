@@ -4,3 +4,11 @@ plan:
   verdict: PASS
   findings: []
   notes: fresh-context dispatch; reviewer executed the READ-premises live (stale-slug grep = 1 at line 32, new-slug grep = 0; gh pr list --head empty; ./build.sh present; every content page renders through page.html — no template-overrides in content/); all 16 defect classes walked, zero findings
+
+- round: spec-revision (stacked scope)
+  date: '2026-11-21T05:10:33Z'
+  verdict: revision-before-pr-finalization
+  findings: []
+  notes: developer's CSP directive joined this spec's scope (R-4/SC-4/SC-5 added) and the single stacked PR now carries one commit per issue closing #63 + #65; consolidated commit 53e8aec on feature/63-giscus-data-repo-pointer
+  preferences-adjudicated: []
+  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/63

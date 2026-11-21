@@ -31,6 +31,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/65 · f
 - Session-observed failures: the console refusal line (above); computed frame width 300px vs 955px wrapper (playwright `getBoundingClientRect`, 2026-11-21); live mutation restoring 955px proving the causal link.
 
 ## Not Included
+- The CSP remedy no longer files its own PR: it ships as the per-issue commit `53e8aec` on the single stacked PR CherokeeLessons#64 (branch `feature/63-giscus-data-repo-pointer`), closing #63 and #65 together — the developer's `approved for stacked PR` ruling of record (2026-11-21); the parallel-PR filing was a deck violation (michael-conrad/.opencode#2768) and is consolidated away.
 
 - Any other CSP directive — script-src/frame-src/connect-src already carry giscus.app correctly.
 - The transient "Loading comments…" backend behavior (both pages stalled 40+s during diagnosis; the same page rendered fully an hour earlier) — environmental, not this change's subject.

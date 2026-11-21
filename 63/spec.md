@@ -22,11 +22,14 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/63 · f
 - The deciding ambiguity-resolution surface is the PR preview render (served, not localhost — per the #59 local-serve record): its console/widget state is recorded verbatim and dated in the PR body, whatever it shows, because the two dated records disagree pre-fix (R-3, SC-3).
 - Human-only merge; the agent files the PR and halts at that boundary.
 - `./build.sh` clean-build gate before push — the repo's verification gate for content changes (AGENTS.md), a process gate rather than a criterion subject.
+- *(Stacked-shape revision, 2026-11-21)* The CSP remedy ships as a second per-issue commit on this spec's single PR — one commit per issue, one PR closing both issues (#63 + #65) — per the developer's `approved for stacked PR` ruling of record; the parallel-PR filing was a deck violation (michael-conrad/.opencode#2768) now consolidated onto this spec's branch.
 
 **User Intent / Original Prompt.**
 
 - Developer, 2026-11-20: "is this a simple change in the giscus setup in the repo?" (answered in-session: yes — the recorded pending fix is a one-line `data-repo` update)
 - Developer, 2026-11-20: "implement the spec to apply the repo fix and file a PR" — implementation authorization for this fix and the PR boundary.
+- Developer, 2026-11-20: "add an sc to the spec to implement and do so" — the CSP directive adding this scope's R-4/SC-4/SC-5.
+- Developer, 2026-11-21: "approved for stacked PR" + "fix the fucked up PR filings that should have been 1 PR" — the single stacked PR of record; the parallel PR filing ruled a deck violation (michael-conrad/.opencode#2768).
 - CherokeeLessons#27 audit (2026-11-10), cited: "giscus resolves the repo via its backend through the GitHub API, which does not follow rename redirects (giscus#1238, verified live 2026-11-10) — the widget is expected to error until the deferred content fix lands and the site redeploys."
 - CherokeeLessons#59 research (2026-11-21), cited: giscus logs "not installed on this repository" on 127.0.0.1 serve; "does not fire this way on the deployed domain's build".
 
@@ -35,12 +38,13 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/63 · f
 - Regenerating `data-repo-id`/`data-category-id` via the giscus.app generator — expected rename-stable; named as the follow-up if the post-fix observation demands it.
 - The CherokeeLessons#62 wiki runbook (its own deliverable, own record) and any wiki navigation changes.
 - Investigating the localhost-serve widget behavior (#59's record) — #62's runbook serve-context branch carries that.
-- CSP changes — `static/_headers` already carries `https://giscus.app` in `frame-src`; no new origin arises.
+- ~~CSP changes — `static/_headers` already carries `https://giscus.app` in `frame-src`; no new origin arises.~~ *(superseded 2026-11-20 by revision-by-stack: the developer's directive revealed a live CSP gap — the giscus client's wrapper stylesheet injection is refused by `style-src` — and added R-4/SC-4/SC-5 to this spec's scope.)*
 
 ## Requirements
 
 - **R-1** — The giscus script block's `data-repo` attribute in `templates/page.html` SHALL read `CherokeeLanguage/CherokeeLessons` (the repository's current `nameWithOwner`).
 - **R-2** — No other attribute of that script block SHALL change; the working-tree diff against trunk for `templates/page.html` SHALL be exactly that one attribute line.
+- **R-4** — *(added 2026-11-20, revision-by-stack: the developer's CSP directive joins this spec's scope; one commit per issue rides the single stacked PR)* The `style-src` directive in `static/_headers` SHALL carry `https://giscus.app` — the origin giscus's client injects its wrapper stylesheet from — so the comment frame renders at its wrapper column's width. The diff of `static/_headers` SHALL be exactly that one directive's token list; every other directive byte-identical. Executed diagnostic evidence (console refusal line; 300px vs 955px measurement; `width: 100%` mutation proof) is recorded in the intent preamble.
 - **R-3** — The change SHALL ship as tracked site content: feature branch → PR; the PR body SHALL record the executed PR-preview render observation — the giscus widget's visible state and the browser console's giscus lines, verbatim and dated, from the preview deployment (a served surface, not a localhost serve).
 
 ## Success criteria
@@ -50,6 +54,8 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/63 · f
 | SC-1 | The pointer reads the post-rename slug and no longer carries the pre-rename value | structural | at the branch: `grep -cE 'data-repo="CherokeeLanguage/CherokeeLessons"' templates/page.html` ≥ 1 AND `grep -cE 'data-repo="CherokeeLanguage/CherokeeLessons\.com"' templates/page.html` = 0 |
 | SC-2 | The diff against trunk touches exactly that one attribute | structural | `git diff <base-tip> -- templates/page.html` contains exactly one removed/added line pair; the removed line contains `data-repo="CherokeeLanguage/CherokeeLessons.com"`; the added line contains `data-repo="CherokeeLanguage/CherokeeLessons"` with every other script-block attribute identical between the two lines |
 | SC-3 | The filed PR records the executed preview observation | structural | `gh pr view <PR> --json body` contains a dated line recording the giscus widget's observed visible state and the console giscus output from the preview render |
+| SC-4 | *(added 2026-11-20 revision)* The style-src carries the giscus origin | structural | directive-bounded grep — `grep -cE 'style-src[^;]*giscus\.app' static/_headers` ≥ 1 (`[^;]*` stops at the next directive: the CSP is one line, and an unanchored `.*` false-positives on script-src's giscus.app token earlier in the line — caught at RED confirmation 2026-11-21) |
+| SC-5 | *(added 2026-11-20 revision)* The template diff stays single-line; the headers diff touches only the style-src directive | structural | `git diff <base-tip> -- templates/page.html` shows exactly one removed/added line pair (SC-2's instrument, unchanged, file-scoped); `git diff 2d0cad6 -- static/_headers` shows exactly one removed/added line pair whose only delta is ` https://giscus.app` inside style-src (executed on the consolidated branch; commit `53e8aec`); and the preview render on the consolidated branch shows the computed giscus frame width ≈ the `.giscus` wrapper's width (955-class) with no `Refused to load the stylesheet 'https://giscus.app/default.css'` console line |
 
 ## Dependencies
 
@@ -68,8 +74,9 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/63 · f
 | R-1 | SC-1 |
 | R-2 | SC-2 |
 | R-3 | SC-3 |
+| R-4 | SC-4, SC-5 |
 
-No orphan rows in either direction (SC-1→R-1; SC-2→R-2; SC-3→R-3).
+No orphan rows in either direction (SC-1→R-1; SC-2→R-2; SC-3→R-3; SC-4/SC-5→R-4).
 
 ## Documentation Sources
 
@@ -81,7 +88,7 @@ No orphan rows in either direction (SC-1→R-1; SC-2→R-2; SC-3→R-3).
 | Current repository slug (`nameWithOwner`) | live API observation | `gh repo view CherokeeLanguage/CherokeeLessons --json nameWithOwner` → `CherokeeLanguage/CherokeeLessons` | executed live 2026-11-20 |
 | CherokeeLessons#59 research note (local-serve record; deployed-domain claim) | local issue store | `.issues/59/research/download-column.md:24` | read 2026-11-20 |
 | AGENTS.md (repo) — PR preview builds; merge-to-master auto-deploy; `./build.sh` gate | repo doc | `AGENTS.md` Build & verification; Deployment | read (session context) 2026-11-20 |
-| `static/_headers` CSP (no change needed; `https://giscus.app` already in `frame-src`) | tracked repo file | `static/_headers:13` | read 2026-11-20 |
+| `static/_headers` CSP (line 13: `https://giscus.app` in `frame-src`; `style-src` lacked it — added by this spec's stacked SC-4 revision, commit `53e8aec`) | tracked repo file | `static/_headers:13` | read 2026-11-20; gap observed live in the #64 preview render 2026-11-21 |
 
 ## Cost Frame
 
@@ -92,13 +99,13 @@ No orphan rows in either direction (SC-1→R-1; SC-2→R-2; SC-3→R-3).
 ## Edge Cases
 
 - Preview observation shows the error still: the record is carried verbatim (the SC requires recording, not a passing outcome); the named follow-up is attribute re-derivation via the giscus.app generator — triaged after the observation, not fixed silently in this change.
-- Preview observation shows a blank frame with a CSP violation: that is the differential failure mode #62's runbook branch (d) names; recorded verbatim; no CSP change is in this change's scope.
+- Preview observation shows a blank frame with a CSP violation: that is the differential failure mode #62's runbook branch (d) names; recorded verbatim. *(2026-11-20 revision: this mode fired live during this change's own preview — giscus's wrapper stylesheet injection refused by `style-src` — and the developer directed the remedy into this spec's scope as R-4/SC-4; the mode is no longer out of scope.)*
 - Pre-fix deployed state already error-free (#59's side of the conflict): the fix remains correct (the stale slug is wrong under both records) — correctness does not require a reproducing symptom; the recorded observation documents the state change or its absence either way.
 - Merge cadence: human merge only; the agent's work ends at the filed, reviewed PR.
 - Slug drift: if the repository is renamed again before merge, the branch's `data-repo` value is re-ground against a fresh `gh repo view` observation before push.
 
 ## Completion gate
 
-Every success criterion SC-1 through SC-3 passes before the change is PR-complete; partial implementation is not permitted.
+Every success criterion SC-1 through SC-5 passes before the change is PR-complete; partial implementation is not permitted.
 
 🤖 Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)

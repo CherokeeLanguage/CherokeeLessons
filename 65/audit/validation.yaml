@@ -4,3 +4,11 @@
   verdict: PASS
   findings: []
   notes: fresh-context dispatch on the fully reconciled artifacts; reviewer re-executed the feasibility set (RED 0, simulated post-GREEN 1, clean tree, PR-list empty, byte hygiene) and walked all 16 classes with zero findings; whole-surface agreement verified both places
+
+- round: spec-revision (consolidation disposition)
+  date: '2026-11-21T05:10:33Z'
+  verdict: revision-in-place
+  findings: []
+  notes: developer ruled the two-PR filing a regression; this spec's disposition revised to stacked-on-#64 (commit rides CherokeeLessons#64; no own PR); PR #66 closed, branch deleted
+  preferences-adjudicated: []
+  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/65
