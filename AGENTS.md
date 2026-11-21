@@ -64,6 +64,11 @@ this file holds repo operational facts only.
   --folder <section-dir>`. It is a bash/python polyglot that activates the
   `cherokee-lessons` conda env; `environment.yml` is that env's export
   (refreshed by `export-env.sh`).
+- Audio-exercise display form of record (CherokeeLessons#68 SC-10, developer
+  ruling 2026-11-21): audio-exercise listings on TTS-demo and lesson-audio
+  pages present as the 3-column `SESSION|M4A FILE|DOWNLOAD` table (the
+  `content/lesson-audio/animal-names/index.md` form), never a bulleted
+  list; each row's third cell carries the `⤓ download` anchor.
 
 ## SoP — content and distribution decisions are the developer's
 
@@ -88,6 +93,11 @@ this file holds repo operational facts only.
   the bitrate ladder; TTS demo audio → tracked mp3s. An agent
   spec/prose that assumes blanket "lesson media → YouTube" for this repo is
   wrong on discovery — record the per-page split.
+- Ruling of record (2026-11-21, via CherokeeLessons#68): audio-exercise
+  listings on TTS-demo and lesson-audio pages display as the 3-column
+  `SESSION|M4A FILE|DOWNLOAD` table (the
+  `content/lesson-audio/animal-names/index.md` form of record), never as a
+  bulleted list; each row's third cell carries the `⤓ download` anchor.
 
 ## Workspace artifacts — never commit
 
