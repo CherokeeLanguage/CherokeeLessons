@@ -6,7 +6,7 @@ Implement the CherokeeLessons#63 spec: change the giscus script block's `data-re
 
 ## Execution surface
 
-Repository: CherokeeLessons (this project root). Branch: `fix/giscus-data-repo-pointer`, created off the verified fresh trunk tip (`master`) per the git-workflow-branch card — the branch exists before the first file modification. Build gate: `./build.sh` (the repo's only sanctioned build path; vendored pinned zola fetched on first use — needs network once). Remote PR operations: `gh` (authenticated). The preview deployment for the observation arrives with the pushed PR branch (Workers preview builds).
+Repository: CherokeeLessons (this project root). Branch: `feature/63-giscus-data-repo-pointer`, created off the verified fresh trunk tip (`master`, `129a1916`) per the git-workflow-branch card — the branch exists before the first file modification. Build gate: `./build.sh` (the repo's only sanctioned build path; vendored pinned zola fetched on first use — needs network once). Remote PR operations: `gh` (authenticated). The preview deployment for the observation arrives with the pushed PR branch (Workers preview builds).
 
 ## Items
 
