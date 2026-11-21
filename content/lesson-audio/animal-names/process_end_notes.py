@@ -42,10 +42,9 @@ Leave comments below.
 Try doing one session each day.
 Repeat the session three times per day, morning, noon, then evening.
 
-SESSION|MP3 FILE
---|--
+SESSION|M4A FILE|DOWNLOAD
+--|--|--
 """
-    # cll1-v3-0001.mp3
     with open("end-notes.txt", "r") as r:
         for line in r:
             line = line.strip()
@@ -58,8 +57,9 @@ SESSION|MP3 FILE
             text = parts[1]
             below_fold_md += f"{number}|"
             below_fold_md += "{{audio (file=\""
-            below_fold_md += f"animals-{number}.mp3\")"
-            below_fold_md += "}}\n"
+            below_fold_md += f"animals-{number}.m4a\")"
+            below_fold_md += "}}|"
+            below_fold_md += f"<a href=\"animals-{number}.m4a\" download>⤓ download</a>\n"
             if text:
                 below_fold_md += f"----|{text}\n"
     # below_fold_md += "----|\n"
