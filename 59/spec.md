@@ -25,6 +25,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/59 · s
 - (2026-11-16, developer decision recorded on CherokeeLessons#54) animal-names joins CLL-1's conversion method: local tracked `.m4a` via the per-track ladder — not YouTube.
 - (2026-11-16, developer decision) the lesson-audio generator scripts are retained — the m4a/mp3 distinction touches emitted names only.
 - (2026-11-20, developer directives) "the changes related to non-dictation videos needs to be moved into their own specs so as to prevent conflation and cross-concerns" (this split); "proceed with spec revisions".
+- (2026-11-21, PR-review feedback) "the page reads 'mp3'" (stale table header copy); "we need a way for users to download these files easily"; disposition set same day: direct download links (no per-file zips — a single-file zip of AAC gains nothing), arrow glyph + the word "download", tested, in a 3rd column of the session table.
 
 ## Not Included
 
@@ -32,17 +33,21 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/59 · s
 - The TTS demo-audio dirs — the umbrella's tracking work (CherokeeLessons#30 R-2, tracked mp3).
 - The generator's own export change (audio-lessons-generator-python#16) — separate repository; this conversion imports its settings inline.
 - The umbrella's site-wide gates (CherokeeLessons#30 SC-7/SC-8 — execute after the last part lands).
+- A "download all" affordance — the bundle's own disposition (drop vs re-issue) stays the umbrella's open decision (CherokeeLessons#30 seam 5); this spec adds per-session direct-download links only.
 
 ## Requirements
 
 - **R-1 — In-place conversion.** The 9 `animals-NNNN.mp3` (measured source: 31 MB) SHALL be transcoded to `animals-NNNN.m4a` — AAC-LC in MP4 container, mono, 48 kHz — through the per-track ladder: 128 kb/s target falling back 112 → 96 kb/s on encode-and-measure (the encoded file's measured size decides) until the file is ≤ 24 MiB (25,165,824 B — the margin below the 25 MiB per-file asset cap). The 9 `.m4a` files SHALL be tracked in git; the page's 9 embeds SHALL reference the `.m4a` names; the 9 mp3s SHALL be deleted from the working tree. The per-track ladder transcript (rungs attempted, measured sizes at each, chosen rung), the transcode command, and tool provenance SHALL be recorded in this issue's research artifacts (`.issues/59/research/`).
 - **R-2 — Generator retained and updated.** The tracked generator script `content/lesson-audio/animal-names/process_end_notes.py` SHALL be retained and SHALL emit `.m4a` embed names matching R-1's filenames. Page regeneration stays format-agnostic over its page-structure inputs (`end-notes.txt`; `index-template.txt`); media production remains the generator's own assembly (audio-lessons-generator-python#16).
+- **R-3 — Session-table copy: header correction + download column.** The page's session table SHALL carry the header row `SESSION|M4A FILE|DOWNLOAD` (the stale `MP3 FILE` header corrected to the converted format), the divider row extended to three columns, and each of the 9 session rows SHALL gain a third cell — a direct-download anchor in raw-HTML form `<a href="animals-NNNN.m4a" download>⤓ download</a>` (direct `.m4a` link with the HTML `download` attribute; arrow glyph plus the word "download") — per the developer's 2026-11-21 disposition: no per-file zip artifacts are created. `index-template.txt`'s table surface stays the generator's input; the generator (R-2) SHALL emit the same header and row form.
 
 ## Success criteria
 
 | ID | Criterion | Class | Instrument |
 |---|---|---|---|
 | SC-1 | The page references only `.m4a` media: `audio (file=` embeds = 9, all 9 names `animals-NNNN.m4a`, `.mp3` name count = 0 | structural | grep counts on the page source |
+| SC-7 | The session table carries the corrected header and the download column: `M4A FILE` header present, `MP3 FILE` count = 0 on the page and in both generator strings, `DOWNLOAD` header present, 9 anchors — each `<a href="animals-NNNN.m4a" download>` carrying the `download` attribute and the `⤓ download` label, one per session row | structural | grep counts on the page source and the generator's emitted-row form |
+| SC-8 | A clicked download anchor serves the row's `.m4a` for download (browser save, not navigation) | behavioral | browser test on the built page: click one of the 9 anchors on the served page, observe the download event with the matching filename |
 | SC-2 | Exactly the 9 converted files are tracked and the mp3s are gone from the working tree | structural | `git ls-files 'content/lesson-audio/animal-names/*.m4a'` lists exactly `animals-0001.m4a`…`animals-0009.m4a`; `find <page dir> -name "*.mp3"` is empty; `git check-ignore` on an m4a exits non-zero (not ignored) |
 | SC-3 | Every m4a is AAC-LC, mono, 48 kHz, ≤ 25,165,824 B, in an MP4 container | structural | per file: `ffprobe` shows `codec_name` aac, `channels` 1, `sample_rate` 48000, `format_name` containing mov/mp4; `stat -c %s` ≤ 25,165,824 |
 | SC-4 | The conversion exercised the ladder per track — each file's final encode is the highest rung (128 → 112 → 96 kb/s) whose encoded output measured ≤ 24 MiB; no track silently pre-lowered | behavioral | the recorded per-track transcripts in `.issues/59/research/`; per-file cross-check: `ffprobe` `bit_rate` corresponds to the recorded chosen rung |
@@ -65,6 +70,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/59 · s
 |---|---|
 | R-1 | SC-1, SC-2, SC-3, SC-4, SC-6 |
 | R-2 | SC-5 |
+| R-3 | SC-7, SC-8 |
 
 ## Documentation Sources
 
