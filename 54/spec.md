@@ -1,55 +1,98 @@
-# Spec — lesson media: dictation videos migrate to YouTube; the two lesson-audio pages convert to tracked .m4a
+# Spec — 14 Syllabary-Dictation pages migrate their dead local-video embeds to `{{ youtube(id=…) }}`
 
-Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/54 · part of the CherokeeLessons#30 recomposition (2026-11-14)
+Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/54 · part of the CherokeeLessons#30 recomposition (2026-11-14) · scope re-cut 2026-11-20 — the lesson-audio halves moved to their own parts (CherokeeLessons#58, CherokeeLessons#59), leaving the dictation slice
+<!-- artifacts: .issues/54/ -->
 
-## Problem
+## Intent
 
-14 Syllabary-Dictation pages embed 20 `{{ video(video="Dictation …mp4") }}` embeds and two lesson-audio pages (CLL-1 audio exercises: 23, animal-names: 9) embed `{{audio(file=…)}}` referencing untracked mp3/mp4 sources — these are dead in every fresh-clone build (the executed 2026-11-11 stand-up gate's build omitted every untracked asset class). All 53 items are verifiably mirrored on the developer's YouTube channel (`@-cherokeelanguage7554`, verified live 2026-11-11) with a stable-title-prefix + duration correspondence mapping (`research/youtube-video-id-map.txt`), and the CLL-1 audio page carries a `cll1-v3-audio.zip` download link that is dead in every fresh-clone build for the same reason. The dictation mapping is further corroborated (2026-11-21, developer review comment on this issue) by the developer's curated playlist **Syllabary Dictation** (`PLo2dw3Y__5_LM3UrVTJoFSxNErQ_yEdCk`): the playlist holds exactly the map's 21 Syllabary-Dictation entries — same set, same positional order, per-position titles matching the map's records (`research/youtube-playlist-crosscheck.txt` in this issue's store dir); the map stays the ID source, the playlist is corroboration.
+**Problem Statement.** The 14 Syllabary-Dictation pages (`content/lessons/Syllabary-Dictation/**/index.md`) embed 20 `{{ video(video="Dictation …mp4") }}` embeds whose mp4 sources are untracked — the repo's `*.mp4` ignore rule predates the embeds — so every fresh-clone/deployed build renders all 20 embeds dead (observed: the executed 2026-11-11 stand-up-gate build omitted every untracked asset class). Visitors to cherokeelessons.org get no playable dictation media.
 
-**Disposition (developer decisions, 2026-11-15/16):** the two lesson-audio pages do **not** migrate to YouTube — the sessions stay local, re-encoded as tracked AAC `.m4a`. Per-page method: the Syllabary-Dictation videos (video class, channel mirror verified) keep the YouTube embed; the two audio pages convert locally with the per-track bitrate ladder (the owning definition of the encoder settings is `audio-lessons-generator-python#16` — AAC-LC, mono, 48 kHz, 128 kb/s target falling back 112 → 96 kb/s per file on encode-and-measure until the file fits the 24 MiB margin under the site's 25 MiB-per-file asset cap; universal browser playback incl. Safari/iOS; the exercises' download/offline-usable role and the per-page method selection govern the split). The CLL-1 page's conversion decision recorded 2026-11-15; animal-names joins the same method 2026-11-16.
+**Root Cause / Motivation.** The dictation mp4 media was never tracked in git — the sources exist only on the working machine (21 untracked mp4s verified in the working tree; none in git) — leaving every deployable tree without the referenced files. The migration lands now as the dictation part of the CherokeeLessons#30 recomposition making the site deployable from fresh clones.
 
-## Scope
+**Approach Chosen.** Each page's old embeds are replaced by `{{ youtube(id=…) }}` embeds carrying the verified mirror IDs — the mechanically derived page↔video assignment — and the ~1.7 GB of untracked working-tree mp4s is deleted. No theme/shortcode/infra changes: the `{{ youtube() }}` shortcode is pre-existing (tracked since 2023-05) and `static/_headers` frame-src already carries the YouTube origin (`https://www.youtube.com`).
 
-This repository — content pages and the two lesson-audio media sets: the 14 Syllabary-Dictation pages, and both audio pages with their media sets — `content/lesson-audio/cherokee-language-lessons-1---audio-exercises/index.md` plus its 23 session mp3s and `.m4a` replacements, `content/lesson-audio/animal-names/index.md` plus its 9 mp3s and `.m4a` replacements — the two tracked `process_end_notes.py` generator scripts, and working-tree retirement of the migrated media files. No theme or shortcode changes (the `{{ youtube() }}` shortcode is pre-existing, tracked since 2023-05; the existing `{{audio}}` shortcode form stays for both audio pages).
+**Alternatives Considered & Why Discarded.**
+- Track the mp4s in git and keep the local embeds — discarded: the delivery method of record for the dictation class is YouTube embeds (developer decision 2026-11-15/16, recorded on this issue), and the long sessions run against the Workers 25 MiB-per-file asset cap.
+- External re-host of the mp4s (R2 delivery) — discarded: R2 is not a valid delivery path for this repo (ruling of record 2026-11-12).
+- Remove the media from the pages — discarded: the pages' purpose is the dictation exercise; dropping playable media abandons the visitor need the migration serves.
+
+**Key Design Decisions.** (1) Embed form `{{ youtube(id=…) }}` — pre-existing shortcode, no new template surface, no CSP change (`frame-src` precondition verified; the same iframe class ships in production on the existing comics-talk embed). (2) IDs single-sourced from the recorded assignment (`.issues/30/research/page-video-assignment.yaml`; map `.issues/30/research/youtube-video-id-map.txt`) — no per-page re-derivation at implement time. (3) The mp4 retirement is working-tree-only (untracked files; no git-history change). (4) The 2026-11-20 re-cut keeps this spec a single work class — a mechanical page edit — with the lesson-audio transcodes, generator updates, and zip-link removal in their own parts (CherokeeLessons#58, CherokeeLessons#59).
+
+**User Intent / Original Prompt.**
+- (2026-11-11, observed failure) the executed stand-up-gate build omitted every untracked asset class; the dictation embeds among them.
+- (2026-11-15/16, developer decisions recorded on this issue) disposition of record, per-page: dictation videos → YouTube embeds; the two lesson-audio pages → local tracked `.m4a` via the ladder (audio-lessons-generator-python#16); TTS demo audio → tracked mp3 — the per-page split governs.
+- (2026-11-21 UTC, review comment on this issue) "Compare with: https://www.youtube.com/playlist?list=PLo2dw3Y__5_LM3UrVTJoFSxNErQ_yEdCk" — the playlist crosscheck (`.issues/54/research/youtube-playlist-crosscheck.txt`, executed 2026-11-21) found a clean bijection: the developer's curated "Syllabary Dictation" playlist holds exactly the map's 21 dictation IDs in identical order.
+- (2026-11-20, developer directives) "the changes related to non-dictation videos needs to be moved into their own specs so as to prevent conflation and cross-concerns" (this re-cut); "proceed with spec revisions".
+
+## Not Included
+
+- The CLL-1 audio-exercises conversion (23 sessions → tracked `.m4a` ladder; dead zip-link removal; its generator's update) — CherokeeLessons#58, its own part since the 2026-11-20 re-cut.
+- The animal-names conversion (9 sessions → tracked `.m4a` ladder; its generator's update) — CherokeeLessons#59, its own part since the re-cut.
+- The `cll1-v3-audio.zip` bundle's own disposition (drop vs re-issue) — the umbrella's open decision (CherokeeLessons#30 seam 5); the dead page link leaves with CherokeeLessons#58.
+- The four TTS demo-audio dirs — the umbrella's tracking work (CherokeeLessons#30 R-2, tracked mp3).
+- Assigning Dictation 14-02 — it has no current page reference (mechanical truth of the assignment derivation); its mp4 still retires with R-2.
+- Any YouTube-side work beyond embedding (playlist edits, privacy settings, uploads).
+- The AGENTS.md content-facts update (the former R-5) — recorded work: commit 1fc9732 on `feature/sop-lesson-media-dispositions` (validated 2026-11-20, this issue's validation record), waiting on the branch's human merge — not part of the dictation migration.
 
 ## Requirements
 
-- **R-1 — YouTube embeds (dictation only).** The 14 dictation pages SHALL switch their 20 `{{ video(video="Dictation …mp4") }}` embeds to `{{ youtube(id=…) }}` using the verified mapping (`.issues/30/research/youtube-video-id-map.txt` — pre-split umbrella artifact); page→video assignment derives from each page's current media references. The untracked mp4 sources of the dictation class SHALL be deleted from the working tree.
-- **R-2 — Dead zip link.** The CLL-1 page's `cll1-v3-audio.zip` download link SHALL be removed with the embed conversion — the link is dead in every fresh-clone build (the zip is untracked and never deploys). The zip file itself stays untracked on disk; its disposition is deferred (out of scope here, recorded on the umbrella CherokeeLessons#30).
-- **R-3 — Generator scripts retained and updated.** The two tracked page-generator scripts `content/lesson-audio/cherokee-language-lessons-1---audio-exercises/process_end_notes.py` and `content/lesson-audio/animal-names/process_end_notes.py` SHALL be retained (developer decision 2026-11-16: the regeneration tooling is needed regardless of media format — the m4a/mp3 distinction touches emitted names only, not the generation logic) and updated to the new disposition: their emitted `{{audio (file=…)}}` names SHALL use the `.m4a` extension (R-4's filenames), and the CLL-1 script SHALL drop its zip-link emission and zip-creation step (`cll1-v3-audio.zip` link line, `zip -j` invocation). Page regeneration stays format-agnostic over its page-structure inputs (`end-notes.txt` in both scripts; `index-template.txt` in animal-names); media production remains the generator's own assembly (`audio-lessons-generator-python#16`).
-- **R-4 — Lesson-audio media conversion.** The audio pages' 32 session mp3s (CLL-1: 23; animal-names: 9) SHALL be transcoded in place to `cll1-v3-NNNN.m4a` / `animals-NNNN.m4a` — AAC-LC, mono, 48 kHz, nominal 128 kb/s with the per-track fallback ladder (112, then 96 kb/s) applied on encode-and-measure until the file is ≤ 24 MiB — per the recommended settings (`audio-lessons-generator-python#16`). The `.m4a` files SHALL be tracked in git (replacing the untracked mp3s), the pages' `{{audio (file=…)}}` embeds SHALL reference the `.m4a` filenames, and the 32 mp3s SHALL be deleted from the working tree. Transcode command, tool provenance, and the per-track ladder transcript — rungs attempted, measured sizes, chosen rung — SHALL be recorded in this issue's research artifacts.
-- **R-5 — SoP alignment.** The repo's AGENTS.md content-facts guidance SHALL be updated to the recorded per-page disposition (dictation → YouTube; lesson-audio → local tracked `.m4a` via the ladder; TTS demo audio → tracked mp3) so the operational-facts document no longer directs a blanket YouTube preference that the developer's decisions superseded.
+- **R-1 — Embed migration.** The 14 dictation pages SHALL replace their 20 `{{ video(video="Dictation …mp4") }}` embeds with `{{ youtube(id=…) }}` embeds whose per-page ID sets equal the recorded assignment — `.issues/30/research/page-video-assignment.yaml`'s dictation entries: 20 IDs assigned across the 14 pages; the map's remaining dictation entry (Dictation 14-02, `pNOCN-6abhk`) assigned to no page. Page structure is otherwise unchanged.
+- **R-2 — Working-tree media retirement.** The untracked dictation mp4 sources (`content/lessons/Syllabary-Dictation/**/*.mp4` — 21 files) SHALL be deleted from the working tree after R-1 replaces the embeds that reference them (untracked media; no git-history change; re-obtainable from the verified channel mirror).
 
 ## Success criteria
 
 | ID | Criterion | Class | Instrument |
-|----|-----------|-------|------------|
-| SC-1 | The 14 dictation pages use `{{ youtube(id=…) }}` with exactly their recorded per-page assignment; their old embeds (`video(video=`) are gone; all seven other `{{audio}}` users are untouched at their measured baselines | structural | per migrated page: `video(video=` counts = 0; the page's `youtube(id=` ID set equals its recorded set in `.issues/30/research/page-video-assignment.yaml` (20 dictation entries derived mechanically from the current pages; map entry Dictation 14-02 has no current page reference and is unassigned; the map's 23 + 9 audio-page entries are superseded by R-4's local conversion); unchanged baselines: `content/content/espeak-ng-and-ced-phonetics/index.md` `audio (file=` = 100; `content/content/cherokee-animal-names-tts-demo-audio-1/index.md` = 12; `content/content/cherokee-animal-names--ims-toucan-tts-/index.md` = 9; `content/content/cherokee-tts-update-3--ims-toucan-/index.md` = 8; `content/content/here-is-why-i-m-so-keen-on-getting-espeak-ng-speaking-cherokee---/index.md` `audio(file=` (no-space form) = 5; `content/content/cherokee-tts-update--2--ims-toucan-/index.md` = 3; `content/content/tacotron2-and-cherokee-tts/index.md` = 18 |
-| SC-2 | The two tracked generator scripts are retained and emit the new media form | structural | `git ls-files "**/process_end_notes.py"` lists both scripts; their sources contain no `.mp3` name emission, no `cll1-v3-audio.zip` link line, and no `zip -j` invocation; they emit `.m4a` embed names |
-| SC-3 | The migrated media sources are absent from the working tree | structural | `find content/lessons/Syllabary-Dictation -name "*.mp4"` is empty; `find content/lesson-audio -name "*.mp3"` is empty |
-| SC-4 | Pages build and serve the migrated embeds and both audio pages' media without template errors | behavioral | `./build.sh` exit 0; the migrated pages and both built audio trees (`public/lesson-audio/cherokee-language-lessons-1---audio-exercises/`, `public/lesson-audio/animal-names/`, with their 23 and 9 `.m4a` files) present in the built tree |
-| SC-5 | The audio pages reference only `.m4a` media (and no zip link on CLL-1) | structural | CLL-1 page: `audio (file=` embed count = 23, `.m4a` name count = 23, `.mp3` name count = 0, `cll1-v3-audio.zip` count = 0; animal-names page: `audio (file=` embed count = 9, `.m4a` name count = 9, `.mp3` name count = 0 |
-| SC-6 | The 32 `.m4a` files are tracked, correctly encoded, and cap-compliant | structural | `git ls-files` lists exactly 23 `cll1-v3-*.m4a` + 9 `animals-*.m4a` in the two page directories; `ffprobe` each: `codec_name= aac`, `channels= 1`, `sample_rate= 48000`; `stat -c %s` ≤ 25,165,824 bytes each |
-| SC-7 | The conversion exercised the per-track ladder: each file's final encode is the highest rung (128 → 112 → 96 kb/s) whose encoded output measured ≤ 24 MiB — no track silently pre-lowered below its fitting rung | behavioral | the recorded per-track ladder transcripts in this issue's research artifacts (both page sets); cross-check per file: its `ffprobe` `bit_rate` corresponds to the recorded chosen rung |
-| SC-8 | The repo's operational-facts document carries the recorded per-page disposition | structural | AGENTS.md content-facts guidance names the dictation→YouTube, lesson-audio→local-.m4a, demo-audio→tracked-mp3 disposition split; it contains no blanket lesson-media→YouTube directive; the two edited bullets read complete (each sentence terminates; no dangling clause remains from the superseded text) |
+|---|---|---|---|
+| SC-1 | The 14 pages carry exactly the recorded assignment: zero `video(video=` embeds anywhere in the 14; each page's `youtube(id=` ID set equals its recorded set; the pages' union equals the 20 assigned IDs; the 14-02 ID appears in no page | structural | per-page greps joined to `.issues/30/research/page-video-assignment.yaml`'s dictation entries; union and orphan checks (`pNOCN-6abhk` count = 0 across the 14) |
+| SC-2 | The untracked dictation mp4s are absent from the working tree | structural | `find content/lessons/Syllabary-Dictation -name "*.mp4"` is empty |
+| SC-3 | The migration's commits touch only the 14 dictation pages under content/ | structural | each migration commit's file list (`git show --name-only`) contains only dictation `index.md` paths under `content/lessons/Syllabary-Dictation/` |
+| SC-4 | The built pages serve the migrated embeds without CSP frame violations | behavioral | `./build.sh` exit 0; each built `public/lessons/Syllabary-Dictation/**/index.html` contains its recorded IDs' iframe embed URLs; a browser-rendered preview reports no Content-Security-Policy `frame-src` violation in the console (the evergreen iframe-CSP gate — the blank-box failure class, #22 precedent) |
 
-(Site-wide build/size gates SC-7/SC-8 remain on the umbrella CherokeeLessons#30 — numbered there; this spec's local SC numbering ends at SC-8 with no site-wide gate claimed.)
+## Dependencies
 
-## Out of scope
+| Reference | Relationship | Status |
+|---|---|---|
+| CherokeeLessons#30 (umbrella) | this part closes into the umbrella's composition; its site-wide gates execute after the last part lands | pending (umbrella open) |
+| `.issues/30/research/page-video-assignment.yaml` · `youtube-video-id-map.txt` | the ID evidence R-1 consumes | satisfied (read 2026-11-20) |
+| `.issues/54/research/youtube-playlist-crosscheck.txt` | playlist corroboration of the dictation set | satisfied (executed 2026-11-21) |
+| `static/_headers` frame-src | iframe-origin precondition — `https://www.youtube.com` pre-existing | satisfied (verified 2026-11-20) |
+| CherokeeLessons#58 · CherokeeLessons#59 | sibling parts born of the re-cut — independent content sets; no ordering constraint | pending (approval states) |
 
-- The `cll1-v3-audio.zip` bundle's own disposition (drop vs re-issue) — deferred to the umbrella; with the sessions tracked as `.m4a` the bundle is locally restorable from them, which the umbrella's disposition decision weighs.
-- The four TTS demo-audio dirs (CherokeeLessons#30's tracking work R-2 — tracked mp3, no conversion).
-- Page↔video assignment beyond the mechanical derivation above (Dictation 14-02 stays unassigned).
-- Any YouTube-side work beyond embedding (playlist edits, privacy settings).
-- The generator's own export change (`audio-lessons-generator-python#16` — separate repository; this conversion imports its settings, it does not implement the generator's code).
+## Traceability
 
-## Approach
+| Requirement | Success criteria |
+|---|---|
+| R-1 | SC-1, SC-4 |
+| R-2 | SC-2, SC-3 |
 
-Mechanical rewrite of the 14 dictation pages to `{{ youtube(id=…) }}` per the derived assignment; the two audio pages: delete the CLL-1 zip link, transcode the 32 mp3s to `.m4a` per the ladder, update the embeds to the `.m4a` names, track the new files (note: `.gitignore` covers `*.mp3` but not `*.m4a`, so the new files track normally — verify with `git status`/`git check-ignore` anyway per the media-add pattern); update the two generator scripts per R-3 (retained, `.m4a` emission, CLL-1 zip lines dropped); update AGENTS.md's content-facts guidance per R-5. CSP check: the `{{audio}}`/`{{youtube}}` shortcode output renders `<audio>`/`<iframe>` — the iframe class is already covered by `static/_headers` frame-src (YouTube pre-existing; no new iframe origins enter through this change). Rollback: revert the commit set; migration media re-obtainable from the YouTube channel and local mirror (`cherokee-audio-mirror`), the mp3s re-generatable by the same ladder from the mirror.
+## Documentation Sources
 
-## Impact
+| Source | Type | Location | Verification |
+|---|---|---|---|
+| Page↔video assignment | research artifact | `.issues/30/research/page-video-assignment.yaml` (dictation entries — 20 assigned IDs across 14 pages) | read 2026-11-20 |
+| Channel mirror map | research artifact | `.issues/30/research/youtube-video-id-map.txt` (Syllabary-Dictation section — 21 entries, verified on channel 2026-11-11) | read 2026-11-20 |
+| Playlist crosscheck | research artifact | `.issues/54/research/youtube-playlist-crosscheck.txt` | executed 2026-11-21 (live playlist fetch; bijection) |
+| Embeds/media state of record | working tree | 14 pages: 20 `video(video=` embeds; 21 untracked mp4s | grep/find executed 2026-11-20 |
+| CSP frame-src | repo file | `static/_headers` (frame-src carries `https://giscus.app https://www.youtube.com https://itch.io`) | read 2026-11-20 |
+| iframe-CSP evergreen gate (failure precedent) | ops governance | `AGENTS.md` build & verification section (#22 itch-widget precedent) | read 2026-11-20 |
 
-Consumers: dictation page visitors gain playable embedded mirror media on the deployed site (the local-media embeds they replaced are dead-on-deploy today); both lesson-audio pages keep fully playable session media, now deployment-surviving rather than dead — exercises remain downloadable as individual files with no channel dependency. The build tree gains ≈ 432 MB of tracked `.m4a` for CLL-1 and ≈ 76 MB for animal-names (the 9 tracks — 12.8–29.9 min each, 2.1–4.5 MB at source — all land at the 128k rung, encoder-measured ≈ 2.3–2.4× their mp3 size, 5.1–11.2 MB per file; projections from the owning spec's measured rung rates, replaced by the implement-time ladder transcripts; every file ≤ 24 MiB by construction, under the 25 MiB asset cap); ~1.7 GB of working-tree dictation media is retired locally and ~431 MB of mp3s are replaced by the tracked `.m4a` set. Risk: low — content plus a mechanical transcode; shortcodes pre-existing; the conversion imports settings defined by the generator spec.
+## Cost Frame
 
-> Full spec and plan artifacts: https://github.com/CherokeeLanguage/CherokeeLessons/tree/issues-data/54
+- SC-1 / SC-2 / SC-3: greps, find, and commit file lists — minutes; skipping risks wrong IDs on live pages (visitors see dead or wrong-media embeds) or collateral edits elsewhere.
+- SC-4: one site build plus one browser-rendered preview — build time; skipping risks the silent blank-box CSP failure reaching the deployed site (#22 precedent: the embed renders empty with no build-time signal).
+
+## Edge Cases
+
+| Condition | Expected behavior | Resolution |
+|---|---|---|
+| A page keeps an old embed alongside a new one (partial swap) | SC-1 fails (per-page `video(video=` count ≠ 0) | the swap completes per page before completion |
+| Two pages carry equal counts but swapped IDs | SC-1 fails (per-page set inequality — a total-count check would miss it) | per-page set equality holds |
+| The 14-02 ID lands on any page | SC-1 fails (orphan check) | the unassigned entry stays unbaked |
+| The iframe is blocked by CSP at runtime | SC-4's console check fails — the silent blank box (#22 class) | the frame-src precondition is verified; the check observes the served page, not the config |
+| The mp4s are deleted before their pages are migrated | sequencing fault | R-2 orders retirement after R-1; the channel mirror re-obtains if violated |
+
+## Completion gate
+
+Every SC passes before the migration is complete — all-or-nothing: a state with some pages migrated and others not fails SC-1 as a set, and retirement without migration (or the reverse) is incomplete.
+
 <!-- artifacts: .issues/54/ -->
