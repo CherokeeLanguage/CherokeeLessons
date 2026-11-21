@@ -54,3 +54,34 @@ plan:
   verdict: PASS
   findings: []
   notes: fresh-context dispatch on the Identity-fixed plan; reviewer executed the live premises again (templates/page.html:32 stale value, gh repo view redirect output, wiki HEAD ebedeefa unchanged, CSP frame-src, .issues/63 present); all 16 classes walked, zero findings; SC coverage verified against the round-1-revised spec instrument set
+
+- round: 2
+  date: '2026-11-21T04:17:41Z'
+  verdict: FAIL
+  findings:
+  - id: F-1
+    classes: fabricated-claims, cross-reference-sufficiency
+    finding: R-2 attributed the merged rollback-before-remediation order to the sre-runbook card's structure, but the card's Structure bullet reads rollback LAST (verified live) — the order is this spec's resolution of the card's rule-4-vs-Structure tension, presented without disclosing the source says otherwise. Echoed in the Approach field and the remote body's Scope/R-2.
+    remediation: R-2, Approach, and remote-body Scope/R-2 rewritten to disclose the resolution (with the card's rule-4 mandate resolved over its Structure bullet's rollback-last arrow list into this spec's single order).
+  - id: F-2
+    classes: incapable-instrument (round-1 F-7 species partially recurring)
+    finding: SC-8's two independent slice-wide count greps do not pair labels with branches — five label occurrences can come from ordinary prose while a branch stays unlabeled.
+    remediation: SC-8 rebuilt as per-token line-paired greps — for each t in 0,a,b,c,d a diagnosis-section line carries the branch marker AND a label term on the same line; R-7 requires the one-line marker-label format making the pairing real; the plan's Items 2/4 GREEN updated to produce that format.
+  - id: F-3
+    classes: traceability-overstatement
+    finding: R-7 mandates labels on remediation branches too; SC-8 and SC-6 observed only diagnosis branches.
+    remediation: SC-8 extended with the same line-pairing over the remediation slice for the three named branch tokens (a,b,c); criterion and traceability row now state the full coverage.
+  - id: F-4
+    classes: incapable-instrument, feasibility
+    finding: SC-6's no-tracked-change limb required git status --porcelain to be empty — unsatisfiable in this checkout (permanent untracked machinery .issues/ and .tools/; reviewer executed it live).
+    remediation: Limb now requires no TRACKED modifier — git status --porcelain piped through grep -v '^??' is empty; ambient untracked machinery excluded by construction.
+  - id: F-5
+    classes: ambiguous-criterion, internal-contradiction
+    finding: SC-5's pass condition said "match the executed outputs (state-relative)" with state-relative undefined, while edge case 7 declared the runbook valid when the fix merges first — two readers resolve the condition differently.
+    remediation: State-relative defined as a both-forms rule — the page documents both comparison outcomes (mismatch fires branch (a), match clears it) and the executed state behaves as documented; edge case 7 rewritten to the same rule; remote-body SC-5 row aligned.
+  - id: F-6
+    classes: misstated-summary
+    finding: Remote body R-5 stated "SHALL NOT promise an automatic fix" where the local-authoritative R-5 states "SHALL NOT perform tracked-content changes itself" — materially different prohibitions.
+    remediation: Remote body R-5 carries the local prohibition verbatim plus the #63 pointer.
+  preferences-adjudicated: []
+  repo-boundary-containment: pass — single repo (path prefix "."), home store .issues/62
