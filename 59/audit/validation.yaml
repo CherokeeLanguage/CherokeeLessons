@@ -1,0 +1,8 @@
+spec:
+  - round: 1
+    date: '2026-11-20'
+    artifact: spec (new part — animal-names conversion; split from CherokeeLessons#54 2026-11-20)
+    verdict: PASS
+    reviewer: fresh-context subagent (ses_e03eda739ffeajCli4pfruPZJx)
+    findings: []
+    outcome: clean PASS — zero findings; factual set verified (9 embeds, no zip reference, 9 mp3s/31 MB untracked, generator tracked emitting animal mp3 names at lines 60–61 with end-notes.txt + index-template.txt inputs; projections carry the owning definition's measured trial figures — source files measured 2.07–4.47 MiB consistent with the cited range); traceability complete both directions; repo-boundary containment satisfied; layout conformant.

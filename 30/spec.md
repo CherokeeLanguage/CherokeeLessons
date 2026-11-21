@@ -21,16 +21,18 @@ The site carries ~3.49 GB of untracked-but-site-required assets, and its distrib
 Parts (each closes on its own delivered work; this umbrella closes only after every part has closed):
 
 - **CherokeeLessons#20** — Bound Pronouns app page: itch conversion (R-1) + presentation refresh (R-2; wording/layout/screenshots/itch widget), bound-pronouns colocated binary retirement.
-- **CherokeeLessons#54** — lesson media: the 14 dictation pages migrate 20 `{{video}}` embeds to `{{ youtube(id=…) }}`; the two lesson-audio pages (CLL-1: 23 sessions, animal-names: 9) convert their mp3s to tracked AAC `.m4a` per-track bitrate ladder; the two `process_end_notes.py` generator scripts retained and updated to the `.m4a` form; migrated/converted media files retired from the working tree (revised 2026-11-15/16 and 2026-11-16 — its spec is the single source of the record).
+- **CherokeeLessons#54** — Syllabary-Dictation pages: the 14 dictation pages migrate 20 `{{video}}` embeds to `{{ youtube(id=…) }}`; the dictation mp4s retire from the working tree (spec re-cut 2026-11-20 — its dictation spec is the single source of this part's record).
+- **CherokeeLessons#58** — CLL-1 audio exercises: the 23 session mp3s convert in place to tracked AAC `.m4a` per-track ladder (owning definition audio-lessons-generator-python#16); its `process_end_notes.py` retained and updated to the `.m4a` form; the dead `cll1-v3-audio.zip` link removed (split from #54, 2026-11-20 — its spec is the single source of the record).
+- **CherokeeLessons#59** — animal-names page: the 9 session mp3s convert in place to tracked AAC `.m4a` via the same ladder; its `process_end_notes.py` retained and updated (split from #54, 2026-11-20 — its spec is the single source of the record).
 - **CherokeeLessons#55** — book pages: external ebook-store links removed (15 pages + `new-page.sh` scaffold lines).
 
 Seams the umbrella names (each part builds on them; nothing part-local is restated here):
 
 1. **App-binary retirement split:** the bound-pronouns colocated binaries bind to #20 (SC-3); the animals (2 files) and cherokee-numbers-maze (3 files) colocated binaries and the untracked `static/HTML-Games/NumbersMaze` web build bind to this umbrella (R-5/SC-6) — their pages' link edits already landed via #22/#25.
-2. **Media-file retirement split:** the migrated/converted lesson media (mp3/mp4 classes — dictation mp4s retired on migration; lesson-audio mp3s deleted on their in-place `.m4a` conversion) bind to #54 (its SC-3); the TTS demo audio is added by this umbrella's R-2, tracked as mp3, never deleted.
+2. **Media-file retirement split:** the dictation mp4s retire on migration (CherokeeLessons#54, its SC-2); the lesson-audio mp3s delete on their in-place `.m4a` conversions (CherokeeLessons#58 SC-2, CherokeeLessons#59 SC-2); the TTS demo audio is added by this umbrella's R-2, tracked as mp3, never deleted.
 3. **Site-wide gates:** SC-7/SC-8 (fresh-clone build; over-limit count) execute after the last part lands — they verify the composed whole and cannot pass early. No part carries them.
 4. **Wording-approval gate:** #20's wording change carries a developer-approval-before-landing clause — an approval gate, not a seam, recorded there for single-sourcing.
-5. **Open decisions (unchanged):** the `cll1-v3-audio.zip` bundle's own disposition (drop vs itch re-issue — #54 removes only the page's dead link to it); the Lulu paperback links and `content/app-ads.txt` reseller entries (open developer decisions, recorded, criterion set does not touch them); Hangman1 (#33).
+5. **Open decisions (unchanged):** the `cll1-v3-audio.zip` bundle's own disposition (drop vs itch re-issue — CherokeeLessons#58 removes only the page's dead link to it); the Lulu paperback links and `content/app-ads.txt` reseller entries (open developer decisions, recorded, criterion set does not touch them); Hangman1 (#33).
 
 ## Scope
 
@@ -69,7 +71,7 @@ No hosting/CDN/Workers changes (CherokeeLessons#31); no theme changes; no itch.i
 ## Interdependencies
 
 - Depends on: none (first in the filing sequence); CherokeeLessons#31 executes first per the revised sequencing (2026-11-12) and clears the four over-limit tracked files itself.
-- Parts: #20 (Bound Pronouns page), #54 (media embeds), #55 (ebook links) — sub-issues; closure order per the Parts section.
+- Parts: #20 (Bound Pronouns page), #54 (dictation embeds — re-cut 2026-11-20 into #54 dictation slice, #58 CLL-1, #59 animal-names), #55 (ebook links) — sub-issues; closure order per the Parts section.
 - Independent: CherokeeLanguage/cll1-gdx#5 (the CLL-1 build/publish — no dependency in either direction; #32 consumed its deliverable, and #32 has landed).
 
 ## Out of scope

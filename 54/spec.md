@@ -12,7 +12,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/54 · p
 **Approach Chosen.** Each page's old embeds are replaced by `{{ youtube(id=…) }}` embeds carrying the verified mirror IDs — the mechanically derived page↔video assignment — and the ~1.7 GB of untracked working-tree mp4s is deleted. No theme/shortcode/infra changes: the `{{ youtube() }}` shortcode is pre-existing (tracked since 2023-05) and `static/_headers` frame-src already carries the YouTube origin (`https://www.youtube.com`).
 
 **Alternatives Considered & Why Discarded.**
-- Track the mp4s in git and keep the local embeds — discarded: the delivery method of record for the dictation class is YouTube embeds (developer decision 2026-11-15/16, recorded on this issue), and the long sessions run against the Workers 25 MiB-per-file asset cap.
+- Track the mp4s in git and keep the local embeds — discarded: the delivery method of record for the dictation class is YouTube embeds (developer decision 2026-11-15/16, recorded on this issue), and all 21 mp4s measure over the Workers 25 MiB-per-file asset cap (measured 2026-11-20: 21 files, 1.77 GB total) — tracked video would be undeployable at any size, capped or not.
 - External re-host of the mp4s (R2 delivery) — discarded: R2 is not a valid delivery path for this repo (ruling of record 2026-11-12).
 - Remove the media from the pages — discarded: the pages' purpose is the dictation exercise; dropping playable media abandons the visitor need the migration serves.
 
@@ -36,7 +36,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/54 · p
 
 ## Requirements
 
-- **R-1 — Embed migration.** The 14 dictation pages SHALL replace their 20 `{{ video(video="Dictation …mp4") }}` embeds with `{{ youtube(id=…) }}` embeds whose per-page ID sets equal the recorded assignment — `.issues/30/research/page-video-assignment.yaml`'s dictation entries: 20 IDs assigned across the 14 pages; the map's remaining dictation entry (Dictation 14-02, `pNOCN-6abhk`) assigned to no page. Page structure is otherwise unchanged.
+- **R-1 — Embed migration.** The 14 dictation pages SHALL replace their 20 `{{ video(video="Dictation …mp4") }}` embeds with `{{ youtube(id=…) }}` embeds whose per-page ID sets equal the recorded assignment — `.issues/30/research/page-video-assignment.yaml`'s dictation entries: 20 IDs assigned across the 14 pages; the map's remaining dictation entry (Dictation 14-02, `pNOCN-6abhk`) assigned to no page. The edit touches only the embed-carrying lines; no other line of the 14 pages changes.
 - **R-2 — Working-tree media retirement.** The untracked dictation mp4 sources (`content/lessons/Syllabary-Dictation/**/*.mp4` — 21 files) SHALL be deleted from the working tree after R-1 replaces the embeds that reference them (untracked media; no git-history change; re-obtainable from the verified channel mirror).
 
 ## Success criteria
@@ -45,7 +45,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/54 · p
 |---|---|---|---|
 | SC-1 | The 14 pages carry exactly the recorded assignment: zero `video(video=` embeds anywhere in the 14; each page's `youtube(id=` ID set equals its recorded set; the pages' union equals the 20 assigned IDs; the 14-02 ID appears in no page | structural | per-page greps joined to `.issues/30/research/page-video-assignment.yaml`'s dictation entries; union and orphan checks (`pNOCN-6abhk` count = 0 across the 14) |
 | SC-2 | The untracked dictation mp4s are absent from the working tree | structural | `find content/lessons/Syllabary-Dictation -name "*.mp4"` is empty |
-| SC-3 | The migration's commits touch only the 14 dictation pages under content/ | structural | each migration commit's file list (`git show --name-only`) contains only dictation `index.md` paths under `content/lessons/Syllabary-Dictation/` |
+| SC-3 | The migration's commits touch only the 14 dictation pages under content/, and each page's diff changes only its embed-carrying lines | structural | each migration commit's file list (`git show --name-only`) contains only dictation `index.md` paths under `content/lessons/Syllabary-Dictation/`; each page's diff shows changes confined to lines carrying `video(video=` or `youtube(id=` |
 | SC-4 | The built pages serve the migrated embeds without CSP frame violations | behavioral | `./build.sh` exit 0; each built `public/lessons/Syllabary-Dictation/**/index.html` contains its recorded IDs' iframe embed URLs; a browser-rendered preview reports no Content-Security-Policy `frame-src` violation in the console (the evergreen iframe-CSP gate — the blank-box failure class, #22 precedent) |
 
 ## Dependencies
@@ -62,7 +62,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/54 · p
 
 | Requirement | Success criteria |
 |---|---|
-| R-1 | SC-1, SC-4 |
+| R-1 | SC-1, SC-3, SC-4 |
 | R-2 | SC-2, SC-3 |
 
 ## Documentation Sources

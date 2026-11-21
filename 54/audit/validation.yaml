@@ -6,3 +6,11 @@ implementation:
     reviewer: fresh-context subagent (ses_e03fdedfcffeCreX5qcGa5RtnL)
     findings: []
     outcome: clean PASS — SC-8 instrument executed (three disposition classes named; no blanket lesson-media→YouTube directive remains anywhere in the file; both edited bullets every-sentence-terminated with no dangling clause); factual claims of the changed text verified against repo state (.gitignore m4a/mp3/mp4 via git check-ignore; #30 R-2 cross-reference matches .issues/30/spec.md; "122 tracked mp3s across four page dirs" re-counted exact); SoP ruling bullet matches the spec's recorded developer decisions; R-1..R-4 remainder out of this branch's claim (20 video( embeds at master, 0 tracked .m4a at HEAD)
+spec:
+  - round: 1
+    date: '2026-11-20'
+    artifact: spec (re-cut revision — dictation slice; the lesson-audio halves split out to parts #58/#59 per the 2026-11-20 developer re-cut directive)
+    verdict: PASS
+    reviewer: fresh-context subagent (ses_e03eda739ffeajCli4pfruPZJx)
+    findings: []
+    outcome: clean PASS — zero findings across the revision set (54/58/59); every load-bearing claim verified against the working tree, the umbrella's seams (.issues/30/spec.md Parts and seams, seams 2/3/5), the assignment evidence (page-video-assignment.yaml — 20 assigned across 14 pages, 14-02 unassigned), the playlist crosscheck record, and the live owning definition (audio-lessons-generator-python#16, fetched via gh); repo-boundary containment (scope + home) satisfied for all three filings. The pre-dispatch duty-of-care pass had already strengthened #54's alternative-rejection ground with the measured all-21-mp4s-over-cap fact (1.77 GB total, 2026-11-20) and tightened R-1/SC-3 with embed-line confinement — those edits preceded the dispatch and were inside the reviewed artifact. This round's record covers the revised #54 spec; the implementation-round record above predates the re-cut.
