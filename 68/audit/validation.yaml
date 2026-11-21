@@ -1,0 +1,25 @@
+spec:
+- round: 1
+  date: '2026-11-21'
+  artifact: spec (new — TTS demo-audio class conversion + source tracking, filed from
+    the 2026-11-21 ruling/directive)
+  verdict: FAIL
+  reviewer: fresh-context subagent (ses_e015d380effek3uFh6irrju40E)
+  findings:
+  - class: cross-reference-sufficiency
+    finding: Two citations pointed to a nonexistent 'Impact' section for the deploy-weight
+      flag (the local artifact carries no Impact section).
+    remediation: The flag's home is Key Design Decisions (5); Not Included now cites
+      it there and states the optimization is not part of this spec.
+  outcome: census, mirror-absence, links, and all other classes verified first-round
+    with no further findings.
+- round: 2
+  date: '2026-11-21'
+  artifact: spec (as revised — citation corrected)
+  verdict: PASS
+  reviewer: fresh-context subagent (ses_e015b28a6ffeIoIdOcf7WTPnRS)
+  findings: []
+  outcome: clean PASS — zero findings; zero 'Impact' references; the flag lives in
+    KDD(5); census spot-checks all reproduce (24/9/8 mp3s, 12/9/8 embeds, four SPEAKER|AUDIO
+    MP3 tables, both-generations drift, Animals*mp3 glob, no demo/TTS mirror section,
+    SC-9 targets live).

@@ -5,32 +5,49 @@ spec:
   findings:
   - id: F-1
     classes: incapable-instrument
-    finding: SC-3's page path used a single hyphen after "maze"; the actual directory name has three (cherokee-numbers-maze---…) — the instrument cannot run.
+    finding: SC-3's page path used a single hyphen after "maze"; the actual directory
+      name has three (cherokee-numbers-maze---…) — the instrument cannot run.
     remediation: Path corrected to the triple-hyphen form.
   - id: F-2
     classes: incapable-instrument
-    finding: SC-4's video-half absence-grep used the spaced form `video (video=` — the actual embed form is `video(video=` (20 occurrences); vacuous check.
+    finding: SC-4's video-half absence-grep used the spaced form `video (video=` —
+      the actual embed form is `video(video=` (20 occurrences); vacuous check.
     remediation: Instrument uses the actual unspaced form.
   - id: F-3
     classes: incapable-instrument
-    finding: SC-1's positive grep (slug substring) is already satisfied on two pages by unrelated occurrences (Apple store URL; featured_image path) — cannot detect a missing itch reference there.
+    finding: SC-1's positive grep (slug substring) is already satisfied on two pages
+      by unrelated occurrences (Apple store URL; featured_image path) — cannot detect
+      a missing itch reference there.
     remediation: Positive conjunct requires the full itch project URL (cherokee-language.itch.io/<slug>).
   - id: F-4
     classes: gap-analysis, traceability
-    finding: Three stated SHALLs had no verifying criterion — the CLL-1 desktop-link drop, the NumbersMaze web-build link replacement, and all untracked working-tree deletions (app bins, NumbersMaze build, migrated media) — while R-3's equivalent IS verified (inconsistent coverage).
-    remediation: SC-12 (page-level link removals) and SC-13 (working-tree absence of the retired untracked surfaces) added.
+    finding: Three stated SHALLs had no verifying criterion — the CLL-1 desktop-link
+      drop, the NumbersMaze web-build link replacement, and all untracked working-tree
+      deletions (app bins, NumbersMaze build, migrated media) — while R-3's equivalent
+      IS verified (inconsistent coverage).
+    remediation: SC-12 (page-level link removals) and SC-13 (working-tree absence
+      of the retired untracked surfaces) added.
   - id: F-5
     classes: fabricated-claims
-    finding: Current-state misstatements — ~514 MB attributed to the NumbersMaze build alone (actual 43.9 MB; ~514 MB is the combined bucket); "four app dirs" with colocated binaries (actual three; syllabary-app.md has none); "3 per-dir .gitignore files in the TTS demo dirs" (actual one tracked; the others must be created).
-    remediation: Numbers and dir counts corrected in R-1, scope table, and R-4 mechanics (edit-one/create-others verified at plan time).
+    finding: Current-state misstatements — ~514 MB attributed to the NumbersMaze build
+      alone (actual 43.9 MB; ~514 MB is the combined bucket); "four app dirs" with
+      colocated binaries (actual three; syllabary-app.md has none); "3 per-dir .gitignore
+      files in the TTS demo dirs" (actual one tracked; the others must be created).
+    remediation: Numbers and dir counts corrected in R-1, scope table, and R-4 mechanics
+      (edit-one/create-others verified at plan time).
   - id: F-6
     classes: fabricated-claims, cross-reference-sufficiency
-    finding: Provenance claimed cherokee-audio-data contains ims-toucan-*.txt — the repo's complete tree has none (they are untracked local generator outputs).
-    remediation: Bullet corrected to the tracked contents (ced-mco.txt, voice-ids.txt, generators) with the ims-toucan files noted as local untracked outputs.
+    finding: Provenance claimed cherokee-audio-data contains ims-toucan-*.txt — the
+      repo's complete tree has none (they are untracked local generator outputs).
+    remediation: Bullet corrected to the tracked contents (ced-mco.txt, voice-ids.txt,
+      generators) with the ims-toucan files noted as local untracked outputs.
   - id: F-7
     classes: cross-reference-sufficiency
-    finding: The stand-up-gate numbers were cited to research/standup-gate-build.log, which holds only the zola output — the counts/size/list live in the work record's gate section.
-    remediation: Citation split — work-record gate section for the numbers, the log for the build output.
+    finding: The stand-up-gate numbers were cited to research/standup-gate-build.log,
+      which holds only the zola output — the counts/size/list live in the work record's
+      gate section.
+    remediation: Citation split — work-record gate section for the numbers, the log
+      for the build output.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 3
@@ -39,8 +56,13 @@ spec:
   findings:
   - id: F-1
     classes: incapable-instrument, gap-analysis
-    finding: SC-4's "untouched" conjunct instrumented only the espeak page sentinel — the three TTS demo pages (12/9/8 audio embeds, the exact form R-2 targets) and the here-is-why page (5 embeds, no-space `audio(file=` form) were named but unobserved; an over-broad rewrite would ship silently.
-    remediation: SC-4 instrument extended with per-page unchanged-count baselines for all five untouched pages (including the here-is-why page's differing literal form).
+    finding: SC-4's "untouched" conjunct instrumented only the espeak page sentinel
+      — the three TTS demo pages (12/9/8 audio embeds, the exact form R-2 targets)
+      and the here-is-why page (5 embeds, no-space `audio(file=` form) were named
+      but unobserved; an over-broad rewrite would ship silently.
+    remediation: SC-4 instrument extended with per-page unchanged-count baselines
+      for all five untouched pages (including the here-is-why page's differing literal
+      form).
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 4
@@ -49,8 +71,11 @@ spec:
   findings:
   - id: F-1
     classes: gap-analysis
-    finding: SC-4's untouched-set baseline list covered five of the repo's seven real {{audio}} users — cherokee-tts-update--2--ims-toucan- (3 embeds) and tacotron2-and-cherokee-tts (18 embeds) were unobserved; an over-broad rewrite clobbering either would pass.
-    remediation: Baseline list completed to all seven users with their measured counts and embed forms.
+    finding: SC-4's untouched-set baseline list covered five of the repo's seven real
+      {{audio}} users — cherokee-tts-update--2--ims-toucan- (3 embeds) and tacotron2-and-cherokee-tts
+      (18 embeds) were unobserved; an over-broad rewrite clobbering either would pass.
+    remediation: Baseline list completed to all seven users with their measured counts
+      and embed forms.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 5
@@ -59,12 +84,23 @@ spec:
   findings:
   - id: F-1
     classes: gap-analysis, traceability
-    finding: R-1 states the CLL-1 page keeps its store links and the Impact asserts "correct store links retained", but no criterion tests store-link retention on any edited app page — deleting the store-link lines during the rewrite would pass every SC (silent-regression shape, same family as the SC-4 rounds).
-    remediation: Measured baselines added (grep-verified this session) — SC-1 gains the retention conjunct (animals 3, bound-pronouns 3, numbers-maze 1 post-removal of the two commented wrong links, syllabary 3); SC-12 gains the CLL-1 page's 3-link retention.
+    finding: R-1 states the CLL-1 page keeps its store links and the Impact asserts
+      "correct store links retained", but no criterion tests store-link retention
+      on any edited app page — deleting the store-link lines during the rewrite would
+      pass every SC (silent-regression shape, same family as the SC-4 rounds).
+    remediation: Measured baselines added (grep-verified this session) — SC-1 gains
+      the retention conjunct (animals 3, bound-pronouns 3, numbers-maze 1 post-removal
+      of the two commented wrong links, syllabary 3); SC-12 gains the CLL-1 page's
+      3-link retention.
   - id: F-2
     classes: cross-reference-sufficiency, fabricated-claims
-    finding: The zero-references bullet cited a nonexistent asset-review research dir and a work-record summary that does not exist; the 428-page resolution count was asserted without available evidence (the underlying conclusion is independently true and SC-11 re-checks it).
-    remediation: Citation replaced with the reproducible source-grep verification (independently re-confirmed by the round-5 reviewer) plus SC-11's structural re-check.
+    finding: The zero-references bullet cited a nonexistent asset-review research
+      dir and a work-record summary that does not exist; the 428-page resolution count
+      was asserted without available evidence (the underlying conclusion is independently
+      true and SC-11 re-checks it).
+    remediation: Citation replaced with the reproducible source-grep verification
+      (independently re-confirmed by the round-5 reviewer) plus SC-11's structural
+      re-check.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 6
@@ -73,8 +109,14 @@ spec:
   findings:
   - id: F-1
     classes: cross-reference-sufficiency, fabricated-claims
-    finding: The "title verbatim" claim overstated the correspondence — CLL-1 YouTube titles carry an album suffix and ASCII ellipsis (prefix-level match, not verbatim); the Dictation 01 02 YT title carries trailing segments the map omits; the YT-side durations (13:50/18:27/47:03) appeared in no evidence artifact (map records titles/IDs only). Materiality bounded — 6/6 oEmbed spot-checks resolved correctly.
-    remediation: Map artifact extended with the observed YT durations (rendered-channel extraction, 2026-11-11); provenance and Problem restated to prefix-level correspondence + duration pattern; oEmbed spot-checks cited.
+    finding: The "title verbatim" claim overstated the correspondence — CLL-1 YouTube
+      titles carry an album suffix and ASCII ellipsis (prefix-level match, not verbatim);
+      the Dictation 01 02 YT title carries trailing segments the map omits; the YT-side
+      durations (13:50/18:27/47:03) appeared in no evidence artifact (map records
+      titles/IDs only). Materiality bounded — 6/6 oEmbed spot-checks resolved correctly.
+    remediation: Map artifact extended with the observed YT durations (rendered-channel
+      extraction, 2026-11-11); provenance and Problem restated to prefix-level correspondence
+      + duration pattern; oEmbed spot-checks cited.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 7
@@ -83,8 +125,15 @@ spec:
   findings:
   - id: F-1
     classes: internal-contradiction, blast-radius
-    finding: The CLL-1 audio page carries a live "Download all files as a single zip" link to cll1-v3-audio.zip; R-2's rewrite kept it while SC-13 deletes the zip's constituent mp3s — post-change the rewritten page ships a dead link in every fresh-clone/CI build, contradicting the Impact's "omissions disappear" claim and the Out-of-scope "irrelevant to CI builds" characterization.
-    remediation: R-2 now removes the dead zip link with the embeds (its target leaves the build; the zip's own disposition stays deferred); SC-4 extended (zip count = 0 on the CLL-1 page); Out-of-scope corrected (exit status vs built-page completeness); Impact qualified with the deferred-class exception.
+    finding: The CLL-1 audio page carries a live "Download all files as a single zip"
+      link to cll1-v3-audio.zip; R-2's rewrite kept it while SC-13 deletes the zip's
+      constituent mp3s — post-change the rewritten page ships a dead link in every
+      fresh-clone/CI build, contradicting the Impact's "omissions disappear" claim
+      and the Out-of-scope "irrelevant to CI builds" characterization.
+    remediation: R-2 now removes the dead zip link with the embeds (its target leaves
+      the build; the zip's own disposition stays deferred); SC-4 extended (zip count
+      = 0 on the CLL-1 page); Out-of-scope corrected (exit status vs built-page completeness);
+      Impact qualified with the deferred-class exception.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 8
@@ -93,12 +142,21 @@ spec:
   findings:
   - id: F-1
     classes: internal-contradiction
-    finding: R-2's zip sentence gave a false causal basis ("its target is deleted by this requirement's media-class deletion" — the zip is neither mp3 nor mp4 and no requirement deletes it) conflicting with its own retention clause and the Impact section; the link-removal action itself is sound (dead on the fresh-clone platform of record).
-    remediation: Causal basis corrected to the actual mechanism (untracked zip never deploys — gate build omitted it; dead link on the platform of record).
+    finding: R-2's zip sentence gave a false causal basis ("its target is deleted
+      by this requirement's media-class deletion" — the zip is neither mp3 nor mp4
+      and no requirement deletes it) conflicting with its own retention clause and
+      the Impact section; the link-removal action itself is sound (dead on the fresh-clone
+      platform of record).
+    remediation: Causal basis corrected to the actual mechanism (untracked zip never
+      deploys — gate build omitted it; dead link on the platform of record).
   - id: F-2
     classes: safety, blast-radius
-    finding: The rollback enumeration named no recovery source for the ~514 MB already-on-itch class (11 app binaries + NumbersMaze web build) and cited "TTS generation pipelines" for a class the spec never deletes (R-4 tracks that audio).
-    remediation: Rollback restated per class — LPT from private repos, media from YouTube, already-on-itch from the itch projects/NumbersMaze.godot repo; TTS audio noted as added, not deleted.
+    finding: The rollback enumeration named no recovery source for the ~514 MB already-on-itch
+      class (11 app binaries + NumbersMaze web build) and cited "TTS generation pipelines"
+      for a class the spec never deletes (R-4 tracks that audio).
+    remediation: Rollback restated per class — LPT from private repos, media from
+      YouTube, already-on-itch from the itch projects/NumbersMaze.godot repo; TTS
+      audio noted as added, not deleted.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 9
@@ -107,8 +165,13 @@ spec:
   findings:
   - id: F-1
     classes: blast-radius, gap-analysis
-    finding: The two tracked process_end_notes.py generator scripts (CLL-1 + animal-names dirs) were unaccounted — they carry the dead zip-link text and old embed form, are served verbatim by the build (zola copies non-md content files), and re-running them post-migration would overwrite the migrated pages and fail on deleted mp3s (a one-command regression vector).
-    remediation: R-2 now deletes both tracked scripts (regenerate-the-old-form rationale; history-recoverable); scope row and SC-14 added.
+    finding: The two tracked process_end_notes.py generator scripts (CLL-1 + animal-names
+      dirs) were unaccounted — they carry the dead zip-link text and old embed form,
+      are served verbatim by the build (zola copies non-md content files), and re-running
+      them post-migration would overwrite the migrated pages and fail on deleted mp3s
+      (a one-command regression vector).
+    remediation: R-2 now deletes both tracked scripts (regenerate-the-old-form rationale;
+      history-recoverable); scope row and SC-14 added.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 10
@@ -117,12 +180,18 @@ spec:
   findings:
   - id: F-1
     classes: incapable-instrument
-    finding: ERE literal-pipe defect (same class as spec #28's rounds) — SC-1's second and third instruments, SC-11's instrument, and SC-12's second instrument used \\\| inside grep -E patterns, which matches only the literal joined string: the empty-result checks verify nothing and the count checks are unreachable (always 0).
+    finding: ERE literal-pipe defect (same class as spec
     remediation: All four -E patterns corrected to unescaped alternation.
   - id: F-2
     classes: gap-analysis
-    finding: SC-4's ID-in-map check cannot detect a scrambled page→video assignment (any mapped ID satisfies it on any page) — R-2's assignment requirement went unexercised.
-    remediation: research/page-video-assignment.yaml generated mechanically from the current pages' embeds joined to the map by track numbering (16 pages, 52 embeds, 0 unresolved; map entry Dictation 15-02 has no current page reference and is noted unassigned); SC-4 now requires each page's youtube(id=) set to equal its recorded assignment.
+    finding: SC-4's ID-in-map check cannot detect a scrambled page→video assignment
+      (any mapped ID satisfies it on any page) — R-2's assignment requirement went
+      unexercised.
+    remediation: research/page-video-assignment.yaml generated mechanically from the
+      current pages' embeds joined to the map by track numbering (16 pages, 52 embeds,
+      0 unresolved; map entry Dictation 15-02 has no current page reference and is
+      noted unassigned); SC-4 now requires each page's youtube(id=) set to equal its
+      recorded assignment.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 11
@@ -131,7 +200,9 @@ spec:
   findings:
   - id: F-1
     classes: fabricated-claims, internal-contradiction
-    finding: SC-4's parenthetical misstated which map entry lacks a page reference — it named Dictation 15-02, but the spec's own assignment yaml records 15-02 → day-7 (the page embeds it); the genuinely unassigned entry is Dictation 14-02.
+    finding: SC-4's parenthetical misstated which map entry lacks a page reference
+      — it named Dictation 15-02, but the spec's own assignment yaml records 15-02
+      → day-7 (the page embeds it); the genuinely unassigned entry is Dictation 14-02.
     remediation: Parenthetical corrected to Dictation 14-02 in both surfaces.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
@@ -139,89 +210,188 @@ spec:
   date: '2026-11-11T22:20:00Z'
   verdict: PASS
   findings: []
-  notes: fresh-context dispatch on the round-11-revised spec; reviewer independently verified all counts, link forms, instrument patterns, assignment yaml, baselines, limits, and live surfaces (itch.io 4 projects, oEmbed spot-checks, TTS source repos, LPT presets, gate figures); explicitly examined R-5 build-safety (tex md draft front matter; loose non-index md precedent) and SC-10 satisfiability; containment pass both prongs.
+  notes: fresh-context dispatch on the round-11-revised spec; reviewer independently
+    verified all counts, link forms, instrument patterns, assignment yaml, baselines,
+    limits, and live surfaces (itch.io 4 projects, oEmbed spot-checks, TTS source
+    repos, LPT presets, gate figures); explicitly examined R-5 build-safety (tex md
+    draft front matter; loose non-index md precedent) and SC-10 satisfiability; containment
+    pass both prongs.
 revision-2-itch-only:
 - round: 0
   date: '2026-11-12T00:00:00Z'
-  note: "developer directives supersede the pre-revision approval \u2014 \"only itch-io is the new release platform\", \"pre-existing store links are all dead\", \"file a spec to ... migrate to itch-io and to publish the latest version with the cll1-gdx repo\", and the cross-repo filing rule (\"all specs must be filed in the correct repos and not have work which crosses repo boundaries. proper interdependencies must be declared between specs\"; \"the agent for the cll1-gdx repo is a separate agent...\"). Revision applied both surfaces: store-link removal (R-1, SC-1 = 0 counts, SC-12 = 0, Impact, approach alternative, scope rows), CLL-1 page-link + build/publish work separated into the correct repos (CherokeeLessons#32 page link; CherokeeLanguage/cll1-gdx#5 build/publish \u2014 that repo's agent triages), Interdependencies section added, store-link probe matrix recorded at research/store-link-probe.txt. Validation restarts fresh below."
+  note: 'developer directives supersede the pre-revision approval — "only itch-io
+    is the new release platform", "pre-existing store links are all dead", "file a
+    spec to ... migrate to itch-io and to publish the latest version with the cll1-gdx
+    repo", and the cross-repo filing rule ("all specs must be filed in the correct
+    repos and not have work which crosses repo boundaries. proper interdependencies
+    must be declared between specs"; "the agent for the cll1-gdx repo is a separate
+    agent..."). Revision applied both surfaces: store-link removal (R-1, SC-1 = 0
+    counts, SC-12 = 0, Impact, approach alternative, scope rows), CLL-1 page-link
+    + build/publish work separated into the correct repos (CherokeeLessons#32 page
+    link; CherokeeLanguage/cll1-gdx#5 build/publish — that repo''s agent triages),
+    Interdependencies section added, store-link probe matrix recorded at research/store-link-probe.txt.
+    Validation restarts fresh below.'
 - round: 1
   date: '2026-11-12T00:10:00Z'
   verdict: FAIL
   findings:
   - id: F-1
     classes: incapable-instrument
-    finding: SC-12's NumbersMaze page path was codepoint-corrupted by the patch author's hand-typed Cherokee (U+13A3-class substitutions, single hyphen) — the instrument cannot run; the store spec (previously validated with a byte-verified path) had inherited a bad copy.
-    remediation: Path extracted programmatically from the filesystem in the remediation script (never hand-typed).
+    finding: SC-12's NumbersMaze page path was codepoint-corrupted by the patch author's
+      hand-typed Cherokee (U+13A3-class substitutions, single hyphen) — the instrument
+      cannot run; the store spec (previously validated with a byte-verified path)
+      had inherited a bad copy.
+    remediation: Path extracted programmatically from the filesystem in the remediation
+      script (never hand-typed).
   - id: F-2
     classes: cross-reference-sufficiency, fabricated-claims, internal-contradiction
-    finding: The probe bullet claimed "all 13 probed / 11 of 13 dead" while the recorded matrix held 12 links (10 dead + 2 live) and contradicted the Problem's own parenthetical — and the matrix had genuinely missed the BoundPronouns page's live Amazon link (B00TCP955U).
-    remediation: Matrix re-executed with the 13th link (now 503); bullet and Problem parenthetical restated to the artifact's exact counts (13 probed, 11 dead — 404×7/503×4, 2 live, removed by policy).
+    finding: The probe bullet claimed "all 13 probed / 11 of 13 dead" while the recorded
+      matrix held 12 links (10 dead + 2 live) and contradicted the Problem's own parenthetical
+      — and the matrix had genuinely missed the BoundPronouns page's live Amazon link
+      (B00TCP955U).
+    remediation: Matrix re-executed with the 13th link (now 503); bullet and Problem
+      parenthetical restated to the artifact's exact counts (13 probed, 11 dead —
+      404×7/503×4, 2 live, removed by policy).
   preferences-adjudicated: []
-  repo-boundary-containment: pass — single repo, home store .issues/30; cross-repo work correctly absent from SCs (cll1-gdx#5 dependency only)
+  repo-boundary-containment: pass — single repo, home store .issues/30; cross-repo
+    work correctly absent from SCs (cll1-gdx#5 dependency only)
 - round: 2
   date: '2026-11-12T00:45:00Z'
   verdict: PASS
   findings: []
-  notes: fresh-context dispatch on the round-1-revised spec; reviewer byte-verified the NumbersMaze path, re-derived all counts against the artifacts (13 probe links, 11 dead / 2 live), positive-controlled the instruments against the live tree (SC-1/SC-3/SC-11/SC-14 detect failure), verified the R-5 build-safety precondition and SC-10 arithmetic, containment both prongs with the cross-repo references correctly dependency-only.
+  notes: fresh-context dispatch on the round-1-revised spec; reviewer byte-verified
+    the NumbersMaze path, re-derived all counts against the artifacts (13 probe links,
+    11 dead / 2 live), positive-controlled the instruments against the live tree (SC-1/SC-3/SC-11/SC-14
+    detect failure), verified the R-5 build-safety precondition and SC-10 arithmetic,
+    containment both prongs with the cross-repo references correctly dependency-only.
 revision-3-standup-first:
 - round: 0
   date: '2026-11-12T03:55:00Z'
-  note: developer directive supersedes the sequencing of record — "we need to add an SC to the appropriate spec on the actual stand up to remove these from tracking so they don't trip up cloudflare deploy. we need to focus on getting the site up, even with internal broken links." CherokeeLessons#31 executes first and deletes the two tracked jars itself (its R-9); this spec's jar surfaces restated to link-removal-only (R-1, scope row), SC-10's over-limit count = 0, and the floating ebook directive given its recorded home (new R-7/SC-15; Lulu paperback links + app-ads.txt reseller entries recorded as open developer decisions in Out of scope). Validation restarts below.
+  note: developer directive supersedes the sequencing of record — "we need to add
+    an SC to the appropriate spec on the actual stand up to remove these from tracking
+    so they don't trip up cloudflare deploy. we need to focus on getting the site
+    up, even with internal broken links." CherokeeLessons#31 executes first and deletes
+    the two tracked jars itself (its R-9); this spec's jar surfaces restated to link-removal-only
+    (R-1, scope row), SC-10's over-limit count = 0, and the floating ebook directive
+    given its recorded home (new R-7/SC-15; Lulu paperback links + app-ads.txt reseller
+    entries recorded as open developer decisions in Out of scope). Validation restarts
+    below.
 - round: 1
   date: '2026-11-12T03:55:00Z'
   verdict: FAIL
   findings:
   - id: F-1
     classes: self-containment-violation, internal-contradiction
-    finding: The sequencing flip was applied to the narrative (Problem/Interdependencies/Impact) but not to the binding surfaces — R-1 and the scope row still assigned the jar deletion to this spec while the revised narrative assigns it to #31's R-9; SC-2's criterion and trace hung on the retained clause.
-    remediation: R-1 and the scope row restated to link-removal-only with deletion attributed to CherokeeLessons#31 R-9; SC-2 restated as the end-state check with trace R-1,R-3.
+    finding: The sequencing flip was applied to the narrative (Problem/Interdependencies/Impact)
+      but not to the binding surfaces — R-1 and the scope row still assigned the jar
+      deletion to this spec while the revised narrative assigns it to
+    remediation: R-1 and the scope row restated to link-removal-only with deletion
+      attributed to CherokeeLessons#31 R-9; SC-2 restated as the end-state check with
+      trace R-1,R-3.
   - id: F-3
     classes: gap-analysis, scope-narrowness
-    finding: The recorded ebook directive floated — the spec censused the surface (26 smashwords/amazon link lines across 15 book pages; Lulu; app-ads.txt) but no requirement, criterion, or destination resolved the disposition.
-    remediation: New R-7 + SC-15 trace the unambiguous clause (ebook-store links removed from content/books; site free-PDF downloads the only ebook channel); Lulu and app-ads.txt recorded as explicit open developer decisions in Out of scope.
+    finding: The recorded ebook directive floated — the spec censused the surface
+      (26 smashwords/amazon link lines across 15 book pages; Lulu; app-ads.txt) but
+      no requirement, criterion, or destination resolved the disposition.
+    remediation: New R-7 + SC-15 trace the unambiguous clause (ebook-store links removed
+      from content/books; site free-PDF downloads the only ebook channel); Lulu and
+      app-ads.txt recorded as explicit open developer decisions in Out of scope.
   preferences-adjudicated: []
-  repo-boundary-containment: pass — single repo, home store .issues/30 (the F-2 finding of the same dispatch belongs to #31's artifact and is recorded there)
+  repo-boundary-containment: pass — single repo, home store .issues/30 (the F-2 finding
+    of the same dispatch belongs to
 - round: 2
   date: '2026-11-12T04:15:00Z'
   verdict: FAIL
   findings:
   - id: F-1
     classes: internal-contradiction, blast-radius
-    finding: The Impact's books clause still read "unchanged — the PDFs stay on-site" (pre-R-7 survival), and R-7 was absent from the Scope table and the Approach decisions enumeration — the plan-of-record surfaces described the spec without the ebook work.
-    remediation: Impact books clause restated (R-7 link removals; PDFs off the served tree via #31 R-8, links to R2 delivery); scope row added for content/books pages + new-page.sh; Approach decisions enumeration extended with site-only ebook distribution.
+    finding: The Impact's books clause still read "unchanged — the PDFs stay on-site"
+      (pre-R-7 survival), and R-7 was absent from the Scope table and the Approach
+      decisions enumeration — the plan-of-record surfaces described the spec without
+      the ebook work.
+    remediation: Impact books clause restated (R-7 link removals; PDFs off the served
+      tree via
   - id: F-2
     classes: internal-contradiction, blast-radius
-    finding: SC-15's empty grep over content/books sweeps the scaffold new-page.sh's 2 template store-link lines, but R-7 enumerated only the 15 pages (26 lines) — an implementer satisfying R-7 as written fails SC-15, and the scaffold re-creates store links on every new book page.
-    remediation: R-7 extended to the scaffold (template lines removed); Provenance census extended to the scaffold; SC-15's parenthetical states the 26 + 2 census.
+    finding: SC-15's empty grep over content/books sweeps the scaffold new-page.sh's
+      2 template store-link lines, but R-7 enumerated only the 15 pages (26 lines)
+      — an implementer satisfying R-7 as written fails SC-15, and the scaffold re-creates
+      store links on every new book page.
+    remediation: R-7 extended to the scaffold (template lines removed); Provenance
+      census extended to the scaffold; SC-15's parenthetical states the 26 + 2 census.
   - id: F-3
     classes: cross-reference-sufficiency
-    finding: SC-10's trace still read R-1 although the rewritten criterion guards the tracking additions (R-4/R-5/R-6) against introducing over-limit files.
+    finding: SC-10's trace still read R-1 although the rewritten criterion guards
+      the tracking additions (R-4/R-5/R-6) against introducing over-limit files.
     remediation: Trace corrected to R-4, R-5, R-6.
   - id: F-4
     classes: cross-reference-sufficiency
-    finding: The Provenance gate bullet cited a nonexistent work-record section for the counts (same class as #31's round-14 F-3).
-    remediation: Citation re-pointed to the reproducible gate instruments + the 2026-11-12 re-execution; log path qualified to .issues/31/research/.
+    finding: The Provenance gate bullet cited a nonexistent work-record section for
+      the counts (same class as
+    remediation: Citation re-pointed to the reproducible gate instruments + the 2026-11-12
+      re-execution; log path qualified to .issues/31/research/.
   preferences-adjudicated: []
   repo-boundary-containment: pass — single repo, home store .issues/30
 - round: 3
   date: '2026-11-12T04:40:00Z'
   verdict: PASS
   findings: []
-  notes: fresh-context dispatch on the round-2-revised spec; reviewer verified the book census (15 pages/26 lines + scaffold 2, grep total 28), the R-7/SC-15 surface scoping, SC-2/SC-10 end-state coherence under the #31-first order, and the cross-spec division of labor end-to-end; containment pass both prongs.
+  notes: fresh-context dispatch on the round-2-revised spec; reviewer verified the
+    book census (15 pages/26 lines + scaffold 2, grep total 28), the R-7/SC-15 surface
+    scoping, SC-2/SC-10 end-state coherence under the
 spec-review-siteRefresh:
-  - round: 1 (site-refresh revision, 2026-11-14T23:30:00-05:00)
-    artifact: .issues/30/spec.md — R-additions for the developer's 2026-11-14 site-refresh direction (layout/wording/screenshots/itch widget)
-    verdict: FAIL (round 1) — 3 substantive findings (layout clause uncovered, #30 duplicate SC-14, #30 R-1-vs-R-1a misreference; 3 minor)
-    reviewer: fresh-context dispatch (ses_e22bf70d5ffeC620XRpkP5s6W3)
-    remediation: layout-traceability note added under the site-update criteria table (R-7 procedural-note style; #30 instead got the layout clause into SC-14 with a section-absence grep); #30 SC-14/SC-15/SC-16 renumbered (unique IDs); #30 Out-of-scope R-1(d)→R-1a(d); paired-spec ownership line corrected in #22-#25; Impact 'repo untouched' qualified with the R-S2(c) screenshot dependency (#32 rollback wording likewise); widget variant claim corrected to light/dark per itches docs
-    reviewer-round-2: pending
-    reviewer-round-2: fresh-context dispatch (ses_e22be3a58ffe3owmc2I4nbZ31j) — all six remediations verified; one residual finding (#24 stale cross-ref 'R-2(c) names it' for #32's widget)
-    remediation-2: #24's traceability note corrected to point at CherokeeLessons#32 R-1 (SC-4 traces it)
-    reviewer-round-3: fresh-context dispatch (ses_e22bdd6a4ffeLEM1ns9jbQctDr) — PASS, zero findings
+- round: 1 (site-refresh revision, 2026-11-14T23:30:00-05:00)
+  artifact: .issues/30/spec.md — R-additions for the developer's 2026-11-14 site-refresh
+    direction (layout/wording/screenshots/itch widget)
+  verdict: FAIL (round 1) — 3 substantive findings (layout clause uncovered,
+  reviewer: fresh-context dispatch (ses_e22bf70d5ffeC620XRpkP5s6W3)
+  remediation: layout-traceability note added under the site-update criteria table
+    (R-7 procedural-note style;
+  reviewer-round-2: fresh-context dispatch (ses_e22be3a58ffe3owmc2I4nbZ31j) — all
+    six remediations verified; one residual finding (#24 stale cross-ref 'R-2(c) names
+    it' for
+  remediation-2: null
+  reviewer-round-3: fresh-context dispatch (ses_e22bdd6a4ffeLEM1ns9jbQctDr) — PASS,
+    zero findings
 spec-review-ttsSeam:
-  - round: 1 (espeak-clips descope revision, 2026-11-21)
-    artifact: .issues/30/spec.md — targeted revision (R-2's 4 espeak clips descope into CherokeeLessons#67, 45→41 demo mp3s, four→three negation dirs; Scope-table row; SC-3 rewritten to the three-demo-dir 41-count instrument; Parts list gains #67 + #59 closed marker; seam 2 gains the #67 retirement sentence)
-    verdict: PASS
-    reviewer: fresh-context subagent (ses_e016915a8ffeDaw8DgGvfw6a9t)
-    findings: []
-    outcome: "clean PASS \u2014 zero findings; reviewer verified R-2's descope (45\u219241 confirmed on disk: 24+9+8; Animals*.mp3 rule and the two no-.gitignore demo dirs), Scope row, SC-3's three-dir enumeration, the #67 part-list entry matching #67's spec point-for-point, the #59 closed marker (PR #61 merged 2026-11-21), and the seam-2 sentence's consistency with R-5/SC-6, seam 3's gates, and the untouched tracking requirements; directive quote verified as a fair ellipsis of #67's full record; repo-boundary containment pass both prongs."
+- round: 1 (espeak-clips descope revision, 2026-11-21)
+  artifact: .issues/30/spec.md — targeted revision (R-2's 4 espeak clips descope into
+    CherokeeLessons#67, 45→41 demo mp3s, four→three negation dirs; Scope-table row;
+    SC-3 rewritten to the three-demo-dir 41-count instrument; Parts list gains
+  verdict: PASS
+  reviewer: fresh-context subagent (ses_e016915a8ffeDaw8DgGvfw6a9t)
+  findings: []
+  outcome: 'clean PASS — zero findings; reviewer verified R-2''s descope (45→41 confirmed
+    on disk: 24+9+8; Animals*.mp3 rule and the two no-.gitignore demo dirs), Scope
+    row, SC-3''s three-dir enumeration, the #67 part-list entry matching #67''s spec
+    point-for-point, the #59 closed marker (PR #61 merged 2026-11-21), and the seam-2
+    sentence''s consistency with R-5/SC-6, seam 3''s gates, and the untouched tracking
+    requirements; directive quote verified as a fair ellipsis of #67''s full record;
+    repo-boundary containment pass both prongs.'
+- round: 2
+  date: '2026-11-21'
+  artifact: 'spec (as revised — R-2 transfer record, SC-3 transfer-resolution instrument,
+    #67/#68 Parts entries)'
+  verdict: FAIL
+  reviewer: fresh-context subagent (ses_e015b28a6ffeIoIdOcf7WTPnRS)
+  findings:
+  - class: internal-contradiction/stale-count
+    finding: 'Two residuals from the revision: the Interdependencies ''Parts:'' enumeration
+      lacked #67/#68; the Impact section''s ''~212 MB'' growth figure was computed
+      under the superseded R-2 method (the transfer''s media-weight effect is materially
+      different).'
+    remediation: 'Interdependencies Parts line extended with #67/#68 (dates + R-2
+      absorption note); the Impact figure replaced by pointers to the owning parts
+      (#67: 122 retired/4 tracked/~3.7 MB m4a; #68: 41+41 tracked, KDD(5)''s ~2x flag)
+      naming the superseded figure as no longer applying; remote body mirrored.'
+  outcome: revised in place; re-validated round 3.
+- round: 3
+  date: '2026-11-21'
+  artifact: spec (as revised — stale figures replaced by part pointers)
+  verdict: PASS
+  reviewer: fresh-context subagent (ses_e01591a92ffeZPi8JDMAKyjK9w)
+  findings: []
+  outcome: 'clean PASS — zero findings; all Impact pointers resolve (links.yaml 67+68;
+    #67/#68 specs match the cited figures verbatim incl. KDD(5)); residual-count sweep
+    clean (no sentence computes growth under the superseded method); R-2/SC-3/Parts/Interdependencies/seam-2
+    mutually consistent; traceability complete.'
