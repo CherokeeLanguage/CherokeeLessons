@@ -28,7 +28,7 @@ Remote issue: https://github.com/CherokeeLanguage/CherokeeLessons/issues/67 · f
 
 ## Not Included
 
-- The three demo-audio dirs' 41 untracked mp3s (`cherokee-animal-names-tts-demo-audio-1` 24, `cherokee-animal-names--ims-toucan-tts-` 9, `cherokee-tts-update-3--ims-toucan-` 8) — umbrella CherokeeLessons#30 R-2's recorded method (per-dir `!*.mp3` negation, tracked as mp3) stands unchanged; those pages' `SPEAKER|AUDIO MP3` table headers are that scope's surface, not this one's. If the developer later extends the conversion to the demo set, that is a disposition change to record there first — this spec does not assume it.
+- The three demo-audio dirs' 41 mp3s (cherokee-animal-names-tts-demo-audio-1 24, cherokee-animal-names--ims-toucan-tts- 9, cherokee-tts-update-3--ims-toucan- 8) and their `SPEAKER|AUDIO MP3` tables — outside this spec's four-page scope; their conversion, source tracking, and page treatment are owned by CherokeeLessons#68 under the 2026-11-21 new-audio-standard directive (R-4's seam record).
 - The lesson-audio pages (converted under CherokeeLessons#58/#59) and the espeak/TTS generation tooling that produced the samples.
 - A "download all" affordance — per-entry links only (the #59 form); no aggregate-download artifact is created.
 

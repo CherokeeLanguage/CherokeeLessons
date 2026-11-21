@@ -73,7 +73,7 @@ No hosting/CDN/Workers changes (CherokeeLessons#31); no theme changes; no itch.i
 ## Interdependencies
 
 - Depends on: none (first in the filing sequence); CherokeeLessons#31 executes first per the revised sequencing (2026-11-12) and clears the four over-limit tracked files itself.
-- Parts: #20 (Bound Pronouns page), #54 (dictation embeds — re-cut 2026-11-20 into #54 dictation slice, #58 CLL-1, #59 animal-names), #55 (ebook links) — sub-issues; closure order per the Parts section.
+- Parts: #20 (Bound Pronouns page), #54 (dictation embeds — re-cut 2026-11-20 into #54 dictation slice, #58 CLL-1, #59 animal-names), #55 (ebook links), #67 (tracked TTS-sample pages, 2026-11-21), #68 (TTS demo-audio class, 2026-11-21 — absorbs the original R-2) — sub-issues; closure order per the Parts section.
 - Independent: CherokeeLanguage/cll1-gdx#5 (the CLL-1 build/publish — no dependency in either direction; #32 consumed its deliverable, and #32 has landed).
 
 ## Out of scope
@@ -92,6 +92,6 @@ Follow the developer's distribution decisions of record — external channels fo
 
 ## Impact
 
-Consumers: the site build (a fresh-clone build becomes complete for all retained surfaces — the executed gate's omissions for the tracked classes disappear except the deferred zip class); the local working tree (shrinks further: ~388 MB LPT surfaces + ~50 MB animals/NumbersMaze binaries + web build; grows ~212 MB with the tracking additions). The umbrella is the last ticket in the stand-up's content-policy chain to close: SC-7/SC-8 verify the composed whole after #20/#54/#55 land. Rollback: revert the commit set; untracked deletions re-obtainable per class (LPT from the private repos, app artifacts from itch, tex/md from history).
+Consumers: the site build (a fresh-clone build becomes complete for all retained surfaces — the executed gate's omissions for the tracked classes disappear except the deferred zip class); the local working tree (shrinks further: ~388 MB LPT surfaces + ~50 MB animals/NumbersMaze binaries + web build; the media-weight effect of the transferred and converted parts is recorded on their own specs — CherokeeLessons#67: 122 mp3s retired git-history-recoverable, 4 clip sources tracked, ~3.7 MB m4a added; CherokeeLessons#68: 41 m4a deliverables plus the 41 retained mp3 sources tracked for durability, its Key Design Decisions (5) flagging the ~2× media weight for the three demo dirs for the developer's approval gate — the superseded R-2's ~212 MB figure no longer applies). The umbrella is the last ticket in the stand-up's content-policy chain to close: SC-7/SC-8 verify the composed whole after #20/#54/#55 land. Rollback: revert the commit set; untracked deletions re-obtainable per class (LPT from the private repos, app artifacts from itch, tex/md from history).
 
 🤖 Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
