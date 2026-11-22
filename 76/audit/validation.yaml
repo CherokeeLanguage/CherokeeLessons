@@ -1,0 +1,70 @@
+spec:
+- round: 1
+  date: '2026-11-22'
+  artifact: spec (new — the 45-source higher-rung pass, filed from the developer's
+    full-pipeline directive)
+  verdict: FAIL
+  reviewer: fresh-context subagent (ses_dfe8c2bddffeE5AGCHYQf7AYSK)
+  findings:
+  - class: fabricated-claim
+    finding: Approach/Alternatives stated 'largest source track ~10 MB'; the pre-drop
+      commit's true largest is 13,552,184 B (animals-0007.mp3, 1,788.96 s) with four
+      tracks 10.8–13.55 MB.
+    remediation: Figures corrected to the measured truth in both files; the four long
+      tracks named as the cap-relevant set.
+  - class: feasibility/gap-analysis
+    finding: R-1's ladder bottoms at 128k with no disposition for a track whose floor
+      encode still exceeds 24 MiB (the long tracks' CBR projections exceed the cap
+      at all rungs).
+    remediation: 'Cap floor rule added to R-1/Approach: a 128k-floor over-cap track
+      retains its existing deliverable unchanged, its transcript records all attempted
+      rungs'' measured sizes with the exclusion; no new rung invented, no over-cap
+      emission; completion = all 45 decided.'
+  - class: fabricated-claim
+    finding: KDD(2) 'projected ≤ ~20 MB at nominal' reproduced under no reading (CBR
+      ~43 MB; content-following ~22–24 MB); the spec never fixed the encode mode.
+    remediation: Projection removed; encoded sizes decided by encode-and-measure per
+      the program's measured record (rate control follows content, 48–128k at the
+      128k rung); the cap floor rule governs.
+  - class: fabricated-claim
+    finding: Edge-case deploy row '+~70 MB' based on a false ~155 MB base; the true
+      current mass is ~326 MB (animal-demo 221 MB, ims-toucan 94 MB, tts-update-3
+      11 MB).
+    remediation: Row corrected to the measured base with the honest ≈ +160 MB bound,
+      true total decided by the transcripts.
+  - class: ambiguity/incapable-instrument
+    finding: SC-3's 'ffprobe bit_rate consistent with the recorded rung's behavior'
+      is undefined (a rung yields a rate range; bit_rate distinguishes nothing).
+    remediation: 'SC-3 recast: the transcript''s command + measured-size columns with
+      the per-track outcome are the evidence; rate columns informational.'
+  - class: instrument/repo-boundary-precision
+    finding: SC-1's diff instrument listed .issues/30/spec.md 'vs HEAD' — the store
+      is an orphan-branch worktree the main-branch diff cannot observe.
+    remediation: SC-1 restricted to main-branch paths (the decided m4a set + AGENTS.md);
+      the seam-2 correction is verified by SC-7's grep on the store worktree.
+  outcome: revised in place; re-validated round 2.
+- round: 2
+  date: '2026-11-22'
+  artifact: spec (as revised — figures corrected, cap floor rule, instruments recast)
+  verdict: FAIL
+  reviewer: fresh-context subagent (ses_dfe8c2bddffeE5AGCHYQf7AYSK)
+  findings:
+  - class: internal-contradiction
+    finding: Completion gate said 'all 45 re-encoded' while R-1's cap floor rule permits
+      a floor-excluded outcome — contradictory if any exclusion fires.
+    remediation: Gate recast to 'all 45 decided per the cap floor rule' (re-encoded
+      or floor-excluded, each verified and transcribed).
+  - class: fabricated-claim
+    finding: Cost Frame still carried the stale 'largest source ~10 MB'.
+    remediation: Corrected to 13.55 MB.
+  outcome: revised in place; re-validated round 3.
+- round: 3
+  date: '2026-11-22'
+  artifact: spec (as revised)
+  verdict: PASS
+  reviewer: fresh-context subagent (ses_dfe86a365ffe6T2jliK98KDT04)
+  findings: []
+  outcome: clean PASS — zero findings; gate/rule consistency verified decidable; stale-figure
+    sweeps clean; spot-facts reproduced live (199 m4a, 0 mp3s, anchor/table counts,
+    toolchain, AGENTS.md records); layout + traceability conformant; repo-boundary
+    containment holds.
