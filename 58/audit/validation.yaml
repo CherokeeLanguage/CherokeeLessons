@@ -6,3 +6,29 @@ spec:
     reviewer: fresh-context subagent (ses_e036f7b09ffeWQ33GtRTS1DhQd)
     findings: []
     outcome: "clean PASS — zero findings. Reviewer verified facts with its own evidence: page carries 23 session rows and 15 note rows (`----|`), `SESSION|MP3 FILE` header + two-cell divider + zip line at the cited lines; generator carries matching strings, `.mp3` emission, note-row emission, `zip -j`, and no index-template (animal-names generator differs structurally — its spec's R-2 names index-template.txt); completed #59 form verified in `content/lesson-audio/animal-names/index.md` (3-column header, 9 anchors), `.issues/59/spec.md` R-3/SC-7/SC-8, and its executed download evidence; repo facts verified (`*.mp3`/`*.mp4` ignored, m4a not ignored via check-ignore exit 1, 25 MiB cap in AGENTS.md, ffmpeg present/ffprobe absent); provenance quotes verified verbatim in `.issues/54/spec.md:25` and `.issues/59/spec.md:28`; #59 PR merge (4ec6190 in master ancestry, closed 2026-11-21) confirmed the sibling's completed state. Traceability both directions, layout conformance, and repo-boundary containment (scope repo = filing home) all confirmed."
+plan:
+  - round: 1
+    date: '2026-11-21'
+    artifact: "plan (item 1: media conversion/transcripts)"
+    verdict: FAIL
+    reviewer: fresh-context subagent (ses_dfebd03b4ffeyTLnJQxjDUxVV0)
+    findings:
+      - "dependency-order section: Item 4's instrument depends on Item 5's build output — contradiction of the stated strict 1→5 order and of the structure standard (no item depends on a later item)"
+      - "Item 4's RED field stated a rationale instead of a failing assertion"
+      - "Item 3's RED misstated the `cll1-v3-audio.zip` occurrence count as two; actual grep count is three (lines 84/116/117)"
+    outcome: "remediated in place: dependency order restated 1 → 2 → 3 → 5 → 4 with Item 4 as Item 5's build's direct consumer; Item 4 given an explicit failing-assertion RED; Item 3's RED corrected to three occurrences with line cites."
+  - round: 2
+    date: '2026-11-21'
+    artifact: "plan"
+    verdict: PASS
+    reviewer: fresh-context subagent (ses_dfebc0ee5ffegkFrc7LgfGUBIz)
+    findings: []
+    outcome: "clean PASS — zero findings. Traceability both directions (SC-1(2), SC-2/3/4(1), SC-5(3), SC-6(5), SC-7(2+3), SC-8(4)); item structure complete; RED/GREEN validity confirmed against the live repo (generator zip lines literally at 84/116/117); no scope enlargement; instruments runnable; factual spot-checks confirmed (23 mp3s, zip line at 51, header at 53, 15 note rows, trunk tip a58df4d == origin/master, .tools/ffmpeg + .tools/ffprobe present, animal-names form of record matches)."
+deliverable:
+  - round: 1
+    date: '2026-11-22'
+    artifact: "deliverable (feature/58-cll1-audio-m4a — 3 commits: 3df5f63 media, 6f8c4b8 page, a123a6f generator)"
+    verdict: PASS
+    reviewer: fresh-context subagent (ses_dfeb160aaffe8C9Uhclz6cfafT)
+    findings: []
+    outcome: "PASS 8/8 per SC, zero findings. Reviewer independently re-executed the structural instruments: SC-1 (23 m4a embeds, 0 mp3, 0 zip), SC-2 (ls-files exactly 0001–0023, 0 mp3 on disk, check-ignore exit 1), SC-3 (all 23 aac/mono/48k/mov-mp4, max 25,004,230 B ≤ 25,165,824), SC-4 (all 23 ffprobe bit_rates match the recorded transcript line-for-line, all 128k), SC-5 (generator greps clean, zip emission + subprocess/glob imports removed in diff), SC-6 (executed ./build.sh exit 0, exactly 23 .m4a in public/), SC-7 (exact anchor form ×23, header/divider, 15 note rows unanchored, generator emission matches), SC-8 (consumed recorded Playwright download evidence — download event, matching filename, byte-identical, URL unchanged). Completion gate satisfied as a set."
