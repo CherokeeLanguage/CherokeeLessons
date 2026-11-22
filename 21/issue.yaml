@@ -1,9 +1,8 @@
 title: 'Spec: create the itch.io app pages and deploy the site-published app artifacts
   (itch migration phase 1)'
 status: open
-labels:
-- needs-approval
+labels: []
 body: ''
 created_at: '2026-11-09T20:05:24+00:00'
-updated_at: '2026-11-09T20:06:13+00:00'
+updated_at: '2026-11-22T04:05:52+00:00'
 github_url: https://github.com/CherokeeLanguage/CherokeeLessons.com/issues/21
