@@ -31,55 +31,73 @@ Samples:
 
 * Anǐ:táɂli ani:sgaya à:ni:no:halǐ:dô:he, ahwi dù:ni:hyohe.
 
-    {{audio (file="bragging-hunter-cno-spk_0-01.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-01.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-01.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-01.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-01.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-01.m4a" download>⤓ download</a>
 
 * Sà:gwű:hno asgaya galò:gwé ga:ne:he sóɂíhnv́ hlā.
 
-    {{audio (file="bragging-hunter-cno-spk_0-02.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-02.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-02.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-02.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-02.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-02.m4a" download>⤓ download</a>
 
 * Ná:hnv́ galò:gwé ga:ne̋:hi u:dlv̌:kwsati gè:sé, ale go:hű:sdi yǔ:dv̂:ne̋:la à:dlv̌:kwsgé.
 
-    {{audio (file="bragging-hunter-cno-spk_0-03.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-03.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-03.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-03.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-03.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-03.m4a" download>⤓ download</a>
 
 * À:ná:ɂi:sv̋:hnv go:hű:sdi wǔ:ní:go:he do:juwáɂihlv, ná:hnv́ galò:gwé ga:ne̋:hi kilagwu iyv̋:da widǔ:sdáyo:hlé ǒ:sdagwu nǔ:ksestanv̋:na iyú:sdi dà:sdayo:hihv̋.
 
-    {{audio (file="bragging-hunter-cno-spk_0-04.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-04.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-04.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-04.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-04.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-04.m4a" download>⤓ download</a>
 
 * U:do:hiyű:hnv́ wǔ:yó:hlé ale ù:ni:go:hé ganv́:gv̋.
 
-    {{audio (file="bragging-hunter-cno-spk_0-05.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-05.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-05.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-05.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-05.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-05.m4a" download>⤓ download</a>
 
 * Ná:hnv́ galò:gwé nigǎ:né:hv̋:na "Ahwi è:ni:yó:ɂa!", ù:dv:hne.
 
-    {{audio (file="bragging-hunter-cno-spk_0-06.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-06.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-06.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-06.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-06.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-06.m4a" download>⤓ download</a>
 
 * "Ji:yó:ɂê:ga", ù:dv:hne ná galò:gwé ga:ne̋:hi, à:dlv̌:kwsgv́.
 
-    {{audio (file="bragging-hunter-cno-spk_0-07.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-07.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-07.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-07.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-07.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-07.m4a" download>⤓ download</a>
 
 * Ù:ná:ne:lǔ:gî:se do:juwáɂihlv́ dí:dla, naɂv̌:hníge̋:hnv wǔ:ní:luhja ù:ni:go:hé sǒ:gwíli gáɂnv̋.
 
-    {{audio (file="bragging-hunter-cno-spk_0-08.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-08.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-08.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-08.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-08.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-08.m4a" download>⤓ download</a>
 
 * "Sǒ:gwílílê ì:nada:hísi", ù:dv:hné ná u:yo:hlv̋. "Hada:hísê:gá", à:gò:sě:lé.
 
-    {{audio (file="bragging-hunter-cno-spk_0-09.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_0-09.m4a")}}
+    <a href="bragging-hunter-cno-spk_0-09.m4a" download>⤓ download</a>
 
-    {{audio (file="bragging-hunter-cno-spk_3-09.mp3")}}
+    {{audio (file="bragging-hunter-cno-spk_3-09.m4a")}}
+    <a href="bragging-hunter-cno-spk_3-09.m4a" download>⤓ download</a>
 

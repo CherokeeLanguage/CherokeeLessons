@@ -35,15 +35,18 @@ pronunciations (hopefully) correctly represented in the transcripts. Github: [Ch
 
 Voice template: German Speaker #41 (male)
 
-{{audio (file="_bragging-hunter-ref-de-41.mp3")}}
+{{audio (file="_bragging-hunter-ref-de-41.m4a")}}
+<a href="_bragging-hunter-ref-de-41.m4a" download>⤓ download</a>
 
 Voice template: American English Speaker #310 (female)
 
-{{audio (file="_bragging-hunter-ref-vctk-p310.mp3")}}
+{{audio (file="_bragging-hunter-ref-vctk-p310.m4a")}}
+<a href="_bragging-hunter-ref-vctk-p310.m4a" download>⤓ download</a>
 
 Voice template: American English Speaker #341 (female)
 
-{{audio (file="_bragging-hunter-ref-vctk-p341.mp3")}}
+{{audio (file="_bragging-hunter-ref-vctk-p341.m4a")}}
+<a href="_bragging-hunter-ref-vctk-p341.m4a" download>⤓ download</a>
 
 
 #### Syllabary
