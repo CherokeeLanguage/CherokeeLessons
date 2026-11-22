@@ -28,27 +28,32 @@ The following examples demonstrate why creating these audio files is so importan
 
 ##### Water vs Salt:
 
-* ᎠᎹ [ạ²ma](ạ²ma_.mp3): Water.
+* ᎠᎹ [ạ²ma](ạ²ma_.m4a): Water.
 
-    {{audio(file="ạ²ma_.mp3")}}
+    {{audio(file="ạ²ma_.m4a")}}
+    <a href="ạ²ma_.m4a" download>⤓ download</a>
 
-* ᎠᎹ [a³ma](a³ma_.mp3): Salt.
+* ᎠᎹ [a³ma](a³ma_.m4a): Salt.
 
-    {{audio(file="a³ma_.mp3")}}
+    {{audio(file="a³ma_.m4a")}}
+    <a href="a³ma_.m4a" download>⤓ download</a>
 
 ##### Wood VS She said recently VS Young animal
 
-* ᎠᏓ [ạ²da](ạ²da_.mp3): Wood.
+* ᎠᏓ [ạ²da](ạ²da_.m4a): Wood.
 
-    {{audio(file="ạ²da_.mp3")}}
+    {{audio(file="ạ²da_.m4a")}}
+    <a href="ạ²da_.m4a" download>⤓ download</a>
 
-* ᎠᏓ [ạ²da²](ạ²da²_.mp3): She said recently.
+* ᎠᏓ [ạ²da²](ạ²da²_.m4a): She said recently.
 
-    {{audio(file="ạ²da²_.mp3")}}
+    {{audio(file="ạ²da²_.m4a")}}
+    <a href="ạ²da²_.m4a" download>⤓ download</a>
 
-* ᎠᏓ [ạ_⁴da_](ạ_⁴da_.mp3): Young animal.
+* ᎠᏓ [ạ_⁴da_](ạ_⁴da_.m4a): Young animal.
 
-    {{audio(file="ạ_⁴da_.mp3")}}
+    {{audio(file="ạ_⁴da_.m4a")}}
+    <a href="ạ_⁴da_.m4a" download>⤓ download</a>
 
 While the pronuncation keys do help mentally visualize the pitch contours and cadences of words, they aren't the same as hearing it. While the audio is not perfect, it may be the only resource available to many students which presents both the cadence and the pitch contours for the Cherokee language to some degree. (At least for this specific dialect as recorded in the Cherokee-English Dictionary.)
 
