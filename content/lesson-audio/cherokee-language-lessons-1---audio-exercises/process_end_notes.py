@@ -6,11 +6,8 @@ conda activate cherokee-lessons
 exec python "$0" "$@"
 exit $?
 ''"""
-import pathlib
-import subprocess
 from datetime import datetime
 from datetime import timezone
-from glob import glob
 from zoneinfo import ZoneInfo
 
 
@@ -81,12 +78,10 @@ Try repeating one session three times each day. Morning, noon, then evening.
 
 Last updated: __last_updated__
 
-Download all files as a single zip: [cll1-v3-audio.zip](cll1-v3-audio.zip).
-
-SESSION|MP3 FILE
---|--
+SESSION|M4A FILE|DOWNLOAD
+---|--|--
 """
-    # cll1-v3-0001.mp3
+    # cll1-v3-0001.m4a
     with open("end-notes.txt", "r") as r:
         for line in r:
             line = line.strip()
@@ -99,8 +94,10 @@ SESSION|MP3 FILE
             text = parts[1]
             below_fold_md += f"{number}|"
             below_fold_md += "{{audio (file=\""
-            below_fold_md += f"cll1-v3-{number}.mp3\")"
-            below_fold_md += "}}\n"
+            below_fold_md += f"cll1-v3-{number}.m4a\")"
+            below_fold_md += "}}"
+            below_fold_md += f"|<a href=\"cll1-v3-{number}.m4a\" download>⤓ download</a>"
+            below_fold_md += "\n"
             if text:
                 below_fold_md += f"----|{text}\n"
     # below_fold_md += "----|\n"
@@ -113,8 +110,6 @@ SESSION|MP3 FILE
     with open("index.md", "w") as w:
         w.write(index_md)
         w.write("\n")
-    pathlib.Path("cll1-v3-audio.zip").unlink(missing_ok=True)
-    subprocess.run(["zip", "-j", "-9", "-o", "cll1-v3-audio.zip"] + glob("*.mp3") , check=True)
 
 
 if __name__ == '__main__':

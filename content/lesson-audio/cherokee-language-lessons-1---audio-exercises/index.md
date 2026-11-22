@@ -48,47 +48,45 @@ Try repeating one session three times each day. Morning, noon, then evening.
 
 Last updated: 2022-08-23 13:28:15
 
-Download all files as a single zip: [cll1-v3-audio.zip](cll1-v3-audio.zip).
-
-SESSION|MP3 FILE
---|--
-0001|{{audio (file="cll1-v3-0001.mp3")}}
-0002|{{audio (file="cll1-v3-0002.mp3")}}
-0003|{{audio (file="cll1-v3-0003.mp3")}}
-0004|{{audio (file="cll1-v3-0004.mp3")}}
+SESSION|M4A FILE|DOWNLOAD
+---|--|--
+0001|{{audio (file="cll1-v3-0001.m4a")}}|<a href="cll1-v3-0001.m4a" download>⤓ download</a>
+0002|{{audio (file="cll1-v3-0002.m4a")}}|<a href="cll1-v3-0002.m4a" download>⤓ download</a>
+0003|{{audio (file="cll1-v3-0003.m4a")}}|<a href="cll1-v3-0003.m4a" download>⤓ download</a>
+0004|{{audio (file="cll1-v3-0004.m4a")}}|<a href="cll1-v3-0004.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 4.
-0005|{{audio (file="cll1-v3-0005.mp3")}}
-0006|{{audio (file="cll1-v3-0006.mp3")}}
+0005|{{audio (file="cll1-v3-0005.m4a")}}|<a href="cll1-v3-0005.m4a" download>⤓ download</a>
+0006|{{audio (file="cll1-v3-0006.m4a")}}|<a href="cll1-v3-0006.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 5.
-0007|{{audio (file="cll1-v3-0007.mp3")}}
+0007|{{audio (file="cll1-v3-0007.m4a")}}|<a href="cll1-v3-0007.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 6.
-0008|{{audio (file="cll1-v3-0008.mp3")}}
+0008|{{audio (file="cll1-v3-0008.m4a")}}|<a href="cll1-v3-0008.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 8.
-0009|{{audio (file="cll1-v3-0009.mp3")}}
-0010|{{audio (file="cll1-v3-0010.mp3")}}
+0009|{{audio (file="cll1-v3-0009.m4a")}}|<a href="cll1-v3-0009.m4a" download>⤓ download</a>
+0010|{{audio (file="cll1-v3-0010.m4a")}}|<a href="cll1-v3-0010.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 9.
-0011|{{audio (file="cll1-v3-0011.mp3")}}
+0011|{{audio (file="cll1-v3-0011.m4a")}}|<a href="cll1-v3-0011.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 10.
-0012|{{audio (file="cll1-v3-0012.mp3")}}
-0013|{{audio (file="cll1-v3-0013.mp3")}}
+0012|{{audio (file="cll1-v3-0012.m4a")}}|<a href="cll1-v3-0012.m4a" download>⤓ download</a>
+0013|{{audio (file="cll1-v3-0013.m4a")}}|<a href="cll1-v3-0013.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 11.
-0014|{{audio (file="cll1-v3-0014.mp3")}}
+0014|{{audio (file="cll1-v3-0014.m4a")}}|<a href="cll1-v3-0014.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 12.
-0015|{{audio (file="cll1-v3-0015.mp3")}}
-0016|{{audio (file="cll1-v3-0016.mp3")}}
-0017|{{audio (file="cll1-v3-0017.mp3")}}
+0015|{{audio (file="cll1-v3-0015.m4a")}}|<a href="cll1-v3-0015.m4a" download>⤓ download</a>
+0016|{{audio (file="cll1-v3-0016.m4a")}}|<a href="cll1-v3-0016.m4a" download>⤓ download</a>
+0017|{{audio (file="cll1-v3-0017.m4a")}}|<a href="cll1-v3-0017.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 14.
-0018|{{audio (file="cll1-v3-0018.mp3")}}
+0018|{{audio (file="cll1-v3-0018.m4a")}}|<a href="cll1-v3-0018.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 17.
-0019|{{audio (file="cll1-v3-0019.mp3")}}
+0019|{{audio (file="cll1-v3-0019.m4a")}}|<a href="cll1-v3-0019.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 18.
-0020|{{audio (file="cll1-v3-0020.mp3")}}
+0020|{{audio (file="cll1-v3-0020.m4a")}}|<a href="cll1-v3-0020.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 19.
-0021|{{audio (file="cll1-v3-0021.mp3")}}
+0021|{{audio (file="cll1-v3-0021.m4a")}}|<a href="cll1-v3-0021.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 20.
-0022|{{audio (file="cll1-v3-0022.mp3")}}
+0022|{{audio (file="cll1-v3-0022.m4a")}}|<a href="cll1-v3-0022.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 21.
-0023|{{audio (file="cll1-v3-0023.mp3")}}
+0023|{{audio (file="cll1-v3-0023.m4a")}}|<a href="cll1-v3-0023.m4a" download>⤓ download</a>
 ----| Complete the lesson material through the end of chapter 22.
 
 
