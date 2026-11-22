@@ -1,0 +1,51 @@
+spec:
+  - round: 1
+    date: '2026-11-22'
+    artifact: "spec"
+    verdict: FAIL
+    reviewer: fresh-context subagent (ses_dfea6e82bffeBFB0UTNFB6we96)
+    findings:
+      - "stale embed count 182 hard-coded in three places; live count 187 — the count as an SC-2 expected value would spuriously fail a correct deliverable"
+    outcome: "remediated: Intent and Doc Sources corrected to the measured count; SC-2's instrument restated as the invariant (every embed .m4a with tracked counterpart, 0 mp3) rather than a fixed count."
+  - round: 2
+    date: '2026-11-22'
+    artifact: "spec"
+    verdict: FAIL
+    reviewer: fresh-context subagent (ses_dfea5980effe8R6K4OCmTooiZY)
+    findings:
+      - "SC-1's 'zero mp3s on disk' claim overreached its content/-scoped instrument (stale public/ build residue invisible to it)"
+      - "Edge Cases section absent (structure standard's mandatory section inventory; the residue discovery is exactly the class it exists for)"
+    outcome: "remediated: SC-1 scoped to the tracked-content surface with the public/ residue as an Edge-Case disposition; Edge Cases section added with four applicable entries; completion-gate heading restored."
+  - round: 3
+    date: '2026-11-22'
+    artifact: "spec"
+    verdict: FAIL
+    reviewer: fresh-context subagent (ses_dfea455dfffeRazgaxRXFLCr6I)
+    findings:
+      - "SC-5/R-4 blast-radius gap: AGENTS.md's stale '176 tracked .m4a' count statement uncounted — the criterion's own 199 figure would contradict a doc that fixed only the mp3 claims"
+    outcome: "remediated: R-4's enumeration and SC-5's instrument extended to the m4a-count statement (176 absent, 199 present)."
+  - round: 4
+    date: '2026-11-22'
+    artifact: "spec"
+    verdict: FAIL
+    reviewer: fresh-context subagent (ses_dfea31b8affe9P8oUC964fKWIV)
+    findings:
+      - "SC-3 instrument: git grep regex '!*.mp3' spuriously matches the root .gitignore's surviving global *.mp3 rule — fixed-string form required"
+      - "R-4/SC-5 blast-radius: AGENTS.md's ruling-of-record prose 'TTS demo audio → tracked mp3s' (line 114) uncounted"
+      - "SC-2 embed audit covers only the space-form variant (182 of 187 md embeds) and left the exercises.txt fragment's scope unresolved"
+    outcome: "remediated: SC-3 instrument fixed to `git grep -lF '!*.mp3'`; R-4 enumeration and SC-5 cover the ruling prose with an in-place supersession instrument; SC-2 audits both spacing variants and the exercises fragment."
+  - round: 5
+    date: '2026-11-22'
+    artifact: "spec"
+    verdict: FAIL
+    reviewer: fresh-context subagent (ses_dfea0ac80ffeS9lSNgPVigVfOp)
+    findings:
+      - "embed-occurrence figure 187 still stale — correct measured total is 199 (the round-1 correction omitted the exercises.txt fragment's 12 and the count was md-paged)"
+    outcome: "remediated: 187 -> 199 in Problem Statement and Documentation Sources, with the correction history recorded."
+  - round: 6
+    date: '2026-11-22'
+    artifact: "spec"
+    verdict: PASS
+    reviewer: fresh-context subagent (ses_dfe9dd4a9ffehS7BSMt4hZV2cO)
+    findings: []
+    outcome: "clean PASS — zero findings. All factual claims reproduced independently (45 mp3s 9/24/8/4 with tracked exact-name m4a counterparts, 199 m4a, 4 negation files, cll1 zip untracked 0 refs, AGENTS.md targets real at lines 57/78/114, 199 embed occurrences / 0 mp3); all six SC instruments verified capable (including SC-3's fixed-string rationale); structure conforms section-by-section; traceability complete both directions; containment both prongs."
