@@ -43,6 +43,12 @@ this file holds repo operational facts only.
     -show_entries format=format_name -of default=noprint_wrappers=1 OUT.m4a
   ```
 
+  Run note (CherokeeLessons#76, developer disposition 2026-11-22 "higher
+  bitrates are acceptable"): the 45 source-backed tracks re-encoded through
+  this form at `-b:a 192k` (feature/76-192k-reencode) — the 192k rung is the
+  encode standard for that pass; the 128k form above remains the generic
+  template.
+
 - Deployment is Cloudflare Workers Static Assets: a merge to `master` triggers
   a Workers Builds build and `npx wrangler deploy` automatically; PR branches
   get preview builds. The one-time dashboard setup (GitHub App connection,
