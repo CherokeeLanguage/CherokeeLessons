@@ -1,1 +1,8 @@
-comments: []
+comments:
+- type: internal
+  body: 'Status check 2026-11-21 (developer-directed itch.io verification): keeps
+    open status - parts #55 and #68 open in store; live cherokee-language.itch.io
+    confirms the itch-distribution slice (all five apps channel-served; Numbers Maze
+    page hosts the HTML5 browser build replacing the retired static/HTML-Games/NumbersMaze).
+    Umbrella correctly open until #55/#68 close.'
+  timestamp: '2026-11-22T04:06:00+00:00'
