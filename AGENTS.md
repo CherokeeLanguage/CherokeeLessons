@@ -26,6 +26,23 @@ this file holds repo operational facts only.
   `./build.sh` proves nothing about the frame. The #22 itch-widget embed
   establishes the pattern (widget iframe `itch.io/embed/…`, origin
   `https://itch.io` in frame-src).
+- Media tooling: media (ffmpeg/ffprobe) work uses the static 7.0.2 builds
+  vendored at `.tools/` (fetch source: johnvansickle.com
+  `ffmpeg-release-amd64-static.tar.xz`). The snap-packaged `/snap/bin/ffmpeg`
+  is broken in this environment (snap-confine capability failure) and must
+  not be used. Always pass `-nostdin` to ffmpeg — non-interactive shells can
+  trigger a stdin-consuming encode hang (observed 2026-11-21, #67: one encode
+  spun CPU-bound for hours without `-nostdin`). Example transcode form used
+  by the repo's audio conversions:
+
+  ```
+  .tools/ffmpeg -y -nostdin -loglevel error -i IN.mp3 -ac 1 -ar 48000 \
+    -c:a aac -b:a 128k -movflags +faststart OUT.m4a
+  .tools/ffprobe -v error -select_streams a:0 \
+    -show_entries stream=codec_name,channels,sample_rate,bit_rate \
+    -show_entries format=format_name -of default=noprint_wrappers=1 OUT.m4a
+  ```
+
 - Deployment is Cloudflare Workers Static Assets: a merge to `master` triggers
   a Workers Builds build and `npx wrangler deploy` automatically; PR branches
   get preview builds. The one-time dashboard setup (GitHub App connection,
