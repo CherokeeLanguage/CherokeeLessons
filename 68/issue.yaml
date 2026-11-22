@@ -1,9 +1,11 @@
 title: 'Spec: TTS demo-audio pages — 41 demo mp3s convert to tracked AAC .m4a with
   per-entry download links; unrecoverable mp3 sources tracked'
-status: open
+status: closed
 labels:
 - needs-approval
 body: ''
 created_at: '2026-11-21T15:02:23+00:00'
-updated_at: '2026-11-21T15:02:24+00:00'
+updated_at: '2026-11-22T04:10:38+00:00'
 github_url: https://github.com/CherokeeLanguage/CherokeeLessons/issues/68
+closed_at: '2026-11-22T04:10:38+00:00'
+close_reason: completed
