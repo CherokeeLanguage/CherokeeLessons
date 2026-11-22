@@ -1,9 +1,11 @@
 title: 'Spec: tracked TTS-sample pages — page mp3s convert to tracked AAC .m4a, pages
   gain per-entry download links (the #59 form)'
-status: open
+status: closed
 labels:
 - needs-approval
 body: ''
 created_at: '2026-11-21T14:48:39+00:00'
-updated_at: '2026-11-21T14:49:48+00:00'
+updated_at: '2026-11-22T03:13:35+00:00'
 github_url: https://github.com/CherokeeLanguage/CherokeeLessons/issues/67
+closed_at: '2026-11-22T03:13:35+00:00'
+close_reason: completed
