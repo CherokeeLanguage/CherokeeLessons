@@ -68,3 +68,27 @@ spec:
     sweeps clean; spot-facts reproduced live (199 m4a, 0 mp3s, anchor/table counts,
     toolchain, AGENTS.md records); layout + traceability conformant; repo-boundary
     containment holds.
+plan:
+- round: 1
+  date: '2026-11-22'
+  artifact: plan (7 items, one per SC set, derived from the round-3-PASS spec)
+  verdict: FAIL
+  reviewer: fresh-context subagent (ses_dfe84ebd1ffeGk3s2ipUeM0DXV)
+  findings:
+  - class: incomplete-derivation/unreal-instrument
+    finding: 'Item 1''s recovery GREEN executed as written fails: `--diff-filter=D`
+      resolves the DROP commit (27191cf) whose tree carries the path deleted; the
+      blob lives at the drop commit''s parent (`<drop-sha>^` verified live: 826,989
+      B mp3, sha256 b53e9a14…).'
+    remediation: Item 1's GREEN rewritten to the two-step mechanics (drop-SHA resolve
+      → parent dereference), verified live in the round-2 dispatch.
+  outcome: revised in place; re-validated round 2.
+- round: 2
+  date: '2026-11-22'
+  artifact: plan (as revised)
+  verdict: PASS
+  reviewer: fresh-context subagent (ses_dfe840d0bffePQpVG62nc1a0Tz)
+  findings: []
+  outcome: clean PASS — recovery mechanics executed live and verify bit-identical;
+    item coverage both directions; instruments runnable; scope discipline vs spec;
+    structure conformance; no status fields.
