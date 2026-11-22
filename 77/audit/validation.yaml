@@ -1,0 +1,24 @@
+spec:
+  - round: 1
+    date: "2026-11-22"
+    artifact: .issues/77/spec.md (remote mirror: CherokeeLanguage/CherokeeLessons#77)
+    dispatch: fresh-context reviewer session ses_dfe6d8fb8ffevVc8Gauky2Wqu6, read against .opencode/skills/spec/references/validation-standards.md + spec-structure-standards.md
+    verdict: PASS
+    findings: []
+    remediation: none — zero-finding round
+    writer_pre_dispatch_self_check: >-
+      duty-of-care pass (spec card rule 7, hygiene not a gate) remediated two
+      defects before the dispatch: R-7's threadless state was internally
+      impossible as first written ("profile-URL placeholder as the embed
+      target" — profile URLs are not OEmbed status inputs; internal
+      contradiction/gap-analysis family) and was rewritten to the plain
+      placeholder-anchor GAP state of record; R-3 gained the public posting
+      visibility disposition from the adapted SOP's paste-ready info set.
+      Both edits applied in the local artifact and the remote body before
+      the round ran. Reviewer independently re-verified the live claims:
+      account lookup (id 112101023658888147), OEmbed of the pinned status
+      carrying the four of-record markers with attribute-order match,
+      profile-URL OEmbed returning 404, embed.js 3821 bytes with zero
+      fetch/XHR, tag GET 200, CSP contents, giscus footer position, and the
+      cited repo/sibling line numbers.
+    repo_boundary_containment: scope hold (one repository: CherokeeLessons); home hold (.issues/77/, same store)
