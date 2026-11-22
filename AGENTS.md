@@ -53,17 +53,20 @@ this file holds repo operational facts only.
 
 - `templates/shortcodes/` ships `{{ video(video=…) }}`, `{{ audio(file=…) }}`,
   and `{{ youtube(id=…) }}`. Legacy `video` embeds reference colocated mp4s
-  that are untracked, so those embeds are dead in any fresh build; `audio`
-  embeds are mixed — pages whose referenced mp3s are tracked stay live (122
-  tracked mp3s across four page dirs), while several lesson-audio and TTS
-  pages embed untracked mp3s and are dead in fresh builds.
+  that are untracked, so those embeds are dead in any fresh build; the
+  sample-media pages ship tracked audio — 176 tracked `.m4a` across the site
+  (the four TTS-sample page dirs 100/18/5/3 with per-entry `⤓ download`
+  anchors after CherokeeLessons#67; demo-audio and lesson-audio dirs making
+  up the rest).
 - Lesson media dispositions of record (developer decisions 2026-11-15/16,
   landing via CherokeeLessons#54):
   the Syllabary-Dictation videos embed via `{{ youtube(id=…) }}` (channel
   mirror verified); the two lesson-audio pages keep their media local —
   tracked AAC `.m4a` files re-encoded per track through the bitrate ladder
   (owning definition: audio-lessons-generator-python#16); the TTS demo audio
-  ships as tracked mp3s per CherokeeLessons#30's R-2. Lesson media remains
+  and the TTS-sample pages likewise ship tracked AAC `.m4a` with per-entry
+  download links (CherokeeLessons#58/#59/#67/#68 — the #30 R-2 supersession).
+  Lesson media remains
   mirrored on the YouTube channel (mirror provenance, not the delivery method
   for the audio pages); a local-media embed ships only if its media file is
   tracked (see the ignore rules below — `*.m4a` is not ignored;
@@ -72,10 +75,11 @@ this file holds repo operational facts only.
   `content/books/ꮳꮃꭹ-…-1.md`). Use `git -c core.quotepath=off` for readable
   git output and quote paths in shell commands.
 - `.gitignore` globally ignores `*.mp3`, `*.mp4`, and `/static/HTML-Games/`.
-  Media is nevertheless tracked where it matters (122 tracked mp3s — tracked
-  files override ignore rules), and
-  `content/content/tacotron2-and-cherokee-tts/.gitignore` re-includes new
-  mp3s with `!*.mp3`. A plain `git add` of ignored media is a silent no-op —
+  Media is nevertheless tracked where it matters (45 tracked mp3s — the 4
+  unrecoverable TTS-sample clip sources and the demo-audio source mp3s,
+  tracked via per-dir `!*.mp3` negation files), and new mp3 media in those
+  dirs is re-included by the same negation pattern (`!*.mp3` in the dir's
+  `.gitignore`). A plain `git add` of ignored media is a silent no-op —
   confirm with `git status` / `git check-ignore` after adding media.
 - Scaffold new content pages with `content/new_page.py --title "…"
   --folder <section-dir>`. It is a bash/python polyglot that activates the
