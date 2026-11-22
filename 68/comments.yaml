@@ -1,1 +1,11 @@
-comments: []
+comments:
+- type: internal
+  body: 'Reconciliation 2026-11-22: remote tracker anchors this record as CLOSED (closed
+    2026-11-21T15:45:35Z; work landed via merged PRs #69/#70, follow-ons #71/#72).
+    The store''s spec predates CherokeeLessons#74''s later superseding disposition:
+    R-2/SC-2 (41+41 mp3 sources tracked via negation) are superseded by CherokeeLessons#74''s
+    sole-format drop (zero tracked mp3s; history-retained), and the umbrella seam-2
+    wording is stale to the same record. Deliverables otherwise verified complete
+    on trunk (199 tracked m4a; table display form; per-entry download anchors; exercises
+    fragment retargeted). Closing the local record to the remote-anchored state.'
+  timestamp: '2026-11-22T04:10:37+00:00'
