@@ -1,1 +1,7 @@
-comments: []
+comments:
+- type: internal
+  body: 'Cleanup 2026-11-22: PR #78 merged to master (ddcfac2, 2026-11-22T04:48:17Z)
+    — the Closes #76 keyword fired (remote closed 04:48:19, needs-approval cleared).
+    All eight SCs verified on trunk (verify PASS 8/8, fresh-context ses_dfe6e19e1ffeynlPv14WD4CWqP);
+    features branch deleted local+remote; trunk synced to ddcfac2.'
+  timestamp: '2026-11-22T04:49:14+00:00'
