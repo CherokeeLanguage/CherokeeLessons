@@ -82,6 +82,11 @@ this file holds repo operational facts only.
 - Content filenames use Cherokee syllabary and Osage script (e.g.
   `content/books/ꮳꮃꭹ-…-1.md`). Use `git -c core.quotepath=off` for readable
   git output and quote paths in shell commands.
+- Blog-posting workflow of record: new blog entries (under `content/content/`)
+  publish with a Mastodon toot posted by hand from `@michaelconrad@mastodon.social`
+  and the toot back-filled into the article body as a modern inline embed —
+  defined in `docs/blog-posting-workflow.md` (existing entries carry no matching
+  toots and are not retrofitted).
 - `.gitignore` globally ignores `*.mp3`, `*.mp4`, and `/static/HTML-Games/`.
   No media is excluded from that rule anymore (CherokeeLessons#74, 2026-11-22:
   the 45 former source mp3s and their per-dir `!*.mp3` negation files were
