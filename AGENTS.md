@@ -54,10 +54,12 @@ this file holds repo operational facts only.
 - `templates/shortcodes/` ships `{{ video(video=…) }}`, `{{ audio(file=…) }}`,
   and `{{ youtube(id=…) }}`. Legacy `video` embeds reference colocated mp4s
   that are untracked, so those embeds are dead in any fresh build; the
-  sample-media pages ship tracked audio — 176 tracked `.m4a` across the site
+  sample-media pages ship tracked audio — 199 tracked `.m4a` across the site
   (the four TTS-sample page dirs 100/18/5/3 with per-entry `⤓ download`
-  anchors after CherokeeLessons#67; demo-audio and lesson-audio dirs making
-  up the rest).
+  anchors after CherokeeLessons#67; demo-audio, espeak-ng, and lesson-audio
+  dirs making up the rest), the site's sole kept audio format (CherokeeLessons#74,
+  developer decision 2026-11-22: no mp3/m4a dupes — the 45 source mp3s and the
+  CLL-1 mp3 zip were dropped).
 - Lesson media dispositions of record (developer decisions 2026-11-15/16,
   landing via CherokeeLessons#54):
   the Syllabary-Dictation videos embed via `{{ youtube(id=…) }}` (channel
@@ -75,12 +77,12 @@ this file holds repo operational facts only.
   `content/books/ꮳꮃꭹ-…-1.md`). Use `git -c core.quotepath=off` for readable
   git output and quote paths in shell commands.
 - `.gitignore` globally ignores `*.mp3`, `*.mp4`, and `/static/HTML-Games/`.
-  Media is nevertheless tracked where it matters (45 tracked mp3s — the 4
-  unrecoverable TTS-sample clip sources and the demo-audio source mp3s,
-  tracked via per-dir `!*.mp3` negation files), and new mp3 media in those
-  dirs is re-included by the same negation pattern (`!*.mp3` in the dir's
-  `.gitignore`). A plain `git add` of ignored media is a silent no-op —
-  confirm with `git status` / `git check-ignore` after adding media.
+  No media is excluded from that rule anymore (CherokeeLessons#74, 2026-11-22:
+  the 45 former source mp3s and their per-dir `!*.mp3` negation files were
+  removed — zero tracked mp3s remain; m4a is the sole kept audio format). The
+  mp3s of any past commit remain recoverable from git history. A plain `git add` of
+  ignored media is still a silent no-op — confirm with `git status` /
+  `git check-ignore` after adding media.
 - Scaffold new content pages with `content/new_page.py --title "…"
   --folder <section-dir>`. It is a bash/python polyglot that activates the
   `cherokee-lessons` conda env; `environment.yml` is that env's export
@@ -111,7 +113,11 @@ this file holds repo operational facts only.
   of record (2026-11-15/16, via CherokeeLessons#54 and
   audio-lessons-generator-python#16): dictation videos → YouTube embeds; the
   two lesson-audio pages → local tracked `.m4a` re-encoded per track through
-  the bitrate ladder; TTS demo audio → tracked mp3s. An agent
+  the bitrate ladder; TTS demo audio → tracked AAC `.m4a` with per-entry
+  download links. Superseding disposition (CherokeeLessons#74, developer
+  decision 2026-11-22): m4a is the site's sole kept audio format — mp3
+  sources and mp3-derived zips are not kept alongside m4a of the same audio.
+  An agent
   spec/prose that assumes blanket "lesson media → YouTube" for this repo is
   wrong on discovery — record the per-page split.
 - Ruling of record (2026-11-21, via CherokeeLessons#68): audio-exercise
