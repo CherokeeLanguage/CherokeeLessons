@@ -56,48 +56,48 @@ Toolchain: `.tools/ffmpeg` and `.tools/ffprobe` — static 7.0.x builds (AGENTS.
 
 | # | file | rung(s) attempted | measured size(s) | outcome | command |
 |---|---|---|---|---|---|
-| 1 | animals-0001.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 2 | animals-0002.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 3 | animals-0003.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 4 | animals-0004.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 5 | animals-0005.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 6 | animals-0006.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 7 | animals-0007.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 8 | animals-0008.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 9 | animals-0009.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 10 | Animals_2021-05-29_0001.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 11 | Animals_2021-05-29_0002.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 12 | Animals_2021-05-29_0003.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 13 | Animals_2021-05-29_0004.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 14 | Animals_2021-05-29_0005.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 15 | Animals_2021-05-29_0006.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 16 | Animals_2021-05-29_0007.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 17 | Animals_2021-05-29_0008.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 18 | Animals_2021-05-29_0009.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 19 | Animals_2021-05-29_0010.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 20 | Animals_2021-05-29_0011.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 21 | Animals_2021-05-29_0012.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 22 | Animals_2021-05-31_0001.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 23 | Animals_2021-05-31_0002.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 24 | Animals_2021-05-31_0003.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 25 | Animals_2021-05-31_0004.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 26 | Animals_2021-05-31_0005.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 27 | Animals_2021-05-31_0006.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 28 | Animals_2021-05-31_0007.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 29 | Animals_2021-05-31_0008.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 30 | Animals_2021-05-31_0009.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 31 | Animals_2021-05-31_0010.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 32 | Animals_2021-05-31_0011.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 33 | Animals_2021-05-31_0012.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 34 | bragging-hunter-en-360-m.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 35 | bragging-hunter-en-361-f.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 36 | search-party-en-360-m.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 37 | search-party-en-361-f.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 38 | turtle-beat-rabbit-en-360-m.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 39 | turtle-beat-rabbit-en-361-f.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 40 | wolf-and-crawdad-en-360-m.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 41 | wolf-and-crawdad-en-361-f.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 42 | oo1sdee3gaa_.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 43 | sdvv2goo2hvv23-ii_.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 44 | sgwoohl2gaa_.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
-| 45 | sgwoohl2gii_.mp3 | _pending_ | _pending_ | _pending_ | _pending_ |
+| 1 | animals-0001.mp3 | 192k | 7412959 | re-encoded at 192k, size=7412959 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 72856) |
+| 2 | animals-0002.mp3 | 192k | 10274508 | re-encoded at 192k, size=10274508 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 74507) |
+| 3 | animals-0003.mp3 | 192k | 10969904 | re-encoded at 192k, size=10969904 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 72644) |
+| 4 | animals-0004.mp3 | 192k | 11856557 | re-encoded at 192k, size=11856557 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 70748) |
+| 5 | animals-0005.mp3 | 192k | 14033043 | re-encoded at 192k, size=14033043 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 73087) |
+| 6 | animals-0006.mp3 | 192k | 17628187 | re-encoded at 192k, size=17628187 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 84133) |
+| 7 | animals-0007.mp3 | 192k | 18959810 | re-encoded at 192k, size=18959810 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 83280) |
+| 8 | animals-0008.mp3 | 192k | 17673709 | re-encoded at 192k, size=17673709 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 83627) |
+| 9 | animals-0009.mp3 | 192k | 12591755 | re-encoded at 192k, size=12591755 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 86048) |
+| 10 | Animals_2021-05-29_0001.mp3 | 192k | 7416743 | re-encoded at 192k, size=7416743 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 62933) |
+| 11 | Animals_2021-05-29_0002.mp3 | 192k | 10097605 | re-encoded at 192k, size=10097605 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 61780) |
+| 12 | Animals_2021-05-29_0003.mp3 | 192k | 9833676 | re-encoded at 192k, size=9833676 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 60697) |
+| 13 | Animals_2021-05-29_0004.mp3 | 192k | 9190705 | re-encoded at 192k, size=9190705 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 59058) |
+| 14 | Animals_2021-05-29_0005.mp3 | 192k | 9690453 | re-encoded at 192k, size=9690453 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 61293) |
+| 15 | Animals_2021-05-29_0006.mp3 | 192k | 14009717 | re-encoded at 192k, size=14009717 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 69815) |
+| 16 | Animals_2021-05-29_0007.mp3 | 192k | 13960669 | re-encoded at 192k, size=13960669 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 67796) |
+| 17 | Animals_2021-05-29_0008.mp3 | 192k | 12621680 | re-encoded at 192k, size=12621680 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 64407) |
+| 18 | Animals_2021-05-29_0009.mp3 | 192k | 12474844 | re-encoded at 192k, size=12474844 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 63368) |
+| 19 | Animals_2021-05-29_0010.mp3 | 192k | 13326185 | re-encoded at 192k, size=13326185 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 64397) |
+| 20 | Animals_2021-05-29_0011.mp3 | 192k | 13769785 | re-encoded at 192k, size=13769785 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 65646) |
+| 21 | Animals_2021-05-29_0012.mp3 | 192k | 10468987 | re-encoded at 192k, size=10468987 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 63057) |
+| 22 | Animals_2021-05-31_0001.mp3 | 192k | 7416207 | re-encoded at 192k, size=7416207 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 62448) |
+| 23 | Animals_2021-05-31_0002.mp3 | 192k | 10053723 | re-encoded at 192k, size=10053723 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 62625) |
+| 24 | Animals_2021-05-31_0003.mp3 | 192k | 9848599 | re-encoded at 192k, size=9848599 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 61434) |
+| 25 | Animals_2021-05-31_0004.mp3 | 192k | 9211731 | re-encoded at 192k, size=9211731 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 58362) |
+| 26 | Animals_2021-05-31_0005.mp3 | 192k | 9699104 | re-encoded at 192k, size=9699104 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 60648) |
+| 27 | Animals_2021-05-31_0006.mp3 | 192k | 13989600 | re-encoded at 192k, size=13989600 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 69716) |
+| 28 | Animals_2021-05-31_0007.mp3 | 192k | 13956277 | re-encoded at 192k, size=13956277 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 67987) |
+| 29 | Animals_2021-05-31_0008.mp3 | 192k | 12708417 | re-encoded at 192k, size=12708417 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 64602) |
+| 30 | Animals_2021-05-31_0009.mp3 | 192k | 12463643 | re-encoded at 192k, size=12463643 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 63609) |
+| 31 | Animals_2021-05-31_0010.mp3 | 192k | 13345503 | re-encoded at 192k, size=13345503 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 64211) |
+| 32 | Animals_2021-05-31_0011.mp3 | 192k | 13852485 | re-encoded at 192k, size=13852485 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 66004) |
+| 33 | Animals_2021-05-31_0012.mp3 | 192k | 10513222 | re-encoded at 192k, size=10513222 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 63630) |
+| 34 | bragging-hunter-en-360-m.mp3 | 192k | 1067210 | re-encoded at 192k, size=1067210 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 158433) |
+| 35 | bragging-hunter-en-361-f.mp3 | 192k | 1010032 | re-encoded at 192k, size=1010032 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 162663) |
+| 36 | search-party-en-360-m.mp3 | 192k | 1880402 | re-encoded at 192k, size=1880402 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 156299) |
+| 37 | search-party-en-361-f.mp3 | 192k | 1732542 | re-encoded at 192k, size=1732542 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 155940) |
+| 38 | turtle-beat-rabbit-en-360-m.mp3 | 192k | 2699877 | re-encoded at 192k, size=2699877 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 159117) |
+| 39 | turtle-beat-rabbit-en-361-f.mp3 | 192k | 2441602 | re-encoded at 192k, size=2441602 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 161324) |
+| 40 | wolf-and-crawdad-en-360-m.mp3 | 192k | 2059215 | re-encoded at 192k, size=2059215 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 157846) |
+| 41 | wolf-and-crawdad-en-361-f.mp3 | 192k | 1900972 | re-encoded at 192k, size=1900972 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 160495) |
+| 42 | oo1sdee3gaa_.mp3 | 192k | 26753 | re-encoded at 192k, size=26753 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 140642) |
+| 43 | sdvv2goo2hvv23-ii_.mp3 | 192k | 35640 | re-encoded at 192k, size=35640 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 154321) |
+| 44 | sgwoohl2gaa_.mp3 | 192k | 19259 | re-encoded at 192k, size=19259 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 118444) |
+| 45 | sgwoohl2gii_.mp3 | 192k | 20839 | re-encoded at 192k, size=20839 | `.tools/ffmpeg -y -nostdin -loglevel error -i IN -ac 1 -ar 48000 -c:a aac -b:a 192k -movflags +faststart OUT` (ffprobe bit_rate 128671) |
