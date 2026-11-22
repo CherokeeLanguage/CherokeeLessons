@@ -1,1 +1,8 @@
-comments: []
+comments:
+- type: internal
+  body: 'Status check 2026-11-21 (developer-directed itch.io verification): keeps
+    open status - deliverable docs/app-announcement-workflow.md not yet landed (tree
+    check absent); itch-side facts verified live: all five app pages follow the cherokee-language.itch.io/<slug>
+    pattern; poster account/trigger/retroactivity still unbound awaiting developer
+    decision.'
+  timestamp: '2026-11-22T04:05:59+00:00'
