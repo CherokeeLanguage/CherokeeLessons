@@ -1,8 +1,10 @@
 title: 'Spec: complete the conversions for consistency — the 45 source-backed m4a
   deliverables re-encoded at the 192k rung from their git-history originals'
-status: open
+status: closed
 labels: []
 body: ''
 created_at: '2026-11-22T04:11:00+00:00'
-updated_at: '2026-11-22T04:18:45+00:00'
+updated_at: '2026-11-22T04:49:12+00:00'
 github_url: https://github.com/CherokeeLanguage/CherokeeLessons/issues/76
+closed_at: '2026-11-22T04:49:12+00:00'
+close_reason: completed
