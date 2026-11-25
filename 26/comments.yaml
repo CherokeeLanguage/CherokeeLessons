@@ -6,3 +6,18 @@ comments:
     pattern; poster account/trigger/retroactivity still unbound awaiting developer
     decision.'
   timestamp: '2026-11-22T04:05:59+00:00'
+- type: internal
+  body: 'Announcement of record 2026-11-25: the website stand-up announcement posted
+    by hand from @michaelconrad@mastodon.social (https://mastodon.social/@michaelconrad/117675127707807011,
+    public, posted 2026-11-25T04:12:31Z). Format verified live against the fetched
+    status: itch.io link (profile hub form https://cherokee-language.itch.io — five
+    apps one click away, not the per-app /<slug> form), one image attached (alt "Billboard
+    for Cherokee Animals"), @itchio@mastodon.gamedev.place full-form mention, and
+    hashtag set Cherokee/CherokeeLanguage/ᏣᎳᎩ/Indigenous/IndigenousPeoples/NativeAmerican/LanguageLearning/LanguageRevitalization/GameDev/IndieDev/itchio
+    — with ᏣᎳᎩ resolving server-side to the case-normalized small-letter record ꮳꮃꭹ
+    exactly as the SC-4 discipline predicts (the duplication of ᏣᎳᎩ in the tag line
+    dedupes to one tag). The hashtag facts of SC-4 were exercised in practice before
+    the workflow doc implementing them exists; poster account/trigger/retroactivity
+    remain unbound (the retroactivity decision point for the five app announcements
+    is still open).'
+  timestamp: '2026-11-25T04:16:15+00:00'
