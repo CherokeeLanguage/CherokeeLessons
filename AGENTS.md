@@ -87,6 +87,14 @@ this file holds repo operational facts only.
   and the toot back-filled into the article body as a modern inline embed —
   defined in `docs/blog-posting-workflow.md` (existing entries carry no matching
   toots and are not retrofitted).
+- Announcement hashtag discipline of record (2026-11-24, developer directive;
+  #26 SC-4): announcement-post hashtags are selected from live tag-usage
+  trends on the Native American–specific Mastodon server `turtleisland.social`
+  (Native-owned instance; the formerly-used `indigenous-mastodon.social`
+  domain does not resolve). Per-tag 7-day uses/accounts come from its own
+  Mastodon API (`/api/v1/tags/<name>`) checked at drafting time; tag names
+  API-resolve in case-normalized small-letter form (`ᏣᎳᎩ` → `ꮳꮃꭹ`), so
+  stats lookups verify the resolved record, not the requested spelling.
 - `.gitignore` globally ignores `*.mp3`, `*.mp4`, and `/static/HTML-Games/`.
   No media is excluded from that rule anymore (CherokeeLessons#74, 2026-11-22:
   the 45 former source mp3s and their per-dir `!*.mp3` negation files were
