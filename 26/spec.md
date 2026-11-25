@@ -10,6 +10,7 @@ The itch migration made itch.io the app download channel, but the workflow carri
 
 - **Developer statement (2026-11-10, chat):** "add this in as a spec to add this into the workflow for all apps going forwards" — with the itchio toot link above as the format source. Follow-ups: "not applicable right now" (2026-11-10) declining to bind the poster account, trigger, and retroactivity; "file a draft spec" (2026-11-10) authorizing this filing.
 - **Observed repo facts (verified 2026-11-10):** no Mastodon/announcement step exists anywhere in the workflow — no announcement CI step in the app repos, no social links in `config.toml`, no announcement content in the issue store. The itch migration's phase-1 umbrella (#21) and per-app specs (#20, #22–#25) govern page creation and deployment only; phase-2 site-page specs are unfiled.
+- **Developer statements (2026-11-24, chat):** on the announcement draft — "don't forget all the needed hash tags based on live tag usage trends", narrowed by "focus on the indigenous mastodon site for the hash tag analysis" and "search for the native american specific mastodon server"; "make a note of it in AGENTS.md as an added SC in the spec" directs this revision. Live-verified the same day: the Native American–specific Mastodon server is `turtleisland.social` (JoinMastodon directory, bipoc category: "Native owned and operated for Native/Indigenous people, BIPOC people and true Allies only"; instance API: 110 users, 102,252 posts; the former `indigenous-mastodon.social` domain does not resolve), with 7-day local tag usage led by #gamedev (364 uses/190 accounts), #indiedev (154/85), #indigenous (95/64), #languages (35/34), #languagelearning (12/12), #nativeamerican (11/11), #itchio (10/9).
 
 ## Scope
 
@@ -23,6 +24,7 @@ This repository (CherokeeLessons.com): one new documentation file, `docs/app-ann
   2. at least one image or video;
   3. a mention of @itchio — canonical handle `https://mastodon.gamedev.place/@itchio` (full form `@itchio@mastodon.gamedev.place` when the post originates from another instance).
 - **R-3 — No invention.** The doc states only what the linked itchio toot (2022-11-07) and the developer's 2026-11-10 direction carry: no claims about boost guarantees or likelihood, no account identities beyond the canonical handle, no invented cadence, trigger, or posting ownership.
+- **R-4 — Hashtag selection basis (2026-11-24 directive).** Every announcement post carries hashtags, selected from live tag-usage trends on the Native American–specific Mastodon server `turtleisland.social` (the formerly-used `indigenous-mastodon.social` domain is dead).
 
 ## Success criteria
 
@@ -31,6 +33,7 @@ This repository (CherokeeLessons.com): one new documentation file, `docs/app-ann
 | SC-1 | `docs/app-announcement-workflow.md` exists, states its applicability to all apps going forward, and names all three mandatory elements | structural | Read the file; check the three elements and the applicability statement are present | R-1, R-2 |
 | SC-2 | The doc binds the canonical @itchio handle URL and the itch.io page URL pattern, matching this spec's R-2 values exactly | content | Read the file against R-2's bound values | R-2 |
 | SC-3 | The doc carries no factual claim beyond the linked itchio toot and the developer's direction | structural | Side-by-side read against the toot text recorded in this spec's Problem section | R-3 |
+| SC-4 | The doc mandates hashtags on every announcement post and binds the hashtag-selection basis — live tag-usage trends on the Native American–specific Mastodon server `turtleisland.social` (the former `indigenous-mastodon.social` domain is dead) — matching R-4's bound values exactly | content | Read the file against R-4's bound values | R-4 |
 
 ## Out of scope
 
