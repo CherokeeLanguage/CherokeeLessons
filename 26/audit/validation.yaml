@@ -1,0 +1,47 @@
+spec:
+  rounds:
+    - round: 1
+      date: 2026-11-24
+      reviewer_session: ses_def215207ffeJ1AJv7sWSML1Ze
+      artifact_state: revised draft (R-4/SC-4 added to the 2026-11-10 filing; pre-standard layout)
+      verdict: FAIL
+      findings:
+        - class: internal-contradiction
+          classification: finding
+          ground: R-3/SC-3 bounded the doc's content to the itchio toot and the 2026-11-10 direction, excluding SC-4's 2026-11-24 hashtag basis; jointly unsatisfiable, and the date scope of "the developer's direction" was two-reader ambiguous
+          location: .issues/26/spec.md R-3/SC-3 vs R-4/SC-4
+          remediation: R-3 and SC-3 amended to admit the 2026-11-24 hashtag directive; "directions (2026-11-10; 2026-11-24 hashtag directive)" stated explicitly on both surfaces
+        - class: layout-non-conformance
+          classification: finding
+          ground: the substantive revision owed whole-artifact conversion per spec-structure-standards §11; artifact retained the pre-standard shape (§§1-10 absent, five-column SC table, class value "content" outside the behavioral|structural vocabulary, approval-gate process sentence in the body)
+          location: .issues/26/spec.md (entire artifact)
+          remediation: whole artifact converted to §§1-10 — six-field §1 preamble, four-column SC table with structural classes, RFC 2119 §3, §5 Dependencies, §6 Traceability, §7 Documentation Sources, §8 Cost Frame, §9 Edge Cases, §10 Completion gate; approval-gate sentence removed from the body
+        - class: cross-reference-sufficiency
+          classification: finding
+          ground: the spec's remote-issue anchor was a dead link (repository renamed CherokeeLessons.com → CherokeeLessons)
+          location: .issues/26/spec.md header line
+          remediation: header anchor removed in the conversion; the remote body's artifacts blockquote set to the canonical https://github.com/CherokeeLanguage/CherokeeLessons/tree/issues-data/26 (verified HTTP 200, 2026-11-24)
+        - class: fabricated-claims
+          classification: finding
+          ground: the AGENTS.md note (commit c51fdd7) stated "#ᏣᎳᎩ ... is not yet a tag on turtleisland.social"; a persisted tag record exists there (id 154025, case-normalized small-letter form ꮳꮃꭹ) — live-state misstatement
+          location: AGENTS.md note, tail lines
+          remediation: superseded in place (commit 84e4af6) by the verified normalization behavior — tag names API-resolve case-normalized; lookups verify the resolved record, not the requested spelling
+      loop_state: all findings remediated in place; re-validation dispatched
+    - round: 2
+      date: 2026-11-24
+      reviewer_session: ses_def19dbb0ffe2cmkVCPMB5s7UO
+      artifact_state: converted spec (278de16 lineage) as synced
+      verdict: PASS
+      findings: []
+      classification: zero-finding round
+      loop_state: loop closed — clean PASS
+implementation:
+  rounds:
+    - round: 1
+      date: 2026-11-24
+      reviewer_session: ses_def19dbb0ffe2cmkVCPMB5s7UO
+      artifact_state: AGENTS.md note, commits c51fdd7 + 84e4af6 on feature/26-app-announcement-workflow (pushed; round-1 finding 4 from the combined round-1 dispatch remediated in 84e4af6)
+      verdict: PASS
+      findings: []
+      classification: zero-finding round
+      loop_state: scope statement satisfied — only AGENTS.md touched, note present, factual claims match the live-verified record
